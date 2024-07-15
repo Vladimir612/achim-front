@@ -1,0 +1,61 @@
+*, *::before, *::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.custom-slick-slider{
+  width: 80%;
+  margin: auto;
+}
+
+.custom-slick-slider .slick-arrow{
+  z-index: 100;
+  transform: translateY(-1rem);
+}
+
+.custom-slick-slider .slick-arrow::before{
+  content: '';
+  display: none;
+}
+
+.custom-slick-slider .slick-arrow.slick-prev{
+  left: calc(10% + 1.5rem);
+}
+
+.custom-slick-slider .slick-arrow.slick-next{
+  right: calc(10% + 1.5rem);
+}
+
+.custom-slick-slider .slick-slide div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-slick-dots {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.custom-slick-dots li div {
+  background: #d9d9d9; /* Boja tačkica kada nisu aktivne */
+  width: 2.4rem; /* Širina tačkica */
+  height: 0.6rem; /* Visina tačkica */
+  transition: all 0.6s; /* Tranzicija za animaciju */
+  cursor: pointer;
+  content: '';
+}
+
+.custom-slick-dots li::marker {
+  content: '';
+}
+
+.custom-slick-dots li.slick-active div {
+  background: #ed1b34; /* Boja tačkica kada su aktivne */
+  width: 4rem; /* Širina tačkica kada su aktivne */
+}
+
