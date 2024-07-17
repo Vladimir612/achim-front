@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../components/banner/Banner";
 import AboutSection from "../components/about/aboutSection/AboutSection";
 import Footer from "../components/footer/Footer";
+import FooterBanner from "../components/footerBanner/FooterBanner";
 
 const about = () => {
   return (
@@ -45,6 +46,11 @@ const about = () => {
           text="...have three levels of impact. They offer spaces for self- and co-regulation. And they create opportunities for civil society engagement by networking with other civil society actors on site and promoting nervous system-oriented approaches. They also have a targeted effect on the municipal structures, influence the local political agenda and contribute to well-being in the municipality."
         />
       </div>
+      <FooterBanner
+        subHeading="JOIN ME"
+        heading="How can you join in?"
+        par="There are many ways to help shape the forum. You can become active as a trainer, join or found a local group, you can help build the club, you can become part of the forum movement with your organization or support us with your ideas, your commitment or your money."
+      />
       <Footer />
     </div>
   );

@@ -1,10 +1,8 @@
 .uvpList{
     background: linear-gradient(0deg, rgba(12, 30, 39, 0.80) 0%, rgba(12, 30, 39, 0.80) 100%), url("/uvpBg.png");
-    // background: #0c1e27;
     background-size: cover;
     width: 100%;
     position: relative;
-    // filter: blur(4px);
     padding-top: 10rem;
     padding: 10rem 16rem;
     &::before{

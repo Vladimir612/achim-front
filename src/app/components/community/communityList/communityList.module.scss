@@ -1,0 +1,72 @@
+.communityList{
+    background: #0c1e27;
+    padding: 0 10rem;
+    .filter{
+        transform: translateY(-17rem);
+        input{
+            width: 100%;
+            border-radius: 1rem;
+            background: #E7FFF533;
+            height: 2.5rem;
+            border: 1px solid #ffffff40;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            color: #fff;
+            padding-left: 3rem;
+            outline: none;
+            font-size: 1.2rem;
+            &::placeholder{
+                color: #ffffff80;
+                font-weight: 500;
+                
+            }
+        }
+        .input{
+            position: relative;
+            label{
+                position: absolute;
+                top: calc(1.25rem - 12px);
+                left: 1rem;
+            }
+        }
+    }
+    .cards{
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .filterCard{
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 2rem;
+        background: #E7FFF533;
+        border: 1px solid #ffffff40;
+        width: 11rem;
+        padding: 0.8rem 0;
+        cursor: pointer;
+        h4{
+            font-weight: 500;
+            color: #fff;
+            font-size: 1.4rem;
+        }
+        p{
+            font-size: 2.1rem;
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+    .list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        transform: translateY(-10rem);
+    }
+}
