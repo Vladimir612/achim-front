@@ -2,11 +2,53 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 .custom-slick-slider{
   width: 80%;
   margin: auto;
+}
+
+.custom-slick-slider.testimonials{
+  width: 14rem;
+  margin: 2rem auto;
+  position: initial;
+}
+
+.custom-slick-slider.team .slick-list{
+  padding: 0!important;
+}
+
+.custom-slick-slider.events .slick-list, .custom-slick-slider.testimonials .slick-list {
+  overflow: visible;
+}
+
+.custom-slick-slider.events .slick-list .slick-slide{
+  /* transform: scale(0.8); */
+  transition: all ease-in-out .3s;
+  opacity: 0.5;
+}
+
+.custom-slick-slider.testimonials .slick-arrow.slick-prev{
+  left: 0;
+}
+
+.custom-slick-slider.testimonials .slick-arrow.slick-next{
+  right: 0;
+}
+
+.custom-slick-slider.events .slick-arrow.slick-prev{
+  left: calc(5% + 1.6rem);
+}
+
+.custom-slick-slider.events .slick-arrow.slick-next{
+  right: calc(5% + 1.6rem);
+}
+
+.custom-slick-slider.events .slick-list .slick-slide.slick-active{
+  /* transform: scale(1); */
+  opacity: 1;
 }
 
 .custom-slick-slider .slick-arrow{
@@ -33,29 +75,62 @@
   justify-content: center;
 }
 
+.custom-slick-slider.team .slick-arrow{
+  bottom: -4.7rem;
+  top: initial;
+  right: initial;
+  left: initial;
+}
+
+.custom-slick-slider.team .slick-arrow.slick-next{
+  right: calc(50% - 7.3rem);
+}
+
+.custom-slick-slider.team .slick-arrow.slick-prev{
+  left: calc(50% - 7.3rem);
+}
+
+
 .custom-slick-dots {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: 0.4rem;
+  margin: 1rem auto;
+  width: 15rem;
+  height: 2.9rem;
+  background: #E7FFF533;
+  border-radius: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.custom-slick-dots li div {
-  background: #d9d9d9; /* Boja tačkica kada nisu aktivne */
-  width: 2.4rem; /* Širina tačkica */
-  height: 0.6rem; /* Visina tačkica */
-  transition: all 0.6s; /* Tranzicija za animaciju */
+.custom-slick-dots li {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-slick-dots li button {
+  width: 0.6rem; 
+  height: 0.6rem; 
+  font-size: 0;
+  transition: all 0.6s; 
   cursor: pointer;
-  content: '';
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background: #263433;
+  transition: all ease-in-out .6s;
 }
 
 .custom-slick-dots li::marker {
   content: '';
 }
 
-.custom-slick-dots li.slick-active div {
-  background: #ed1b34; /* Boja tačkica kada su aktivne */
-  width: 4rem; /* Širina tačkica kada su aktivne */
-}
+.custom-slick-dots li.slick-active button {
+  transform: scale(1.4);
+  background: #FFF6E0;
 
+}

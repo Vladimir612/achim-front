@@ -1,6 +1,7 @@
 import Footer from "./components/footer/Footer";
 import FooterBanner from "./components/footerBanner/FooterBanner";
 import Hero from "./components/home/hero/Hero";
+import Team from "./components/home/team/Team";
 import UvpList from "./components/home/uvp/UvpList";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <main>
       <Hero />
       <UvpList />
+      <Team />
       <FooterBanner
         subHeading="JOIN ME"
         heading="How can you join in?"
