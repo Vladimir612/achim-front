@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./nav.module.scss";
 import Image from "next/image";
 
@@ -21,6 +21,8 @@ const Nav = () => {
   const pathname = usePathname();
   const isActive = (path) => path === pathname;
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className={styles.navigationHeader}>
       <Image
@@ -31,7 +33,7 @@ const Nav = () => {
         style={{ objectFit: "cover" }}
         priority
       />
-      <ul>
+      <ul className={styles.listPc}>
         {NavLinks.map((link) => {
           return (
             <li key={link.id}>
@@ -45,7 +47,33 @@ const Nav = () => {
           );
         })}
       </ul>
-      <button>Join us</button>
+      <button className={styles.listPc}>Join us</button>
+      <button
+        className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+      </button>
+      <div className={`${styles.responsive} ${isOpen ? styles.open : ""}`}>
+        <ul>
+          {NavLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <Link
+                  href={link.path}
+                  className={isActive(link.path) ? styles.active : ""}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+        <button>Join us</button>
+      </div>
     </header>
   );
 };

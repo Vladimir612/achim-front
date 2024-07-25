@@ -41,3 +41,37 @@
         position: relative!important;
     }
 }
+
+@media (max-width: 870px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        .colOne {
+            width: 100%;
+            align-items: center;
+            gap: 1rem;
+        }
+        .colTwo,
+        .colThree,
+        .colFour {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        p{
+            width: 60%;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        p{
+            width: 90%;
+        }
+    }
+}

@@ -5,6 +5,7 @@
     width: 60%;
     height: 24rem;
     border-radius: 2rem;
+    z-index: 10;
     .card {
         width: 6rem!important;
         height: 6rem!important;
@@ -59,5 +60,42 @@
                 right: -1rem;
             }
         }
+    }
+}
+
+@media (max-width: 1200px) {
+    .testimonials {
+        .sliderVisible {
+            width: 26rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials {
+        width: 95%;
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonials {
+        .card{
+            width: 5rem!important;
+            height: 5rem!important;
+            &.slickBeforeAfter {
+                transform: scale(0.6);
+            }
+            &.slickCurrent {
+                transform: scale(1);
+            }
+        }
+        .sliderVisible {
+            width: 19rem;
+        }
+        .content{
+            padding: 0 2rem;
+        }
+        
+        
     }
 }

@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     gap: 6rem;
-    padding: 4rem 8rem;
+    padding: 4rem 2rem;
     position: relative;
     .header{
         position: relative;
@@ -43,6 +43,38 @@
         flex-direction: row-reverse;
         span{
             left: 0;
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .uvpSingle {
+        padding: 4rem 0;
+        .image{
+            height: 30rem;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .uvpSingle {
+        flex-direction: column-reverse!important;
+        gap: 3rem;
+        span{
+            z-index: 10;
+            bottom: 0rem;
+            left: 0;
+        }
+        .content, .image{
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .uvpSingle {
+        .content, .image{
+            width: 100%;
         }
     }
 }

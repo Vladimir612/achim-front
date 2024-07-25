@@ -134,6 +134,27 @@ const TeamSlider = () => {
     dotsClass: "custom-slick-dots",
     arrows: true,
     swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 868,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+        },
+      },
+    ],
   };
 
   return (

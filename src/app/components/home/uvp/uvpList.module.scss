@@ -16,3 +16,18 @@
         background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0B1D26 47.98%, #0B1D26 68.79%, rgba(11, 29, 38, 0) 84.92%);
     }
 }
+
+
+@media (max-width: 1250px) {
+    .uvpList {
+        padding: 10rem;
+        padding-top: 17rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .uvpList {
+        padding: 10rem 2rem;
+        padding-top: 20rem;
+    }
+}

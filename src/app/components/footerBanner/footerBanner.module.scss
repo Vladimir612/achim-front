@@ -1,18 +1,21 @@
 .footerBanner{
-    height: 80vh;
+    min-height: 80vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
     *{
         text-align: center;
+    }
+    img{
+        z-index: -1;
     }
     .content{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         color: #fff;
         width: 50%;
         h1{
@@ -46,6 +49,22 @@
                 font-size: 1rem;
                 margin-bottom: 0;
             }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .footerBanner {
+        .content {
+            width: 80%;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .footerBanner {
+        .content {
+            width: 100%;
+            padding: 1rem;
         }
     }
 }
