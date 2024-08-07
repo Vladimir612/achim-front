@@ -119,21 +119,11 @@ const SliderHero = () => {
                   <p className="second">8001 Zurich</p>
                 </div>
               </div>
-              <div className={styles.col}>
-                <img src="/ticket.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Daily: 50.00 CHF</p>
-                  <p className="second">3 Days: 120.00 CHF</p>
-                </div>
-              </div>
             </div>
 
             <div className={styles.buttons}>
               <button className={`${styles.btnCta} ${styles.borderBg}`}>
                 More details
-              </button>
-              <button className={`${styles.btnCta} ${styles.fullBg}`}>
-                Buy tickets &gt;
               </button>
             </div>
           </div>
@@ -176,21 +166,11 @@ const SliderHero = () => {
                   <p className="second">8001 Zurich</p>
                 </div>
               </div>
-              <div className={styles.col}>
-                <img src="/ticket.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Daily: 50.00 CHF</p>
-                  <p className="second">3 Days: 120.00 CHF</p>
-                </div>
-              </div>
             </div>
 
             <div className={styles.buttons}>
               <button className={`${styles.btnCta} ${styles.borderBg}`}>
                 More details
-              </button>
-              <button className={`${styles.btnCta} ${styles.fullBg}`}>
-                Buy tickets &gt;
               </button>
             </div>
           </div>
@@ -233,21 +213,11 @@ const SliderHero = () => {
                   <p className="second">8001 Zurich</p>
                 </div>
               </div>
-              <div className={styles.col}>
-                <img src="/ticket.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Daily: 50.00 CHF</p>
-                  <p className="second">3 Days: 120.00 CHF</p>
-                </div>
-              </div>
             </div>
 
             <div className={styles.buttons}>
               <button className={`${styles.btnCta} ${styles.borderBg}`}>
                 More details
-              </button>
-              <button className={`${styles.btnCta} ${styles.fullBg}`}>
-                Buy tickets &gt;
               </button>
             </div>
           </div>
@@ -290,21 +260,11 @@ const SliderHero = () => {
                   <p className="second">8001 Zurich</p>
                 </div>
               </div>
-              <div className={styles.col}>
-                <img src="/ticket.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Daily: 50.00 CHF</p>
-                  <p className="second">3 Days: 120.00 CHF</p>
-                </div>
-              </div>
             </div>
 
             <div className={styles.buttons}>
               <button className={`${styles.btnCta} ${styles.borderBg}`}>
                 More details
-              </button>
-              <button className={`${styles.btnCta} ${styles.fullBg}`}>
-                Buy tickets &gt;
               </button>
             </div>
           </div>
@@ -347,21 +307,11 @@ const SliderHero = () => {
                   <p className="second">8001 Zurich</p>
                 </div>
               </div>
-              <div className={styles.col}>
-                <img src="/ticket.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Daily: 50.00 CHF</p>
-                  <p className="second">3 Days: 120.00 CHF</p>
-                </div>
-              </div>
             </div>
 
             <div className={styles.buttons}>
               <button className={`${styles.btnCta} ${styles.borderBg}`}>
                 More details
-              </button>
-              <button className={`${styles.btnCta} ${styles.fullBg}`}>
-                Buy tickets &gt;
               </button>
             </div>
           </div>

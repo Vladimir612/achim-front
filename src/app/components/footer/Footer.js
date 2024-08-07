@@ -19,7 +19,7 @@ const Footer = () => {
           malesuada fringilla.
         </p>
       </div>
-      <div className={styles.colTwo}>
+      <div className={styles.colTwo} style={{ margin: "0 4rem 0 1rem" }}>
         <p>Pages</p>
         <nav>
           <a href="/">Home</a>
@@ -31,7 +31,7 @@ const Footer = () => {
           <a href="/contact">Contact</a>
         </nav>
       </div>
-      <div className={styles.colThree}>
+      {/* <div className={styles.colThree}>
         <p>Services</p>
         <nav>
           <a href="#">Trainers Pool</a>
@@ -42,13 +42,13 @@ const Footer = () => {
           <a href="#">Self-study area</a>
           <a href="#">Model projects</a>
         </nav>
-      </div>
+      </div> */}
       <div className={styles.colFour}>
         <p>Terms and Conditions</p>
         <nav>
           <a href="#">Terms and Services</a>
           <a href="#">Privacy Policy</a>
-          <a href="#">Community Rules</a>
+          <a href="#">Community Guidelines</a>
         </nav>
       </div>
     </footer>

@@ -155,19 +155,10 @@ const SliderHeroEvents = () => {
               <p className="first">{currentEvent.location}</p>
             </div>
           </div>
-          <div className={styles.col}>
-            <img src="/ticket.svg" alt="Ticket icon" width={30} />
-            <div className={styles.data}>
-              <p className="first">{currentEvent.price}</p>
-            </div>
-          </div>
         </div>
         <div className={styles.buttons}>
           <button className={`${styles.btnCta} ${styles.borderBg}`}>
             More details
-          </button>
-          <button className={`${styles.btnCta} ${styles.fullBg}`}>
-            Buy tickets &gt;
           </button>
         </div>
       </div>
