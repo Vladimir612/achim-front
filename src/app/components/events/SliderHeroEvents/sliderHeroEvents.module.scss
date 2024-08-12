@@ -14,11 +14,13 @@
     overflow: hidden;
     background-image: url("/eventsBanner.png");
     background-size: cover;
-    height: 100vh;
+    height: auto;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
+    padding: 2rem 0;
     padding-top: 6rem;
     gap: 3rem;
     div:first-child {
@@ -70,7 +72,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: space-between;
+            justify-content: center;
         }
         .buttons{
             display: flex;
@@ -96,5 +98,41 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 900px) {
+    .sliderHeroEvents {
+        .content{
+            .columns{
+                width: 90vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .sliderHeroEvents {
+        .content{
+            .firstPar, h1{
+                width: 95%;
+                text-align: center;
+            }
+            .columns{
+                flex-direction: column;
+                gap: 1.5rem;
+                .col{
+                    border-left: none;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 560px) {
+    .card {
+        height: 12rem;
     }
 }

@@ -66,3 +66,29 @@
         
     }
 }
+
+@media (max-width: 1200px) {
+    .eventCard {
+        width: 95%;
+    }
+}
+
+@media (max-width: 660px) {
+    .eventCard {
+        flex-direction: column;
+        gap: 2rem;
+        .image{
+            width: 80%!important;
+            transform: none!important;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .eventCard {
+        .image{
+            width: 95%!important;
+            
+        }
+    }
+}

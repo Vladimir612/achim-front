@@ -37,3 +37,63 @@
         overflow: hidden;
     }
 }
+
+@media (max-width: 1050px) {
+    .startingPoint {
+        flex-direction: column-reverse;
+        bottom: -35rem;
+        .content {
+            width: 100%;
+            align-items: center;
+            p {
+                text-align: center;
+            }
+        }
+        .image {
+            width: 100% !important;
+            max-width: 28rem;
+        }
+    }
+}
+
+@media (max-width: 830px) {
+    .startingPoint {
+        bottom: -35rem;
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .startingPoint {
+        width: 95%;
+        padding: 2rem 1rem;
+        bottom: -25rem;
+        .image {
+            height: 15rem!important;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .startingPoint {
+        .content {
+            h1{
+                font-size: 2rem!important;
+            }
+            p{
+                font-size: 1.2rem!important;
+            }
+        }
+    }
+}
+
+@media (max-width: 415px) {
+    .startingPoint {
+        bottom: -27rem;
+        .content {
+        p{
+            font-size: 1rem!important;
+        }
+    }
+    }
+}

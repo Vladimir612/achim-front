@@ -32,6 +32,7 @@
         font-size: 1.2rem;
     }
     form{
+        width: 90%;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -43,11 +44,8 @@
             font-size: 1.2rem;
             font-weight: 300;
         }
-        .left{
-            width: 35rem;
-        }
-        .right{
-            width: 35rem;
+        .left, .right{
+            width: 50%;
         }
         .row{
             display: flex;
@@ -100,6 +98,39 @@
             &:hover{
                 background: #3893B8;
             }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .messageForm {
+        .content {
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .messageForm {
+        form{
+            flex-direction: column;
+            .left, .right{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .messageForm {
+        form{
+           .row{
+                flex-direction: column;
+                gap: 0;
+                .inputGroup{
+                    width: 100%;
+                }
+           }
         }
     }
 }

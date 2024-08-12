@@ -36,7 +36,23 @@
         margin-top: 2rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        overflow-x: auto;
+        gap: 1.5rem;
+        &::-webkit-scrollbar {
+            height: 8px; /* Height of the scrollbar */
+        }
+        &::-webkit-scrollbar-track {
+            background: #E7FFF533; /* Background color of the scrollbar track */
+            border-radius: 10px; /* Rounded corners */
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #ffffff80; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners */
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #ffffffb3; /* Lighter color when hovered */
+        }
     }
     .filterCard{
         display: flex;
@@ -49,6 +65,7 @@
         border: 1px solid #ffffff40;
         width: 11rem;
         padding: 0.8rem 0;
+        flex-shrink: 0;
         cursor: pointer;
         h4{
             font-weight: 500;
@@ -64,9 +81,24 @@
     .list{
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         gap: 1rem;
         flex-wrap: wrap;
         transform: translateY(-10rem);
+    }
+}
+
+@media (max-width: 1320px) {
+    .communityList {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 1070px) {
+    .communityList {
+        .cards {
+            justify-content: flex-start;
+            
+        }
     }
 }

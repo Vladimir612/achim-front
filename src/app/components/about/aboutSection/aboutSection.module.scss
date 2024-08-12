@@ -57,3 +57,39 @@
         text-align: center;
     }
 }
+
+@media (max-width: 1400px) {
+    .aboutSection {
+        padding: 3rem 20%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .aboutSection {
+        &:first-child {
+            padding-top: 40rem;
+        }
+    }
+}
+
+@media (max-width: 830px) {
+    .aboutSection {
+        &:first-child {
+            padding-top: 48rem;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .aboutSection {
+        padding: 3rem 8%;
+    }
+}
+
+@media (max-width: 600px) {
+    .aboutSection {
+        &:first-child {
+            padding-top: 30rem;
+        }
+    }
+}

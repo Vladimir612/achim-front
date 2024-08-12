@@ -59,12 +59,6 @@ const CommunityList = () => {
             name="All"
             number="12"
           />
-          <FilterCard
-            id="1"
-            iconPath="/communityIcons/organizations.svg"
-            name="All"
-            number="12"
-          />
         </div>
       </div>
       <div className={styles.list}>

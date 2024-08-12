@@ -42,3 +42,24 @@
         }
     }
 }
+
+@media (max-width: 1050px) {
+    .banner {
+        .content {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .banner {
+        .content {
+            h1{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

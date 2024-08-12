@@ -4,8 +4,12 @@
     width: 15rem;
     padding: 1rem;
     border-radius: 2rem;
+    flex-shrink: 0;
     border: none;
     outline: none;
+    cursor: pointer;
+    /* Remove blue highlight on tap */
+    -webkit-tap-highlight-color: transparent;
     ul{
         list-style-type: none;
         text-align: left;

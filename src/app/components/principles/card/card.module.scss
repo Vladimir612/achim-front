@@ -69,3 +69,39 @@
         }
     }
 }
+
+@media (max-width: 1000px) {
+    .card {
+        flex-direction: column-reverse!important;
+        padding: 3rem 6rem;
+        gap: 3rem;
+        .image {
+            width: 100%;
+            transform: none!important;
+            &::after {
+                background: none!important;
+            }
+        }
+        .content {
+            width: 100%;
+            transform: none;
+        }
+        span{
+            bottom: 0;
+            left: 0;
+            opacity: 0.6;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .card {
+        padding: 2rem 3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        padding: 1rem 1.5rem;
+    }
+}

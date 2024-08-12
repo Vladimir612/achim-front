@@ -50,6 +50,50 @@
         bottom: -5rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 1rem;
+        &::-webkit-scrollbar {
+            height: 8px; /* Height of the scrollbar */
+        }
+        &::-webkit-scrollbar-track {
+            background: #E7FFF533; /* Background color of the scrollbar track */
+            border-radius: 10px; /* Rounded corners */
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #36695195; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners */
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #366951; /* Lighter color when hovered */
+        }
+    }
+}
+
+@media (max-width: 1310px) {
+    .contactBanner {
+        .cards {
+            overflow-x: scroll;
+            justify-content: flex-start;
+            padding: 0;
+            width: 95%;
+            left: 2.5%;
+            padding-bottom: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .contactBanner {
+        .content {
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .contactBanner {
+        .cards {
+            bottom: -8rem;
+        }
     }
 }
