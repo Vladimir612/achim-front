@@ -1,8 +1,8 @@
-import Footer from "./components/footer/Footer";
-import FooterBanner from "./components/footerBanner/FooterBanner";
-import Hero from "./components/home/hero/Hero";
-import Team from "./components/home/team/Team";
-import UvpList from "./components/home/uvp/UvpList";
+import Footer from "../components/footer/Footer";
+import FooterBanner from "../components/footerBanner/FooterBanner";
+import Hero from "../components/home/hero/Hero";
+import Team from "../components/home/team/Team";
+import UvpList from "../components/home/uvp/UvpList";
 
 export default function Home() {
   return (

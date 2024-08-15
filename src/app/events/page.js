@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import SliderHeroEvents from "../components/events/SliderHeroEvents/SliderHeroEvents";
-import Footer from "../components/footer/Footer";
-import FooterBanner from "../components/footerBanner/FooterBanner";
-import EventsComponent from "../components/events/Events";
+import SliderHeroEvents from "../../components/events/SliderHeroEvents/SliderHeroEvents";
+import Footer from "../../components/footer/Footer";
+import FooterBanner from "../../components/footerBanner/FooterBanner";
+import EventsComponent from "../../components/events/Events";
 
 const Events = () => {
   return (

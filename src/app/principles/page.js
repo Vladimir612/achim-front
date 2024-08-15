@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "../components/banner/Banner";
-import Card from "../components/principles/card/Card";
-import FooterBanner from "../components/footerBanner/FooterBanner";
-import Footer from "../components/footer/Footer";
+import Banner from "../../components/banner/Banner";
+import Card from "../../components/principles/card/Card";
+import FooterBanner from "../../components/footerBanner/FooterBanner";
+import Footer from "../../components/footer/Footer";
 
 const Principles = () => {
   return (

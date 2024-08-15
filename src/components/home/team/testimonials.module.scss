@@ -1,0 +1,101 @@
+.testimonials{
+    background: linear-gradient(180deg, rgba(101, 153, 150, 0.6) 3.85%, rgba(76, 98, 131, 0.4) 100%);
+    overflow: hidden;
+    border: 1px solid rgba(214, 241, 235, 0.236);
+    width: 60%;
+    height: 24rem;
+    border-radius: 2rem;
+    z-index: 10;
+    .card {
+        width: 6rem!important;
+        height: 6rem!important;
+        position: relative;
+        transform: scale(0.6);
+        opacity: 0.5;
+        transition: transform 0.3s ease;
+        .testimonialImage{
+            border: 2px solid #FBD784;
+            border-radius: 50%;
+        }
+        &.slickBeforeAfter {
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            opacity: 0.75;
+        }
+        &.slickCurrent {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    .sliderVisible {
+        width: 42rem;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+    }
+    .content{
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding: 0 5rem;
+        text-align: center;
+        h1{
+            margin-bottom: 1rem;
+        }
+        .firstPar{
+            position: relative;
+            svg:first-child {
+                position: absolute;
+                top: -1rem;
+                left: -1rem;
+            }
+
+            svg:last-child {
+                position: absolute;
+                top: -1rem;
+                right: -1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .testimonials {
+        .sliderVisible {
+            width: 26rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials {
+        width: 95%;
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonials {
+        .card{
+            width: 5rem!important;
+            height: 5rem!important;
+            &.slickBeforeAfter {
+                transform: scale(0.6);
+            }
+            &.slickCurrent {
+                transform: scale(1);
+            }
+        }
+        .sliderVisible {
+            width: 19rem;
+        }
+        .content{
+            padding: 0 2rem;
+        }
+        
+        
+    }
+}

@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "../components/banner/Banner";
-import AboutSection from "../components/about/aboutSection/AboutSection";
-import Footer from "../components/footer/Footer";
-import FooterBanner from "../components/footerBanner/FooterBanner";
+import Banner from "../../components/banner/Banner";
+import AboutSection from "../../components/about/aboutSection/AboutSection";
+import Footer from "../../components/footer/Footer";
+import FooterBanner from "../../components/footerBanner/FooterBanner";
 
 const about = () => {
   return (

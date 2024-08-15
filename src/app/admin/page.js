@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Panel from "../components/admin/Panel/Panel";
+import Panel from "../../components/admin/Panel/Panel";
 
 const Admin = () => {
   const router = useRouter();

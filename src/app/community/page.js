@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../components/footer/Footer";
-import FooterBanner from "../components/footerBanner/FooterBanner";
-import CommunityBanner from "../components/community/banner/CommunityBanner";
-import CommunityList from "../components/community/communityList/CommunityList";
+import Footer from "../../components/footer/Footer";
+import FooterBanner from "../../components/footerBanner/FooterBanner";
+import CommunityBanner from "../../components/community/banner/CommunityBanner";
+import CommunityList from "../../components/community/communityList/CommunityList";
 
 const Community = () => {
   return (

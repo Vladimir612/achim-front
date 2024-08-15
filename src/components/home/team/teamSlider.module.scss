@@ -1,0 +1,32 @@
+.teamSlider{
+    background: linear-gradient(90deg, rgba(58, 95, 94, 0.12) 0%, rgba(33, 71, 70, 0.12) 91.41%);
+    backdrop-filter: blur(4px);
+    padding: 2rem 0;
+    color: #fff;
+    width: 100%;
+    .teamMember{
+        width: 17rem;
+        position: relative;
+        margin: 0 1rem;
+        .image{
+            width: 100%!important;
+            height: 20rem!important;
+            position: relative!important;
+            border-radius: 2rem;
+        }
+        h3{
+            margin-top: 0.6rem;
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 300;
+            margin: 0.5rem 0;
+        }
+        .role{
+            opacity: 0.7;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+    }
+    
+}

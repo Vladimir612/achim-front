@@ -1,0 +1,52 @@
+.banner{
+    height: 90vh;
+    position: relative;
+    *{
+        text-align: center;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        width: 50%;
+        h1{
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 1.7rem 0;
+        }
+        p{
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            color: #fff;
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+            p{
+                margin-bottom: 0;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .banner {
+        .content {
+            width: 90%;
+        }
+    }
+}

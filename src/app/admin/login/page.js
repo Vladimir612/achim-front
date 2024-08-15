@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Login from "@/app/components/admin/Login/Login";
+import Login from "@/components/admin/Login/Login";
 
 const LoginPage = () => {
   const router = useRouter();

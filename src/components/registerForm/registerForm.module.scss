@@ -1,0 +1,338 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: #E7F2F8;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 95%;
+    width: 40rem;
+    position: relative;
+    .errMsg{
+      color: #ff0000;
+      font-size: 0.7rem;
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0.5rem;
+    }
+    input[type="checkbox"] {
+      border: 3px solid #366951!important;
+      border-radius: 0.5rem!important;
+      outline: none!important;
+      height: 1.2rem!important;
+      width: 1.2rem!important;
+    }
+    .interestImg{
+        width: 7rem;
+        height: 7rem;
+        border-radius: 1rem;
+        object-fit: cover;
+        filter: brightness(.7);
+    }
+    .interestWrapper{
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      font-size: 0.75rem!important;
+      gap: 0.5rem;
+      input {
+        position: absolute;
+        left: 5.2rem;
+        top: 5.2rem;
+      }
+    }
+    .interestsList{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .inputGroup{
+      position: relative;
+      margin: 0.7rem 0;
+      label{
+          position: absolute;
+          top: 0.1rem;
+          left: 0.5rem;
+          color: #585858;
+          font-size: 0.6rem;
+      }
+      input, textarea{
+          border: none;
+          box-shadow: 0px 8px 32px 0px #E7F2F8;
+          border-radius: 1rem;
+          background: #fff;
+          padding: 1rem 0 0.4rem 1rem;
+          height: 2.7rem;
+          font-size: 0.9rem;
+          outline: none;
+          text-align: left!important;
+          width: 100%;
+      }
+      textarea{
+          height: 4.5rem;
+          resize: none;
+          &.subject{
+            height: 7rem;
+
+          }
+      }
+    }
+    .top{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      .topRight{
+        width: 80%;
+        input{
+          font-size: 0.9rem!important;
+        }
+        .rowSecond{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          .inputGroup{
+              width: 40%;
+              &:first-child{
+                  width: 65%;
+              }
+          }
+        }
+      }
+    }
+    .fileInputWrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        label{
+          position: initial;
+        }
+        .fileInputLabel {
+          border: none;
+          border-radius: 1rem;
+          background: #fff;
+          padding: 1rem;
+          height: 8rem;
+          width: 8rem;
+          font-size: 0.7rem;
+          text-align: center;
+          cursor: pointer;
+          position: relative;
+            .previewImage {
+                width: 90%;
+                height: 90%;
+                border-radius: 0.5rem;
+                object-fit: cover;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                height: 100%;
+                gap: 1.5rem;
+            }
+        }
+        
+        .fileInput {
+          display: none;
+        }
+        
+        
+      }
+    .numbers{
+        position: absolute;
+        left: 2rem;
+        bottom: 2.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .number{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: #366951;
+            border: 2px solid #366951;
+            font-weight: 500;
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            &.active{
+                background: #366951;
+                color: #fff;
+            }
+        }
+        .line{
+            width: 1.5rem;
+            height: 2px;
+            background: #3669517b;
+            &.active{
+                background: #366951;
+            }
+        }
+    }
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .step {
+    &.preview{
+      color: #696A6A!important;
+      .fileInputWrapper{
+        .fileInputLabel{
+          padding: 0rem;
+          .previewImage{
+            width: 100%!important;
+            height: 100%!important;
+          }
+        }
+      }
+      h3{
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      h4{
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin: 0.2rem 0;
+      }
+      .column{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .top{
+        margin-bottom: 1rem;
+      }
+      .topRight{
+        p{
+          margin-top: 0.5rem;
+        }
+        .interests {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 0.4rem;
+          margin: 0.7rem 0;
+        }
+        .interestLabel{
+          border: 2px solid #366951;
+          color: #366951!important;
+          border-radius: 2rem;
+          box-shadow: 2px 2px 6px #5b5b5b3f;
+          padding: 0.4rem 1rem;
+          font-size: 0.8rem;
+          font-weight: 500;
+        }
+      }
+    }
+    .selectBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+        background: #366951;
+        border-radius: 2.5rem;
+        outline: none;
+        cursor: pointer;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        width: 12rem;
+        margin-bottom: 0.2rem;
+      }
+      
+      .dropdown {
+        margin-top: 0.5rem;
+        background: #458c6b;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .dropdownItem {
+        padding: 0.5rem 1rem;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 0.5rem;
+      
+        &:hover {
+          background: #2c5746;
+        }
+      }
+    h2 {
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      color: #696A6A;
+        font-weight: 500;
+    }
+
+    .buttonGroup {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 2rem;
+      button {
+        background: #366951;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 2rem;
+        width: 8rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        &:hover {
+          background: #224333;
+        }
+        &.prevStep{
+            background: #E7F2F8;
+            border: 2px solid #366951;
+            color: #366951;
+            width: 10rem;
+            &:hover {
+                background: #c8e6f7;
+              }
+        }
+        &:disabled {
+          background: #a8a8a8;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  

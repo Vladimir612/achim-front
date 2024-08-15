@@ -1,14 +1,8 @@
 import React from "react";
-import Banner from "../components/banner/Banner";
-import { Merriweather } from "next/font/google";
-import FooterBanner from "../components/footerBanner/FooterBanner";
-import Footer from "../components/footer/Footer";
-import ServicesComponent from "../components/services/Services";
-
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["300"],
-});
+import Banner from "../../components/banner/Banner";
+import FooterBanner from "../../components/footerBanner/FooterBanner";
+import Footer from "../../components/footer/Footer";
+import ServicesComponent from "../../components/services/Services";
 
 const Services = () => {
   return (

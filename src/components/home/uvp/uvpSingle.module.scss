@@ -1,0 +1,94 @@
+.uvpSingle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    padding: 4rem 2rem;
+    position: relative;
+    .header{
+        position: relative;
+    }
+    span{
+        font-size: 8rem;
+        font-weight: 700;
+        color: #fff;
+        opacity: 0.2;
+        position: absolute;
+        bottom: -1.7rem;
+        left: -3.5rem;
+    }
+    .content{
+        width: 50%;
+    }
+    .title{
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 1.5rem 0;
+    }
+    .image{
+        width: 50%;
+        height: 37rem;
+        border-radius: 2rem;
+        overflow: hidden;
+        position: relative;
+    }
+    p{
+        font-size: 1rem;
+        color: #fff;
+        line-height: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    button{
+        border: none;
+        color: #FBD784;
+        outline: none;
+        background: none;
+        font-size: 1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem; 
+        cursor: pointer;
+    }
+    &:nth-child(even){
+        flex-direction: row-reverse;
+        span{
+            left: 0;
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .uvpSingle {
+        padding: 4rem 0;
+        .image{
+            height: 30rem;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .uvpSingle {
+        flex-direction: column-reverse!important;
+        gap: 3rem;
+        span{
+            z-index: 10;
+            bottom: 0rem;
+            left: 0;
+        }
+        .content, .image{
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .uvpSingle {
+        .content, .image{
+            width: 100%;
+        }
+    }
+}
