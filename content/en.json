@@ -1,0 +1,113 @@
+{
+  "Navigation": {
+    "btn": "Join us"
+  },
+  "Home": {
+    "subHeading": "THE PLATFORM",
+    "title": "Where Trauma Awareness Meets Societal Change",
+    "scroll": "scroll down",
+    "moreDetails": "More details"
+  },
+  "UvpList": {
+    "first": {
+      "subHeading": "PURPOSE",
+      "title": "Why do I exist and what am I?",
+      "par": "Awareness of trauma and the nervous system and the creation of safe spaces is the key to collective and individual healing and transformation. I am a think, feel and do tank who imagines a trauma-informed and nervous system-oriented social transformation, tries out the next steps and creates the necessary offers to accompany people from all areas of society in the transformation...",
+      "fullText": "Awareness of trauma and the nervous system and the creation of safe spaces is the key to collective and individual healing and transformation. I am a think, feel and do tank who imagines a trauma-informed and nervous system-oriented social transformation, tries out the next steps and creates the necessary offers to accompany people from all areas of society in the transformation..."
+    },
+    "second": {
+      "subHeading": "APROACH",
+      "title": "What are my basic principles?",
+      "par": "In all my activities and manifestations I am guided by basic principles that give me orientation. My view of humanity is characterized by an all-encompassing and loving acceptance of what is and is based on the life's work of Martinus Thomsen. The forum swings like a pendulum between the pillar of “going outward” in the form of passing on knowledge to society and the pillar of “going inward” in the form of creating safe spaces in which we look within ourselves and perceive our shadows and integrate, back and forth...",
+      "fullText": "In all my activities and manifestations I am guided by basic principles that give me orientation. My view of humanity is characterized by an all-encompassing and loving acceptance of what is and is based on the life's work of Martinus Thomsen. The forum swings like a pendulum between the pillar of “going outward” in the form of passing on knowledge to society and the pillar of “going inward” in the form of creating safe spaces in which we look within ourselves and perceive our shadows and integrate, back and forth..."
+    },
+    "third": {
+      "subHeading": "PURPOSE",
+      "title": "My view of humanity",
+      "par": "...is characterized by the fact that we all have animal and human parts, as well as childish and adult parts of consciousness, within us. Our animal structures are focused on competition, power, possession and self-interest, whereas our human parts want to serve, can share, are compassionate and prefer to give rather than receive...",
+      "fullText": "...is characterized by the fact that we all have animal and human parts, as well as childish and adult parts of consciousness, within us. Our animal structures are focused on competition, power, possession and self-interest, whereas our human parts want to serve, can share, are compassionate and prefer to give rather than receive..."
+    },
+    "fourth": {
+      "subHeading": "NETWORK",
+      "title": "Building a global network",
+      "par": "The forum is a holistic transformation idea that interlinks all necessary levels of impact and actors. The forum is a global knowledge and networking platform that, like a prism, brings together actors from civil society, the health sector, education, politics and business and promotes joint, sustainably effective action...",
+      "fullText": "The forum is a holistic transformation idea that interlinks all necessary levels of impact and actors. The forum is a global knowledge and networking platform that, like a prism, brings together actors from civil society, the health sector, education, politics and business and promotes joint, sustainably effective action..."
+    },
+    "fifth": {
+      "subHeading": "SERVICES",
+      "title": "What do I offer?",
+      "par": "I'm setting up a pool of trainers, organizing events, building networks, offering online and offline further training, nervous system-oriented advice and support, and setting up an attractive interactive self-study area (we're currently doing almost nothing?)...",
+      "fullText": "I'm setting up a pool of trainers, organizing events, building networks, offering online and offline further training, nervous system-oriented advice and support, and setting up an attractive interactive self-study area (we're currently doing almost nothing?)..."
+    }
+  },
+  "Team": {
+    "first": {
+      "name": "LUKAS ZIMMERMANN",
+      "role": "Recovery Coach",
+      "text": "Lukas partners with clients to develop personalized strategies for overcoming trauma, providing encouragement and resources for healing and well-being."
+    },
+    "second": {
+      "name": "EVGENIA SCHNIDER",
+      "role": "Trauma Recovery Specialist",
+      "text": "Evgenia specializes in evidence-based therapies tailored to each client's needs, fostering resilience and promoting healing in trauma survivors."
+    },
+    "third": {
+      "name": "LARS MÜLLER",
+      "role": "Trauma Support Worker",
+      "text": "Lars offers compassionate support and practical guidance to trauma survivors, empowering them to rebuild their lives with stability and hope."
+    },
+    "fourth": {
+      "name": "MATHIAS BAUER",
+      "role": "Partner",
+      "text": "Mathias partners with clients to develop personalized strategies for overcoming trauma, providing encouragement and resources for healing and well-being."
+    },
+    "fifth": {
+      "name": "LUKAS ZIMMERMANN",
+      "role": "Recovery Coach",
+      "text": "Lukas partners with clients to develop personalized strategies for overcoming trauma, providing encouragement and resources for healing and well-being."
+    }
+  },
+  "Testimonials": {
+    "first": {
+      "name": "John Doe",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    },
+    "second":{
+      "name": "John Doe",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    },
+    "third": {
+      "name": "John Doe",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    },
+    "fourth": {
+      "name": "John Doe",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    }
+  },
+  "FooterBanner": {
+    "subHeading": "JOIN ME",
+    "heading": "How can you join in?",
+    "par": "There are many ways to help shape the forum. You can become active as a trainer, join or found a local group, you can help build the club, you can become part of the forum movement with your organization or support us with your ideas, your commitment or your money.",
+    "button": "Join us here"
+  },
+  "Footer": {
+    "text": "Lorem ipsum dolor sit amet consectetur. Amet convallis maecenas malesuada fringilla.",
+    "linksHeading": "Pages",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "principles": "Principles",
+      "services": "Services",
+      "events": "Events",
+      "community": "Community",
+      "contact": "Contact"
+    },
+    "terms": "Terms and Conditions",
+    "termsLinks": {
+      "first": "Terms and Services",
+      "second": "Privacy Policy",
+      "third": "Community Guidelines"
+    }
+  }
+}

@@ -21,12 +21,12 @@ const interestOptions = [
   { value: "Sharing Experience", imgPath: "/interests/selfReflection.png" },
 ];
 
-const RegisterForm = ({ isOpen, onClose }) => {
+const RegisterForm = ({ onClose, selectedType }) => {
   const [step, setStep] = useState(1);
   const [disableSubmit, setDisableSubmit] = useState(false);
 
   const [formData, setFormData] = useState({
-    type: "C1",
+    type: selectedType,
     name: "",
     email: "",
     phone: "",
@@ -147,8 +147,6 @@ const RegisterForm = ({ isOpen, onClose }) => {
     handleNextStep(); // Move to congratulations step
   };
 
-  if (!isOpen) return null;
-
   const handleTypeSelect = (value) => {
     setFormData((prev) => ({
       ...prev,
@@ -160,29 +158,6 @@ const RegisterForm = ({ isOpen, onClose }) => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        {step !== 5 && (
-          <div className={styles.numbers}>
-            <div className={`${styles.number} ${styles.active}`}>1</div>
-            <div
-              className={`${styles.line} ${step > 1 && styles.active}`}
-            ></div>
-            <div className={`${styles.number} ${step > 1 && styles.active}`}>
-              2
-            </div>
-            <div
-              className={`${styles.line} ${step > 2 && styles.active}`}
-            ></div>
-            <div className={`${styles.number} ${step > 2 && styles.active}`}>
-              3
-            </div>
-            <div
-              className={`${styles.line} ${step > 3 && styles.active}`}
-            ></div>
-            <div className={`${styles.number} ${step > 3 && styles.active}`}>
-              4
-            </div>
-          </div>
-        )}
         <button
           className={styles.closeButton}
           onClick={() => {
@@ -584,7 +559,29 @@ const RegisterForm = ({ isOpen, onClose }) => {
             </div>
           </div>
         )}
-
+        {step !== 5 && (
+          <div className={styles.numbers}>
+            <div className={`${styles.number} ${styles.active}`}>1</div>
+            <div
+              className={`${styles.line} ${step > 1 && styles.active}`}
+            ></div>
+            <div className={`${styles.number} ${step > 1 && styles.active}`}>
+              2
+            </div>
+            <div
+              className={`${styles.line} ${step > 2 && styles.active}`}
+            ></div>
+            <div className={`${styles.number} ${step > 2 && styles.active}`}>
+              3
+            </div>
+            <div
+              className={`${styles.line} ${step > 3 && styles.active}`}
+            ></div>
+            <div className={`${styles.number} ${step > 3 && styles.active}`}>
+              4
+            </div>
+          </div>
+        )}
         <p className={styles.errMsg}>{errorMsg}</p>
       </div>
     </div>

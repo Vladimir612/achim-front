@@ -3,7 +3,7 @@ import styles from "./footerBanner.module.scss";
 import SubHeading from "../SubHeading/SubHeading";
 import Image from "next/image";
 
-const FooterBanner = ({ subHeading, heading, par, customText }) => {
+const FooterBanner = ({ subHeading, heading, par, btnText }) => {
   return (
     <div className={styles.footerBanner}>
       <Image
@@ -18,7 +18,7 @@ const FooterBanner = ({ subHeading, heading, par, customText }) => {
         <h1>{heading}</h1>
         <p>{par}</p>
         <button>
-          <p>Join us here </p>
+          <p>{btnText}</p>
         </button>
       </div>
     </div>

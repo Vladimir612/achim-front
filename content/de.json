@@ -1,0 +1,113 @@
+{
+  "Navigation": {
+    "btn": "Begleiten Sie uns"
+  },
+  "Home": {
+    "subHeading": "DIE PLATTFORM",
+    "title": "Wo Trauma-Bewusstsein auf gesellschaftlichen Wandel trifft",
+    "scroll": "nach unten scrollen",
+    "moreDetails": "Mehr Details"
+  },
+  "UvpList": {
+    "first": {
+      "subHeading": "ZWECK",
+      "title": "Warum existiere ich und was bin ich?",
+      "par": "Das Bewusstsein für Trauma und das Nervensystem sowie die Schaffung sicherer Räume sind der Schlüssel zur kollektiven und individuellen Heilung und Transformation. Ich bin ein Think-, Feel- und Do-Tank, der sich eine traumasensible und nervensystemorientierte soziale Transformation vorstellt, die nächsten Schritte ausprobiert und die notwendigen Angebote schafft, um Menschen aus allen Bereichen der Gesellschaft in der Transformation zu begleiten...",
+      "fullText": "Das Bewusstsein für Trauma und das Nervensystem sowie die Schaffung sicherer Räume sind der Schlüssel zur kollektiven und individuellen Heilung und Transformation. Ich bin ein Think-, Feel- und Do-Tank, der sich eine traumasensible und nervensystemorientierte soziale Transformation vorstellt, die nächsten Schritte ausprobiert und die notwendigen Angebote schafft, um Menschen aus allen Bereichen der Gesellschaft in der Transformation zu begleiten..."
+    },
+    "second": {
+      "subHeading": "ANSATZ",
+      "title": "Was sind meine Grundprinzipien?",
+      "par": "Bei all meinen Aktivitäten und Manifestationen lasse ich mich von Grundprinzipien leiten, die mir Orientierung geben. Meine Sicht auf die Menschheit ist geprägt von einer allumfassenden und liebevollen Akzeptanz dessen, was ist, und basiert auf dem Lebenswerk von Martinus Thomsen. Das Forum schwingt wie ein Pendel zwischen dem Pfeiler des „nach außen Gehens“ in Form der Weitergabe von Wissen an die Gesellschaft und dem Pfeiler des „nach innen Gehens“ in Form der Schaffung sicherer Räume, in denen wir in uns hineinschauen, unsere Schatten wahrnehmen und integrieren, hin und her...",
+      "fullText": "Bei all meinen Aktivitäten und Manifestationen lasse ich mich von Grundprinzipien leiten, die mir Orientierung geben. Meine Sicht auf die Menschheit ist geprägt von einer allumfassenden und liebevollen Akzeptanz dessen, was ist, und basiert auf dem Lebenswerk von Martinus Thomsen. Das Forum schwingt wie ein Pendel zwischen dem Pfeiler des „nach außen Gehens“ in Form der Weitergabe von Wissen an die Gesellschaft und dem Pfeiler des „nach innen Gehens“ in Form der Schaffung sicherer Räume, in denen wir in uns hineinschauen, unsere Schatten wahrnehmen und integrieren, hin und her..."
+    },
+    "third": {
+      "subHeading": "ZWECK",
+      "title": "Meine Sicht auf die Menschheit",
+      "par": "...ist dadurch gekennzeichnet, dass wir alle tierische und menschliche Teile sowie kindliche und erwachsene Teile des Bewusstseins in uns haben. Unsere tierischen Strukturen sind auf Wettbewerb, Macht, Besitz und Eigeninteresse ausgerichtet, während unsere menschlichen Teile dienen wollen, teilen können, mitfühlend sind und lieber geben als nehmen...",
+      "fullText": "...ist dadurch gekennzeichnet, dass wir alle tierische und menschliche Teile sowie kindliche und erwachsene Teile des Bewusstseins in uns haben. Unsere tierischen Strukturen sind auf Wettbewerb, Macht, Besitz und Eigeninteresse ausgerichtet, während unsere menschlichen Teile dienen wollen, teilen können, mitfühlend sind und lieber geben als nehmen..."
+    },
+    "fourth": {
+      "subHeading": "NETZWERK",
+      "title": "Aufbau eines globalen Netzwerks",
+      "par": "Das Forum ist eine ganzheitliche Transformationsidee, die alle notwendigen Wirkungsebenen und Akteure miteinander verknüpft. Das Forum ist eine globale Wissens- und Vernetzungsplattform, die wie ein Prisma Akteure aus der Zivilgesellschaft, dem Gesundheitssektor, dem Bildungswesen, der Politik und der Wirtschaft zusammenführt und gemeinsames, nachhaltig wirksames Handeln fördert...",
+      "fullText": "Das Forum ist eine ganzheitliche Transformationsidee, die alle notwendigen Wirkungsebenen und Akteure miteinander verknüpft. Das Forum ist eine globale Wissens- und Vernetzungsplattform, die wie ein Prisma Akteure aus der Zivilgesellschaft, dem Gesundheitssektor, dem Bildungswesen, der Politik und der Wirtschaft zusammenführt und gemeinsames, nachhaltig wirksames Handeln fördert..."
+    },
+    "fifth": {
+      "subHeading": "DIENSTLEISTUNGEN",
+      "title": "Was biete ich an?",
+      "par": "Ich baue einen Trainerpool auf, organisiere Veranstaltungen, baue Netzwerke auf, biete Online- und Offline-Weiterbildungen, nervensystemorientierte Beratung und Unterstützung an und richte einen attraktiven interaktiven Selbststudienbereich ein (wir machen derzeit fast nichts?)...",
+      "fullText": "Ich baue einen Trainerpool auf, organisiere Veranstaltungen, baue Netzwerke auf, biete Online- und Offline-Weiterbildungen, nervensystemorientierte Beratung und Unterstützung an und richte einen attraktiven interaktiven Selbststudienbereich ein (wir machen derzeit fast nichts?)..."
+    }
+  },
+  "Team": {
+    "first": {
+      "name": "LUKAS ZIMMERMANN",
+      "role": "Erholungscoach",
+      "text": "Lukas arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
+    },
+    "second": {
+      "name": "EVGENIA SCHNIDER",
+      "role": "Trauma-Spezialistin",
+      "text": "Evgenia ist auf evidenzbasierte Therapien spezialisiert, die auf die Bedürfnisse jedes Klienten zugeschnitten sind, fördert die Resilienz und unterstützt die Heilung bei Traumata."
+    },
+    "third": {
+      "name": "LARS MÜLLER",
+      "role": "Trauma-Unterstützungsarbeiter",
+      "text": "Lars bietet mitfühlende Unterstützung und praktische Anleitung für Traumaüberlebende und befähigt sie, ihr Leben mit Stabilität und Hoffnung neu aufzubauen."
+    },
+    "fourth": {
+      "name": "MATHIAS BAUER",
+      "role": "Partner",
+      "text": "Mathias arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
+    },
+    "fifth": {
+      "name": "LUKAS ZIMMERMANN",
+      "role": "Erholungscoach",
+      "text": "Lukas arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
+    }
+  },
+  "Testimonials": {
+    "first": {
+      "name": "Max Mustermann",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    },
+    "second": {
+      "name": "Max Mustermann",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    },
+    "third": {
+      "name": "Max Mustermann",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    },
+    "fourth": {
+      "name": "Max Mustermann",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    }
+  },
+  "FooterBanner": {
+    "subHeading": "MITMACHEN",
+    "heading": "Wie kannst du mitmachen?",
+    "par": "Es gibt viele Möglichkeiten, das Forum mitzugestalten. Du kannst als Trainer aktiv werden, einer lokalen Gruppe beitreten oder eine gründen, den Verein mitaufbauen, mit deiner Organisation Teil der Forumsbewegung werden oder uns mit deinen Ideen, deinem Engagement oder deinem Geld unterstützen.",
+    "button": "Mach hier mit"
+  },
+  "Footer": {
+    "text": "Lorem ipsum dolor sit amet consectetur. Amet convallis maecenas malesuada fringilla.",
+    "linksHeading": "Seiten",
+    "links": {
+      "home": "Startseite",
+      "about": "Über uns",
+      "principles": "Prinzipien",
+      "services": "Dienstleistungen",
+      "events": "Veranstaltungen",
+      "community": "Gemeinschaft",
+      "contact": "Kontakt"
+    },
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "termsLinks": {
+      "first": "Nutzungsbedingungen",
+      "second": "Datenschutzerklärung",
+      "third": "Gemeinschaftsrichtlinien"
+    }
+  }
+}

@@ -11,7 +11,7 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const SliderHero = () => {
+const SliderHero = ({ readMoreTxt }) => {
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -123,7 +123,7 @@ const SliderHero = () => {
 
             <div className={styles.buttons}>
               <button className={`${styles.btnCta} ${styles.borderBg}`}>
-                More details
+                {readMoreTxt}
               </button>
             </div>
           </div>

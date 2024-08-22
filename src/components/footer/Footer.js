@@ -1,8 +1,24 @@
 import React from "react";
 import styles from "./footer.module.scss";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 
-const Footer = () => {
+const Footer = ({
+  text,
+  linksHeading,
+  home,
+  about,
+  principles,
+  services,
+  events,
+  community,
+  contact,
+  terms,
+  termsFirst,
+  termsSecond,
+  termsThird,
+}) => {
+  const locale = useLocale(); // Get the current locale
   return (
     <footer className={styles.footer}>
       <div className={styles.colOne}>
@@ -14,41 +30,26 @@ const Footer = () => {
           style={{ objectFit: "cover" }}
           priority
         />
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Amet convallis maecenas
-          malesuada fringilla.
-        </p>
+        <p>{text}</p> {/* Dinamički tekst iz propa */}
       </div>
       <div className={styles.colTwo} style={{ margin: "0 4rem 0 1rem" }}>
-        <p>Pages</p>
+        <p>{linksHeading}</p> {/* Dinamički naslov linkova */}
         <nav>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/principles">Principles</a>
-          <a href="/services">Services</a>
-          <a href="/events">Events</a>
-          <a href="/community">Community</a>
-          <a href="/contact">Contact</a>
+          <a href={`/${locale}`}>{home}</a>
+          <a href={`/${locale}/about`}>{about}</a>
+          <a href={`/${locale}/principles`}>{principles}</a>
+          <a href={`/${locale}/services`}>{services}</a>
+          <a href={`/${locale}/events`}>{events}</a>
+          <a href={`/${locale}/community`}>{community}</a>
+          <a href={`/${locale}/contact`}>{contact}</a>
         </nav>
       </div>
-      {/* <div className={styles.colThree}>
-        <p>Services</p>
-        <nav>
-          <a href="#">Trainers Pool</a>
-          <a href="#">Online Courses</a>
-          <a href="#">Science Network</a>
-          <a href="#">Structural consulting</a>
-          <a href="#">Events</a>
-          <a href="#">Self-study area</a>
-          <a href="#">Model projects</a>
-        </nav>
-      </div> */}
       <div className={styles.colFour}>
-        <p>Terms and Conditions</p>
+        <p>{terms}</p>
         <nav>
-          <a href="#">Terms and Services</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Community Guidelines</a>
+          <a href="#">{termsFirst}</a>
+          <a href="#">{termsSecond}</a>
+          <a href="#">{termsThird}</a>
         </nav>
       </div>
     </footer>

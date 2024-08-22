@@ -1,12 +1,14 @@
 import React from "react";
-import Banner from "../../components/banner/Banner";
-import FooterBanner from "../../components/footerBanner/FooterBanner";
-import Footer from "../../components/footer/Footer";
-import ServicesComponent from "../../components/services/Services";
+import Nav from "@/components/nav/nav";
+import Banner from "@/components/banner/Banner";
+import FooterBanner from "@/components/footerBanner/FooterBanner";
+import Footer from "@/components/footer/Footer";
+import ServicesComponent from "@/components/services/Services";
 
 const Services = () => {
   return (
     <div>
+      <Nav />
       <Banner
         subHeading="WHAT WE OFFER"
         heading="Transforming Society Together"

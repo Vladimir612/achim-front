@@ -13,37 +13,9 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const Testimonials = () => {
+const Testimonials = ({ testimonialsList }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [prevSlide, setPrevSlide] = useState(0);
-
-  const testimonialsArr = [
-    {
-      image: "/eventImageExample.png",
-      name: "John Doe",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae mauris euismod, aliquet nunc id, lacinia nisl.",
-    },
-    {
-      image: "/eventImageExample.png",
-      name: "Jane Smith",
-      text: "Nulla facilisi. Sed auctor, nunc non aliquam aliquet, nisl nunc tincidunt nunc, id ultricies nisl elit ac nunc.",
-    },
-    {
-      image: "/eventImageExample.png",
-      name: "Michael Johnson",
-      text: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed nec semper elit.",
-    },
-    {
-      image: "/eventImageExample.png",
-      name: "Emily Davis",
-      text: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed auctor, nunc non aliquam aliquet, nisl nunc tincidunt nunc, id ultricies nisl elit ac nunc.",
-    },
-    {
-      image: "/eventImageExample.png",
-      name: "David Wilson",
-      text: "Donec auctor, nunc non aliquam aliquet, nisl nunc tincidunt nunc, id ultricies nisl elit ac nunc. Sed auctor, nunc non aliquam aliquet, nisl nunc tincidunt nunc, id ultricies nisl elit ac nunc.",
-    },
-  ];
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -119,34 +91,35 @@ const Testimonials = () => {
     },
   };
 
-  const currentTestimonial = testimonialsArr[currentSlide];
+  const currentTestimonial = testimonialsList[currentSlide];
 
   return (
     <div className={styles.testimonials}>
       <div className={styles.sliderVisible}>
         <Slider {...settings}>
-          {testimonialsArr.map((event, index) => (
+          {testimonialsList.map((event, index) => (
             <div
               key={index}
               className={`${styles.card} ${
                 index === currentSlide ? styles.slickCurrent : ""
               } ${
                 index === prevSlide ||
-                index === (currentSlide + 1) % testimonialsArr.length ||
+                index === (currentSlide + 1) % testimonialsList.length ||
                 index ===
-                  (currentSlide - 1 + testimonialsArr.length) %
-                    testimonialsArr.length
+                  (currentSlide - 1 + testimonialsList.length) %
+                    testimonialsList.length
                   ? styles.slickBeforeAfter
                   : ""
               }`}
             >
               <Image
-                src={event.image}
+                src={event.imagePath}
                 alt={event.name}
                 className={styles.testimonialImage}
                 fill
                 style={{ objectFit: "cover" }}
                 priority
+                sizes=""
               />
             </div>
           ))}

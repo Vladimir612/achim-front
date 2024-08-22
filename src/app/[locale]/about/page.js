@@ -1,12 +1,14 @@
 import React from "react";
-import Banner from "../../components/banner/Banner";
-import AboutSection from "../../components/about/aboutSection/AboutSection";
-import Footer from "../../components/footer/Footer";
-import FooterBanner from "../../components/footerBanner/FooterBanner";
+import Banner from "@/components/banner/Banner";
+import AboutSection from "@/components/about/aboutSection/AboutSection";
+import Footer from "@/components/footer/Footer";
+import FooterBanner from "@/components/footerBanner/FooterBanner";
+import Nav from "@/components/nav/nav";
 
 const about = () => {
   return (
     <div>
+      <Nav />
       <Banner
         subHeading="OUR LAYERS"
         heading="Building a Healthier Future"

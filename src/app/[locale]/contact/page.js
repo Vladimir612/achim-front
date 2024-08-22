@@ -1,12 +1,14 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
-import ContactBanner from "../../components/contact/ContactBanner/ContactBanner";
-import MessageForm from "../../components/contact/MessageForm/MessageForm";
-import Faq from "../../components/contact/Faq/Faq";
+import Footer from "@/components/footer/Footer";
+import ContactBanner from "@/components/contact/ContactBanner/ContactBanner";
+import MessageForm from "@/components/contact/MessageForm/MessageForm";
+import Nav from "@/components/nav/nav";
+// import Faq from "@/components/contact/Faq/Faq";
 
 const Contact = () => {
   return (
     <div>
+      <Nav />
       <ContactBanner
         subHeading="JOIN US"
         heading="How can you join in?"

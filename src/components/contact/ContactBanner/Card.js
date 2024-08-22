@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./card.module.scss";
+import RegisterForm from "@/components/registerForm/RegisterForm";
 
 const Card = ({
   id,
@@ -9,24 +12,32 @@ const Card = ({
   bulletTwo,
   bulletThree,
 }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
-    <button className={styles.card}>
-      <div className={styles.top}>
-        <div className={styles.wrapper}>
-          <img
-            src={`/communityIcons/${communityType}.svg`}
-            alt={communityType}
-            width={24}
-          />
+    <>
+      {isModalOpen && <RegisterForm onClose={closeModal} selectedType={id} />}
+      <button className={styles.card} onClick={openModal}>
+        <div className={styles.top}>
+          <div className={styles.wrapper}>
+            <img
+              src={`/communityIcons/${communityType}.svg`}
+              alt={communityType}
+              width={24}
+            />
+          </div>
+          <h3>{name}</h3>
         </div>
-        <h3>{name}</h3>
-      </div>
-      <ul>
-        <li>{bulletOne}</li>
-        <li>{bulletTwo}</li>
-        <li>{bulletThree}</li>
-      </ul>
-    </button>
+        <ul>
+          <li>{bulletOne}</li>
+          <li>{bulletTwo}</li>
+          <li>{bulletThree}</li>
+        </ul>
+      </button>
+    </>
   );
 };
 

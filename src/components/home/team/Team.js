@@ -3,11 +3,11 @@ import styles from "./team.module.scss";
 import Testimonials from "./Testimonials";
 import TeamSlider from "./TeamSlider";
 
-const Team = () => {
+const Team = ({ teamList, testimonialsList, readMore }) => {
   return (
     <div className={styles.team}>
-      <TeamSlider />
-      <Testimonials />
+      <TeamSlider teamList={teamList} readMore={readMore} />
+      <Testimonials testimonialsList={testimonialsList} />
     </div>
   );
 };

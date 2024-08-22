@@ -1,14 +1,17 @@
+"use client";
 import React from "react";
-import Footer from "../../components/footer/Footer";
-import FooterBanner from "../../components/footerBanner/FooterBanner";
-import CommunityBanner from "../../components/community/banner/CommunityBanner";
-import CommunityList from "../../components/community/communityList/CommunityList";
+import SliderHeroEvents from "@/components/events/SliderHeroEvents/SliderHeroEvents";
+import Footer from "@/components/footer/Footer";
+import FooterBanner from "@/components/footerBanner/FooterBanner";
+import EventsComponent from "@/components/events/Events";
+import Nav from "@/components/nav/nav";
 
-const Community = () => {
+const Events = () => {
   return (
     <div>
-      <CommunityBanner />
-      <CommunityList />
+      <Nav />
+      <SliderHeroEvents />
+      <EventsComponent />
       <FooterBanner
         subHeading="JOIN ME"
         heading="How can you join in?"
@@ -19,4 +22,4 @@ const Community = () => {
   );
 };
 
-export default Community;
+export default Events;

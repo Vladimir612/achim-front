@@ -12,7 +12,15 @@ const merriweather = Merriweather({
   weight: ["300", "700", "900"],
 });
 
-const UvpSingle = ({ number, subHeading, title, par, imagePath, fullText }) => {
+const UvpSingle = ({
+  number,
+  subHeading,
+  title,
+  par,
+  imagePath,
+  fullText,
+  readMoreTxt,
+}) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleReadMore = () => {
@@ -33,7 +41,7 @@ const UvpSingle = ({ number, subHeading, title, par, imagePath, fullText }) => {
         <h1 className={styles.title}>{title}</h1>
         <p>{par}</p>
         <button onClick={handleReadMore}>
-          Read more{" "}
+          {readMoreTxt + " "}
           <svg
             width="24"
             height="16"
@@ -56,6 +64,7 @@ const UvpSingle = ({ number, subHeading, title, par, imagePath, fullText }) => {
           fill
           style={{ objectFit: "cover" }}
           priority
+          sizes=""
         />
       </div>
       <Modal

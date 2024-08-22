@@ -36,6 +36,7 @@ const ContactBanner = ({ subHeading, heading, par, customText }) => {
       </div>
       <div className={styles.cards}>
         <Card
+          id="C3"
           communityType="partners"
           name="Partners"
           bulletOne="Resources, and funding"
@@ -43,32 +44,36 @@ const ContactBanner = ({ subHeading, heading, par, customText }) => {
           bulletThree="Collaborations"
         />
         <Card
-          communityType="partners"
-          name="Partners"
-          bulletOne="Resources, and funding"
-          bulletTwo="Strategic planning"
+          id="C2"
+          communityType="organizations"
+          name="Organizations"
+          bulletOne="Access and share resources"
+          bulletTwo="Co-create events and webinars"
+          bulletThree="Networking and collaboration"
+        />
+        <Card
+          id="CM1"
+          communityType="individuals"
+          name="Individuals"
+          bulletOne="Educational resources & support"
+          bulletTwo="Community connection"
+          bulletThree="Volonterism"
+        />
+        <Card
+          id="CM2"
+          communityType="trainers"
+          name="Trainers"
+          bulletOne="Training programs & workshops"
+          bulletTwo="Provide mentorship"
           bulletThree="Collaborations"
         />
         <Card
-          communityType="partners"
-          name="Partners"
-          bulletOne="Resources, and funding"
-          bulletTwo="Strategic planning"
-          bulletThree="Collaborations"
-        />
-        <Card
-          communityType="partners"
-          name="Partners"
-          bulletOne="Resources, and funding"
-          bulletTwo="Strategic planning"
-          bulletThree="Collaborations"
-        />
-        <Card
-          communityType="partners"
-          name="Partners"
-          bulletOne="Resources, and funding"
-          bulletTwo="Strategic planning"
-          bulletThree="Collaborations"
+          id="C1"
+          communityType="events"
+          name="Institution"
+          bulletOne="Networking opportunities"
+          bulletTwo="Cross marketing opportunities"
+          bulletThree="Co-organising events"
         />
       </div>
     </div>

@@ -5,14 +5,14 @@ import styles from "./hero.module.scss";
 import SliderHero from "../slider/SliderHero";
 import SubHeading from "../../SubHeading/SubHeading";
 
-const Hero = () => {
+const Hero = ({ subHeading, title, scrollTxt, readMoreTxt }) => {
   return (
     <div className={styles.hero}>
       <div className={styles.content}>
-        <SubHeading text="THE PLATFORM" />
-        <h1>Where Trauma Awareness Meets Societal Change</h1>
+        <SubHeading text={subHeading} />
+        <h1>{title}</h1>
         <button>
-          scroll down{" "}
+          {scrollTxt + " "}
           <svg
             width="16"
             height="24"
@@ -27,7 +27,7 @@ const Hero = () => {
           </svg>
         </button>
       </div>
-      <SliderHero />
+      <SliderHero readMoreTxt={readMoreTxt} />
     </div>
   );
 };
