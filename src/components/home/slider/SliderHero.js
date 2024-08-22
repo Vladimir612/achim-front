@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styles from "./sliderHero.module.scss";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -11,7 +11,7 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const SliderHero = ({ readMoreTxt }) => {
+const SliderHero = forwardRef(({ readMoreTxt }, ref) => {
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -79,7 +79,7 @@ const SliderHero = ({ readMoreTxt }) => {
   };
 
   return (
-    <div className={styles.sliderHero}>
+    <div className={styles.sliderHero} ref={ref}>
       <Slider {...settings}>
         <div className={styles.card}>
           <Image
@@ -319,6 +319,6 @@ const SliderHero = ({ readMoreTxt }) => {
       </Slider>
     </div>
   );
-};
+});
 
 export default SliderHero;

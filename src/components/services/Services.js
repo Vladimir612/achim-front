@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styles from "./services.module.scss";
 import { Merriweather } from "next/font/google";
 
@@ -7,9 +7,9 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const Services = () => {
+const Services = forwardRef((_, ref) => {
   return (
-    <div className={styles.services}>
+    <div className={styles.services} ref={ref}>
       <div
         style={{
           border: "2px solid rgba(214, 241, 235, 0.35)",
@@ -377,6 +377,6 @@ const Services = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Services;

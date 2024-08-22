@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./login.module.scss";
 import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -11,12 +12,13 @@ const Login = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const router = useRouter();
+  const locale = useLocale();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("jwtToken");
       if (token) {
-        router.push("/admin");
+        router.push(`/${locale}/admin`);
       }
     }
   }, [submitted]);

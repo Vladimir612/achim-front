@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import styles from "./banner.module.scss";
 import SubHeading from "../SubHeading/SubHeading";
 import Image from "next/image";
@@ -11,7 +12,18 @@ const Banner = ({
   par,
   aboutBanner,
   customText,
+  refToScroll,
 }) => {
+  const refAbout = useRef(null);
+
+  const scrollToElement = () => {
+    if (aboutBanner && refAbout.current) {
+      refAbout.current.scrollIntoView({ behavior: "smooth" });
+    } else if (refToScroll && refToScroll.current) {
+      refToScroll.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={styles.banner}>
       <Image
@@ -26,7 +38,7 @@ const Banner = ({
         <SubHeading text={subHeading} type="2" />
         <h1>{heading}</h1>
         <p>{par}</p>
-        <button>
+        <button onClick={scrollToElement}>
           <p>{customText ? customText : "Continue Reading"}</p>
           <svg
             width="18"
@@ -42,7 +54,7 @@ const Banner = ({
           </svg>
         </button>
       </div>
-      {aboutBanner && <StartingPoint />}
+      {aboutBanner && <StartingPoint ref={refAbout} />}
     </div>
   );
 };

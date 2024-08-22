@@ -1,11 +1,15 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import styles from "./panel.module.scss";
 import { useRouter } from "next/navigation";
 import User from "./User";
 import Event from "./Event";
+import { useLocale } from "next-intl";
 
 const Panel = () => {
   const [logout, setLogout] = useState(false);
+  const locale = useLocale();
 
   const [communityMembers, setCommunityMembers] = useState([
     {
@@ -118,7 +122,7 @@ const Panel = () => {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("jwtToken");
       if (!token) {
-        router.push("/admin/login");
+        router.push(`/${locale}/admin/login`);
       }
     }
   }, [logout, router]);
@@ -167,7 +171,6 @@ const Panel = () => {
 
   const handleCommunityMemberSubmit = (e) => {
     e.preventDefault();
-    console.log(communityMemberData);
   };
 
   const [eventData, setEventData] = useState({

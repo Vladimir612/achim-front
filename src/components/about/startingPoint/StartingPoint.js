@@ -1,11 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styles from "./startingPoint.module.scss";
 import SubHeading from "../../SubHeading/SubHeading";
 import Image from "next/image";
 
-const StartingPoint = () => {
+const StartingPoint = forwardRef((_, ref) => {
   return (
-    <div className={styles.startingPoint}>
+    <div className={styles.startingPoint} ref={ref}>
       <div className={styles.content}>
         <SubHeading text="STARTING POINT" />
         <h1>History of origin</h1>
@@ -25,6 +25,6 @@ const StartingPoint = () => {
       />
     </div>
   );
-};
+});
 
 export default StartingPoint;

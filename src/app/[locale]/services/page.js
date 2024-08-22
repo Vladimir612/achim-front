@@ -1,28 +1,66 @@
 import React from "react";
 import Nav from "@/components/nav/nav";
-import Banner from "@/components/banner/Banner";
 import FooterBanner from "@/components/footerBanner/FooterBanner";
+import ServicesWrapper from "@/components/services/ServicesWrapper";
 import Footer from "@/components/footer/Footer";
-import ServicesComponent from "@/components/services/Services";
+import { useTranslations } from "next-intl";
 
 const Services = () => {
+  const tFooter = useTranslations("Footer");
+  const tFooterBanner = useTranslations("FooterBanner");
+  const tNav = useTranslations("Navigation");
+
+  const footerHome = tFooter("links.home");
+  const footerAbout = tFooter("links.about");
+  const footerPrinciples = tFooter("links.principles");
+  const footerServices = tFooter("links.services");
+  const footerEvents = tFooter("links.events");
+  const footerCommunity = tFooter("links.community");
+  const footerContact = tFooter("links.contact");
+
+  const footerTerms = tFooter("terms");
+  const footerTermsFirst = tFooter("termsLinks.first");
+  const footerTermsSecond = tFooter("termsLinks.second");
+  const footerTermsThird = tFooter("termsLinks.third");
+  const footerText = tFooter("text");
+  const footerLinksHeading = tFooter("linksHeading");
+
+  const navBtn = tNav("btn");
+
   return (
     <div>
-      <Nav />
-      <Banner
-        subHeading="WHAT WE OFFER"
-        heading="Transforming Society Together"
-        par="Discover our offerings designed to empower societal change. From events and training to structural consulting and innovative initiatives, we're dedicated to shaping a brighter future. Join us in creating positive impact."
-        customText="Explore Our Services"
-        imagePath="/servicesBanner.png"
+      <Nav
+        home={footerHome}
+        about={footerAbout}
+        principles={footerPrinciples}
+        services={footerServices}
+        events={footerEvents}
+        community={footerCommunity}
+        contact={footerContact}
+        btn={navBtn}
       />
-      <ServicesComponent />
+      <ServicesWrapper />
       <FooterBanner
-        subHeading="JOIN ME"
-        heading="How can you join in?"
-        par="There are many ways to help shape the forum. You can become active as a trainer, join or found a local group, you can help build the club, you can become part of the forum movement with your organization or support us with your ideas, your commitment or your money."
+        subHeading={tFooterBanner("subHeading")}
+        heading={tFooterBanner("heading")}
+        par={tFooterBanner("par")}
+        btnText={tFooterBanner("button")}
       />
-      <Footer />
+      <Footer
+        text={footerText}
+        linksHeading={footerLinksHeading}
+        home={footerHome}
+        about={footerAbout}
+        principles={footerPrinciples}
+        services={footerServices}
+        events={footerEvents}
+        community={footerCommunity}
+        contact={footerContact}
+        terms={footerTerms}
+        termsFirst={footerTermsFirst}
+        termsSecond={footerTermsSecond}
+        termsThird={footerTermsThird}
+      />
     </div>
   );
 };

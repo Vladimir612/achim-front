@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import { Merriweather } from "next/font/google";
 
 import EventCard from "./EventCard/EventCard";
@@ -12,12 +13,21 @@ const merriweather = Merriweather({
 });
 
 const Events = () => {
+  const refToScroll = useRef(null);
+
+  const scrollToElement = () => {
+    if (refToScroll && refToScroll.current) {
+      refToScroll.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={styles.events}>
       <SubHeading text="EVENTS" type="2" />
       <p
-        style={{ color: "#fff", marginTop: "1rem" }}
+        style={{ color: "#fff", marginTop: "1rem", cursor: "pointer" }}
         className={merriweather.className}
+        onClick={scrollToElement}
       >
         See All Our Past Events
       </p>
@@ -35,36 +45,38 @@ const Events = () => {
         />
       </svg>
 
-      <EventCard
-        imagePath="/aboutFirst.png"
-        heading="Event 1"
-        date="26. - 28. September 2024."
-        text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-      />
-      <EventCard
-        imagePath="/aboutFirst.png"
-        heading="Event 1"
-        date="26. - 28. September 2024."
-        text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-      />
-      <EventCard
-        imagePath="/aboutFirst.png"
-        heading="Event 1"
-        date="26. - 28. September 2024."
-        text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-      />
-      <EventCard
-        imagePath="/aboutFirst.png"
-        heading="Event 1"
-        date="26. - 28. September 2024."
-        text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-      />
-      <EventCard
-        imagePath="/aboutFirst.png"
-        heading="Event 1"
-        date="26. - 28. September 2024."
-        text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-      />
+      <div className={styles.column} ref={refToScroll}>
+        <EventCard
+          imagePath="/aboutFirst.png"
+          heading="Event 1"
+          date="26. - 28. September 2024."
+          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
+        />
+        <EventCard
+          imagePath="/aboutFirst.png"
+          heading="Event 1"
+          date="26. - 28. September 2024."
+          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
+        />
+        <EventCard
+          imagePath="/aboutFirst.png"
+          heading="Event 1"
+          date="26. - 28. September 2024."
+          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
+        />
+        <EventCard
+          imagePath="/aboutFirst.png"
+          heading="Event 1"
+          date="26. - 28. September 2024."
+          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
+        />
+        <EventCard
+          imagePath="/aboutFirst.png"
+          heading="Event 1"
+          date="26. - 28. September 2024."
+          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
+        />
+      </div>
     </div>
   );
 };

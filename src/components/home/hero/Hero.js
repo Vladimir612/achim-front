@@ -1,17 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./hero.module.scss";
 import SliderHero from "../slider/SliderHero";
 import SubHeading from "../../SubHeading/SubHeading";
 
 const Hero = ({ subHeading, title, scrollTxt, readMoreTxt }) => {
+  const slider = useRef(null);
+
+  const scrollToElement = () => {
+    if (slider.current) {
+      slider.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={styles.hero}>
       <div className={styles.content}>
         <SubHeading text={subHeading} />
         <h1>{title}</h1>
-        <button>
+        <button onClick={scrollToElement}>
           {scrollTxt + " "}
           <svg
             width="16"
@@ -27,7 +35,7 @@ const Hero = ({ subHeading, title, scrollTxt, readMoreTxt }) => {
           </svg>
         </button>
       </div>
-      <SliderHero readMoreTxt={readMoreTxt} />
+      <SliderHero readMoreTxt={readMoreTxt} ref={slider} />
     </div>
   );
 };
