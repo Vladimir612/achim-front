@@ -28,6 +28,9 @@ const about = () => {
 
   const navBtn = tNav("btn");
 
+  //Treba testirati
+  const tAbout = useTranslations("About");
+
   return (
     <div>
       <Nav
