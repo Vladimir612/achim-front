@@ -1,4 +1,8 @@
 {
+  "Common": {
+    "continueReading": "Weiterlesen",
+    "explore": "Erkunden Sie unsere Dienstleistungen"
+  },
   "Navigation": {
     "btn": "Begleiten Sie uns"
   },
@@ -109,5 +113,241 @@
       "second": "Datenschutzerklärung",
       "third": "Gemeinschaftsrichtlinien"
     }
+  },
+  "About": {
+    "startingPoint": {
+      "subHeading": "STARTPUNKT",
+      "heading": "Geschichte des Ursprungs",
+      "par": "Wenn du wissen möchtest, wie die Vision des Forums entstanden ist, was ein Hund, ein Sozialarbeiter und eine Netflix-Dokumentation damit zu tun haben, dann klicke hier..."
+    },
+    "banner": {
+      "subHeading": "UNSERE EBENEN",
+      "heading": "Eine gesündere Zukunft aufbauen",
+      "par": "Entdecke traumainformierte, nervensystemorientierte Lösungen für gesellschaftlichen Wandel. Schließe dich uns an und gestalte eine gesündere, gerechtere Zukunft."
+    },
+    "sections": {
+      "first": {
+        "heading": "Das Forum selbst",
+        "text": "...basiert auf traumainformierten und nervensystemorientierten Prinzipien sowohl in seinen hauptamtlichen als auch freiwilligen Strukturen. Neben dem Inhalt der Arbeit liegt der Fokus darauf, sicherzustellen, dass die Arbeitsprozesse und -methoden eine positive, regulierende Wirkung auf die Gesundheit haben. Das Forum ist daher ein Forschungs- und Entwicklungsfeld für regenerative Arbeitsmethoden, die New-Work-Ansätze mit aktuellen Erkenntnissen über das Nervensystem verbinden. Das Forum bietet auch nervensystemfreundliche und traumaintegrierende Räume für Gruppen an."
+      },
+      "second": {
+        "heading": "Das Forum als Wissensplattform",
+        "text": "...vernetzt sich mit bestehenden (wissenschaftlichen) Strukturen, bereitet traumainformiertes und nervensystemorientiertes Wissen auf und macht es einem breiteren Publikum zugänglich und verständlich. Neben wissenschaftlichem Wissen geht es darum, konkrete, nervensystemgerechte Lösungen für Politik, Wirtschaft, Gesundheit, Bildung und soziale Sektoren zu entwickeln und zu verbreiten. Einige dieser Lösungen existieren bereits, während andere wissenschaftliche Erkenntnisse noch in konkrete Handlungsmöglichkeiten übersetzt werden müssen. Neben Fachkräften und Führungskräften richtet sich das Forum über Broschüren, soziale Medien usw. auch an Privatpersonen und fördert nervensystemgerechte Handlungsoptionen für den „persönlichen Gebrauch“ in Beziehungen, Erziehung oder im Umgang mit sich selbst."
+      },
+      "third": {
+        "heading": "Das Forum als Ausbildungszentrum",
+        "text": "...entwickelt maßgeschneiderte Ausbildungskonzepte für verschiedene Bereiche und bildet Trainer aus, um diese umzusetzen. Diese werden beispielsweise speziell auf Lehrer, Sozialarbeiter, Politiker, Führungskräfte oder gesellschaftspolitisch engagierte Personen zugeschnittene Schulungen sein."
+      },
+      "fourth": {
+        "heading": "Das Forum als soziale Bewegung",
+        "text": "...identifiziert die Nervensystemorientierung als entscheidenden gemeinsamen Nenner und gemeinsames Ziel aller sozialen Transformationsbewegungen. Gesellschaftliche Strukturen, die kompatibler mit dem Nervensystem sind, haben positive Auswirkungen auf Gesundheit, Bildungsgerechtigkeit, Umweltbewusstsein und Konflikttransformation. Nervensystembasierte Ansätze fließen in die verschiedenen gesellschaftspolitischen Bewegungen ein und es entsteht eine eigene Bewegung, die die Vision einer globalen, nervensystemfreundlicheren Gesellschaft als Hauptziel hat."
+      },
+      "fifth": {
+        "heading": "Das Forum als Lobbystruktur",
+        "text": "...hat zwei Säulen. Die eine ist eine sich ständig professionalisierende Lobbyorganisation, die nervensystembasierte Ansätze innerhalb der bestehenden Strukturen in der Gemeinde, im Staat, im Bund und darüber hinaus fördert. Die zweite Säule ist eine – langfristig gesehen – globale Partei, die sich einerseits für eine nervensystemfreundlichere Gesellschaft einsetzt, andererseits sich aber nicht an die bestehenden politischen Strukturen anpasst. Wichtiger als das Erreichen konkreter Wahlergebnisse ist es, einen alternativen Politikstil zu etablieren, der auf Solidarität und „Wohlbefinden“ statt auf Machtgewinnung abzielt."
+      },
+      "sixth": {
+        "heading": "Die lokalen Gruppen",
+        "text": "...haben drei Wirkungsebenen. Sie bieten Räume zur Selbst- und Mitregulation. Sie schaffen Möglichkeiten für zivilgesellschaftliches Engagement, indem sie sich vor Ort mit anderen zivilgesellschaftlichen Akteuren vernetzen und nervensystemorientierte Ansätze fördern. Außerdem wirken sie gezielt auf die kommunalen Strukturen ein, beeinflussen die lokale politische Agenda und tragen zum Wohlbefinden in der Gemeinde bei."
+      }
+    }
+  },
+  "Principles": {
+    "banner": {
+      "subHeading": "UNSER ANSATZ",
+      "heading": "Erfahre unsere Prinzipien",
+      "par": "Entdecke einen transformativen Raum im Forum, in dem wir Trauma, soziale Gerechtigkeit und gesellschaftliche Transformation erkunden. Tauche ein und erforsche die Tiefen der menschlichen Erfahrung mit Mitgefühl und Mut."
+    },
+    "sections": {
+      "first": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Das Prinzip der 2 Säulen",
+        "text": "Das Forum schwingt wie ein Pendel zwischen der Säule des „nach außen Gehens“ in Form der Wissensvermittlung an die Gesellschaft und der Säule des „nach innen Gehens“ in Form der Schaffung sicherer Räume, in denen wir in uns selbst hineinschauen, unsere Schatten wahrnehmen und integrieren, hin und her."
+      },
+      "second": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Storytelling",
+        "text": "Das Forum verbindet das Thema Trauma mit dem Thema soziale Gerechtigkeit und entwickelt eine kraftvolle Vision einer traumainformierten, gerechteren und friedlicheren Gesellschaft mit wirksamen Sozialsystemen."
+      },
+      "third": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Scham vermeiden und das Selbstbild erhalten",
+        "text": "...sind mächtige Antriebskräfte in uns, die dazu führen, dass wir Aspekte der Realität ignorieren, die unsere Aufmerksamkeit auf unseren eigenen inneren Schmerz lenken und unsere eigene Unvollkommenheit widerspiegeln. Um Scham zu vermeiden und unser Selbstbild zu erhalten, schaffen wir Geschichten über uns selbst und die Welt. Im Forum entdecken und hinterfragen wir diese Geschichten. Wir sind ehrlich zu uns selbst und anderen und behandeln uns von Anfang an liebevoll als verletzliche und unvollkommene Wesen. Aus dieser Ehrlichkeit und Transparenz ziehen wir unsere Stärke und begegnen der Außenwelt auf Augenhöhe."
+      },
+      "fourth": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Multiperspektivität",
+        "text": "Der zentrale Ausgangspunkt ist, sich auf die Perspektive der „Betroffenen“ durch die Unterstützungssysteme zu konzentrieren und den Prozess der Wissensgenerierung und -vermittlung nicht in einer „weißen“ gebildeten Mittelschicht-Blase stattfinden zu lassen. Wir sind uns der Begrenztheit unserer eigenen Perspektiven bewusst und versuchen, so viele gesellschaftliche Perspektiven wie möglich in das Forum zu integrieren."
+      },
+      "fifth": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Das Harmonieprinzip",
+        "text": "Kontroverse Diskussionen und das Aufkommen intensiver Gefühle sind herzlich willkommen und Teil eines gesunden und lebendigen Energiekörpers. Machtkämpfe sind nicht Teil dieser gesunden Lebendigkeit. Das Streben nach Macht kann und sollte in einem sicheren Raum reflektiert und in Wachstum transformiert werden. Es ist jedoch nicht möglich, die Grundlagen des Forums während seiner Reise zu ändern. Wenn es interne Brüche mit dem Forum gibt, kann und wird es Abschiede und Wiedervereinigungen geben. Wer das Forum nicht unterstützen kann, kann für eine Weile einen anderen, eigenen Weg gehen, bis seine Seele sich wieder mit dem Forum verbinden kann."
+      },
+      "sixth": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Das Prinzip der Skalierbarkeit und Wirksamkeit",
+        "text": "Alles, was das Forum aufbaut, ist darauf ausgelegt, so skalierbar und wirksam wie möglich zu sein. Wissen über Trauma sollte an den Knotenpunkten mit der größten Reichweite in die Systeme eingespeist werden. Zu diesem Zweck werden politische und zivilgesellschaftliche Strukturen gezielt eingebunden. Lokale Gruppen arbeiten innerhalb ihres Einflussbereichs, nutzen die Bürgersprechstunden ihrer Vertreter und lokalen Vernetzungsstrukturen, um zentral gesteuerte Kampagnen zu fördern. Es entstehen Arbeitsgruppen und politische Allianzen. In den begleitenden Schulungen werden neben der kognitiven Ebene auch die Herzebene und die zelluläre Ebene angesprochen."
+      },
+      "seventh": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Das Prinzip der transparenten Schatten",
+        "text": "Unsere inneren Schattenanteile sind willkommen. Anstatt sie zu verbergen, bringen wir sie ans Licht und üben uns darin, sie liebevoll in unser Selbstbild zu integrieren. Nicht-transparente Schattenanteile sind gefährlich für das Forum, weil sie eine Traumaintegration verhindern. Wir werden unseren Ansprüchen oft nicht gerecht werden, weil dies unsere Entwicklung als Individuen und als Energiekörper nicht zulässt. Wir machen die Diskrepanz zwischen Erwartungen und Realität transparent. Wir werden auch finanzielle Unterstützung erhalten, die mit ausbeuterischen kapitalistischen Mitteln generiert wurde. Auch die Schatten der uns zur Verfügung stehenden finanziellen Mittel machen wir transparent."
+      },
+      "eighth": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Das Prinzip der organischen Hierarchie",
+        "text": "Das Forum offenbart sich uns in unterschiedlichen Graden der Klarheit. Je klarer jemand das Forum sehen und fühlen kann, desto mehr Entscheidungsbefugnis hat diese Person. Das Forum ist flexibel und klar in seiner Arbeit. Es wird schnell wachsen. Die Langsamkeit basisdemokratischer Entscheidungsfindung ist in den ersten Jahren nicht für das Forum geeignet. Das 2-Säulen-Prinzip bietet sichere Räume für Langsamkeit, Pausen, Fühlen und Heilen."
+      },
+      "ninth": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Das Prinzip des Zuhörens",
+        "text": "Jedes Wesen kann und soll entsprechend seinen Fähigkeiten und Interessen zum Forum beitragen. Wo fühlen sich meine Seele und mein Körper am richtigen Ort. Wir hören in uns hinein, ins Universum und ins Leben, um zu hören, wozu wir berufen werden. Dies kann neue Handlungsfelder schaffen. Innerhalb und außerhalb des Forums."
+      },
+      "tenth": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Spiritualität",
+        "text": "Im Forum üben wir uns darin, uns mit unserem höheren Selbst zu verbinden. Frei von religiösen Dogmen etablieren wir eine spirituelle Praxis, die absolut freiwillig und auch für Atheisten angenehm ist."
+      },
+      "eleventh": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Regenerative Arbeit",
+        "text": "Wir versuchen, die Arbeitsplätze an die individuellen Bedürfnisse des Nervensystems anzupassen und die Arbeitsbedingungen, einschließlich der Gehaltsstruktur, in einem gemeinsamen Prozess zu gestalten."
+      },
+      "twelfth": {
+        "subHeading": "GRUNDPRINZIPIEN",
+        "heading": "Forschungsraum für gesellschaftliche Transformation",
+        "text": "Unser Ziel ist es, einen Forschungsraum für nachhaltiges soziales Handeln und neue gesellschaftliche Strukturen zu eröffnen. Wir sehen die Notwendigkeit, zur Veränderung beizutragen, weil wir erkennen, dass ein nervensystemorientiertes und traumasensibles Leben und Arbeiten durch das derzeitige sozialökonomische und soziale System erschwert wird."
+      }
+    }
+  },
+  "Services": {
+    "banner": {
+      "subHeading": "WAS WIR ANBIETEN",
+      "heading": "Gemeinsam die Gesellschaft transformieren",
+      "par": "Entdecken Sie unsere Angebote, die darauf abzielen, gesellschaftlichen Wandel zu fördern. Von Veranstaltungen und Schulungen bis hin zu struktureller Beratung und innovativen Initiativen – wir sind bestrebt, eine bessere Zukunft zu gestalten. Schließen Sie sich uns an, um einen positiven Einfluss zu schaffen."
+    },
+    "content": {
+      "first": {
+        "heading": "Trainer-Pool",
+        "text": "Es wird einen Pool zertifizierter Trainer geben, die sowohl Online-Kurse abdecken als auch für individuell gestaltete Lernprozesse für Organisationen buchbar sind."
+      },
+      "second": {
+        "heading": "Online-Kurse",
+        "text": "Hier werden (hoffentlich kostenfreie) Kurse für Anfänger und Fortgeschrittene buchbar sein, moderiertes Lernen, Praxis- und Austauschgruppen. Sowie spezifische Kurse für verschiedene Disziplinen aus dem Gesundheitswesen, der Bildung oder der Wirtschaft. Und das 7 Tage die Woche zu unterschiedlichen Tageszeiten und so bald wie möglich auch in anderen Sprachen."
+      },
+      "third": {
+        "heading": "Wissenschaftsnetzwerke",
+        "text": "Wissenschaftsnetzwerke werden vom Forum unterstützt, um die verschiedenen Forschungsstränge noch enger miteinander zu verweben."
+      },
+      "fourth": {
+        "heading": "Strukturberatung",
+        "text": "Hier können größere Strukturen wie Gemeinden, Universitäten, Bundesländer oder (Bundes-)Politik und später auch die EU-Institutionen Beratung und Unterstützung finden."
+      },
+      "fifth": {
+        "heading": "Veranstaltungen",
+        "text": "Sehen Sie sich all unsere Konferenzen, Schulungen, Jahresgruppen usw. an."
+      },
+      "sixth": {
+        "heading": "Selbststudium-Bereich",
+        "text": "Es wird Videos, Vorträge, Fallstudien und Übungen, Lerngruppen und wahrscheinlich irgendwann ein dreidimensionales Metaversum als interaktiven Lernraum geben."
+      },
+      "seventh": {
+        "heading": "Modellprojekte",
+        "text": "Wir wissen noch nicht, wie ein nervensystemfreundlicherer Kindergarten, eine Schule oder eine lokale Regierung aussieht. Dies muss durch professionell gestaltete und wissenschaftlich begleitete Modellprojekte erforscht werden."
+      }
+    }
+  },
+  "Events": {
+    "subHeading": "VERANSTALTUNGEN",
+    "text": "Alle unsere vergangenen Veranstaltungen ansehen",
+    "readMore": "Mehr lesen"
+  },
+  "Community": {
+    "subHeading": "GEMEINSCHAFT",
+    "heading": "Verbinden Sie sich",
+    "text": "UNSERE GEMEINSCHAFT ENTDECKEN",
+    "partners": "Partner",
+    "organizations": "Organisationen",
+    "individuals": "Einzelpersonen",
+    "trainers": "Trainer",
+    "institutions": "Institutionen",
+    "search": "Suche"
+  },
+  "Contact": {
+    "subHeading": "WERDE TEIL UNSERER GEMEINSCHAFT",
+    "heading": "Wie können Sie mitmachen?",
+    "par": "Es gibt viele Möglichkeiten, das Forum mitzugestalten. Sie können als Trainer aktiv werden, einer lokalen Gruppe beitreten oder eine gründen, den Club mit aufbauen, Teil der Forumsbewegung mit Ihrer Organisation werden oder uns mit Ihren Ideen, Ihrem Engagement oder Ihrem Geld unterstützen.",
+    "btn": "Wählen Sie Ihre Rolle",
+    "partners": {
+      "bulletOne": "Ressourcen und Finanzierung",
+      "bulletTwo": "Strategische Planung",
+      "bulletThree": "Zusammenarbeit"
+    },
+    "organizations": {
+      "bulletOne": "Ressourcen nutzen und teilen",
+      "bulletTwo": "Veranstaltungen und Webinare mitgestalten",
+      "bulletThree": "Vernetzung und Zusammenarbeit"
+    },
+    "individuals": {
+      "bulletOne":"Bildungsressourcen & Unterstützung",
+      "bulletTwo":"Gemeinschaftsverbindung",
+      "bulletThree":"Freiwilligenarbeit"
+    },
+    "trainers": {
+      "bulletOne": "Schulungsprogramme & Workshops",
+      "bulletTwo": "Mentorschaft anbieten",
+      "bulletThree": "Zusammenarbeit"
+    },
+    "institutions": {
+      "bulletOne": "Vernetzungsmöglichkeiten",
+      "bulletTwo": "Cross-Marketing-Möglichkeiten",
+      "bulletThree": "Gemeinsame Organisation von Veranstaltungen"
+    },
+    "simply": "ODER EINFACH",
+    "writeUs": "Schreiben Sie uns eine Nachricht",
+    "text": "Haben Sie eine Frage, brauchen Sie Hilfe oder möchten Sie einfach eine unterstützende Nachricht teilen? Zögern Sie nicht, uns zu kontaktieren—wir sind für Sie da! Ihre Gedanken und Anfragen sind immer willkommen. 😊",
+    "yourInfo": "Ihre Informationen",
+    "yourMessage": "Ihre Nachricht",
+    "form": {
+      "name": "Name",
+      "surname": "Nachname",
+      "email": "E-Mail",
+      "phone": "Telefonnummer",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "button": "Nachricht senden"
+    }
+  },
+  "Register": {
+    "selectRType": "Registrierungstyp auswählen",
+    "institution": "Institution",
+    "organization": "Organisation",
+    "partner": "Partner",
+    "individual": "Einzelperson",
+    "trainer": "Trainer",
+    "personalInfo": "Persönliche Informationen",
+    "addImg": "Ihr Bild hinzufügen",
+    "shortDesc": "Kurze Beschreibung* (Maximal 150 Zeichen)",
+    "acceptTerms": "Allgemeine Geschäftsbedingungen akzeptieren",
+    "interests": "Interessen",
+    "selfReflection": "Selbstreflexion",
+    "conn": "Verbindungen",
+    "selfGrowth": "Persönliches Wachstum",
+    "volonterism": "Freiwilligenarbeit",
+    "seekingHelp": "Hilfe suchen",
+    "breakingIso": "Isolation überwinden",
+    "research": "Forschung",
+    "sharingExp": "Erfahrungen teilen",
+    "reqFields": "Bitte füllen Sie alle erforderlichen Felder aus",
+    "oneInterest": "Bitte wählen Sie mindestens ein Interesse aus",
+    "nextStep": "Nächster Schritt",
+    "prevStep": "Vorheriger Schritt",
+    "submit": "Absenden",
+    "congratulations": "Herzlichen Glückwunsch!",
+    "congratsText": "Ihre Anfrage, sich uns anzuschließen, wurde erfolgreich gesendet und wird derzeit überprüft. Wir werden Ihnen per E-Mail antworten, sobald unser Team Ihre Bewerbung bearbeitet hat.",
+    "congratsSecond": "Vielen Dank für Ihre Geduld 😊",
+    "congratsThird": "In der Zwischenzeit genießen Sie bitte weiterhin unsere Plattform.",
+    "close": "Schließen"
   }
 }

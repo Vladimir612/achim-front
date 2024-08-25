@@ -6,6 +6,7 @@ import Hero from "../../components/home/hero/Hero";
 import Team from "../../components/home/team/Team";
 import UvpList from "../../components/home/uvp/UvpList";
 import { useTranslations } from "next-intl";
+import LocaleSwitcher from "@/components/localeSwitcher/LocaleSwitcher";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -129,8 +130,48 @@ export default function Home() {
   const tNav = useTranslations("Navigation");
   const navBtn = tNav("btn");
 
+  const tContact = useTranslations("Contact");
+  const tReg = useTranslations("Register");
+
+  const regObj = {
+    selectRType: tReg("selectRType"),
+    institution: tReg("institution"),
+    organization: tReg("organization"),
+    partner: tReg("partner"),
+    individual: tReg("individual"),
+    trainer: tReg("trainer"),
+    personalInfo: tReg("personalInfo"),
+    addImg: tReg("addImg"),
+    shortDesc: tReg("shortDesc"),
+    acceptTerms: tReg("acceptTerms"),
+    interests: tReg("interests"),
+    selfReflection: tReg("selfReflection"),
+    conn: tReg("conn"),
+    selfGrowth: tReg("selfGrowth"),
+    volonterism: tReg("volonterism"),
+    seekingHelp: tReg("seekingHelp"),
+    breakingIso: tReg("breakingIso"),
+    research: tReg("research"),
+    sharingExp: tReg("sharingExp"),
+    reqFields: tReg("reqFields"),
+    oneInterest: tReg("oneInterest"),
+    nextStep: tReg("nextStep"),
+    prevStep: tReg("prevStep"),
+    submit: tReg("submit"),
+    name: tContact("form.name"),
+    email: tContact("form.email"),
+    phone: tContact("form.phone"),
+    subject: tContact("form.subject"),
+    congratulations: tReg("congratulations"),
+    congratsText: tReg("congratsText"),
+    congratsSecond: tReg("congratsSecond"),
+    congratsThird: tReg("congratsThird"),
+    close: tReg("close"),
+  };
+
   return (
     <main>
+      <LocaleSwitcher route={null} />
       <Nav
         home={footerHome}
         about={footerAbout}
@@ -140,6 +181,7 @@ export default function Home() {
         community={footerCommunity}
         contact={footerContact}
         btn={navBtn}
+        regObj={regObj}
       />
       <Hero
         subHeading={t("subHeading")}

@@ -1,4 +1,8 @@
 {
+  "Common": {
+    "continueReading": "Continue reading",
+    "explore": "Explore Our Services"
+  },
   "Navigation": {
     "btn": "Join us"
   },
@@ -111,6 +115,11 @@
     }
   },
   "About": {
+    "startingPoint": {
+      "subHeading": "STARTING POINT",
+      "heading": "History of origin",
+      "par": "If you want to know how the forum vision came about, what a dog, a social worker and a Netflix documentary have to do with it, then click here..."
+    },
     "banner": {
       "subHeading": "OUR LAYERS",
       "heading": "Building a Healthier Future",
@@ -216,8 +225,7 @@
     "banner": {
       "subHeading": "WHAT WE OFFER",
       "heading": "Transforming Society Together",
-      "par": "Discover our offerings designed to empower societal change. From events and training to structural consulting and innovative initiatives, we're dedicated to shaping a brighter future. Join us in creating positive impact.",
-      "customText": "Explore Our Services"
+      "par": "Discover our offerings designed to empower societal change. From events and training to structural consulting and innovative initiatives, we're dedicated to shaping a brighter future. Join us in creating positive impact."
     },
     "content": {
       "first": {
@@ -249,6 +257,97 @@
         "text": "We don't yet know what a more nervous system-friendly daycare center, school or local government looks like. This needs to be researched through professionally designed and scientifically supported model projects."
       }
     }
+  },
+  "Events": {
+    "subHeading": "EVENTS",
+    "text": "See All Our Past Events",
+    "readMore": "Read More"
+  },
+  "Community": {
+    "subHeading": "COMMUNITY",
+    "heading": "Get Connected",
+    "text": "DISCOVER OUR COMMUNITY",
+    "partners": "Partners",
+    "organizations": "Organizations",
+    "individuals": "Individuals",
+    "trainers": "Trainers",
+    "institutions": "Institutions",
+    "search": "Search"
+  },
+  "Contact": {
+    "subHeading": "JOIN US",
+    "heading": "How can you join in?",
+    "par": "There are many ways to help shape the forum. You can become active as a trainer, join or found a local group, you can help build the club, you can become part of the forum movement with your organization or support us with your ideas, your commitment or your money.",
+    "btn": "Select The Role",
+    "partners": {
+      "bulletOne": "Resources, and funding",
+      "bulletTwo": "Strategic planning",
+      "bulletThree": "Collaborations"
+    },
+    "organizations": {
+      "bulletOne": "Access and share resources",
+      "bulletTwo": "Co-create events and webinars",
+      "bulletThree": "Networking and collaboration"
+    },
+    "individuals": {
+      "bulletOne":"Educational resources & support",
+      "bulletTwo":"Community connection",
+      "bulletThree":"Volonterism"
+    },
+    "trainers": {
+      "bulletOne": "Training programs & workshops",
+      "bulletTwo": "Provide mentorship",
+      "bulletThree": "Collaborations"
+    },
+    "institutions": {
+      "bulletOne": "Networking opportunities",
+      "bulletTwo": "Cross marketing opportunities",
+      "bulletThree": "Co-organising events"
+    },
+    "simply": "OR SIMPLY",
+    "writeUs": "Write Us A Message",
+    "text": "Have a question, need help, or just want to share a supportive message? Don't hesitate to reach out—we're here for you! Your thoughts and inquiries are always welcome. 😊",
+    "yourInfo" : "Your Info",
+    "yourMessage": "Your Message",
+    "form": {
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "button": "Send Message"
+    }
+  },
+  "Register": {
+    "selectRType": "Select Registration Type",
+    "institution": "Institution",
+    "organization": "Organization",
+    "partner": "Partner",
+    "individual": "Individual",
+    "trainer": "Trainer",
+    "personalInfo": "Personal Information",
+    "addImg": "Add Your Image",
+    "shortDesc": "Short description* (Maximum of 150 Characters)",
+    "acceptTerms": "Accept terms and conditions",
+    "interests": "Interests",
+    "selfReflection": "Self Reflection",
+    "conn": "Connections",
+    "selfGrowth": "Self Growth",
+    "volonterism": "Volonterism",
+    "seekingHelp": "Seeking Help",
+    "breakingIso": "Breaking Isolation",
+    "research": "Research",
+    "sharingExp": "Sharing Experiences",
+    "reqFields": "Please fill all required fields",
+    "oneInterest": "Please select at least one interest",
+    "nextStep": "Next Step",
+    "prevStep": "Previous Step",
+    "submit": "Submit",
+    "congratulations": "Congratulations!",
+    "congratsText": "Your request to join us was sent successfully and its under our review. We will respond to you over your email address once our crew complete your application.",
+    "congratsSecond": "Thank you for your patients 😊",
+    "congratsThird": "Meanwhile please continue enjoying our platform.",
+    "close": "Close"
   }
-  
 }

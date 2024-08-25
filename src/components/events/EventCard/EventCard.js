@@ -8,7 +8,7 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const EventCard = ({ imagePath, heading, date, text }) => {
+const EventCard = ({ imagePath, heading, date, text, readMore }) => {
   return (
     <div className={styles.eventCard}>
       <Image
@@ -26,7 +26,7 @@ const EventCard = ({ imagePath, heading, date, text }) => {
         </div>
         <p className={merriweather.className}>{text}</p>
         <button>
-          Read more{" "}
+          {readMore}{" "}
           <svg
             width="24"
             height="16"

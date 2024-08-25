@@ -5,6 +5,7 @@ import CommunityBanner from "@/components/community/banner/CommunityBanner";
 import CommunityList from "@/components/community/communityList/CommunityList";
 import Nav from "@/components/nav/nav";
 import { useTranslations } from "next-intl";
+import LocaleSwitcher from "@/components/localeSwitcher/LocaleSwitcher";
 
 const Community = () => {
   const tFooter = useTranslations("Footer");
@@ -27,8 +28,51 @@ const Community = () => {
   const footerLinksHeading = tFooter("linksHeading");
 
   const navBtn = tNav("btn");
+
+  const tCommunity = useTranslations("Community");
+
+  const tContact = useTranslations("Contact");
+  const tReg = useTranslations("Register");
+
+  const regObj = {
+    selectRType: tReg("selectRType"),
+    institution: tReg("institution"),
+    organization: tReg("organization"),
+    partner: tReg("partner"),
+    individual: tReg("individual"),
+    trainer: tReg("trainer"),
+    personalInfo: tReg("personalInfo"),
+    addImg: tReg("addImg"),
+    shortDesc: tReg("shortDesc"),
+    acceptTerms: tReg("acceptTerms"),
+    interests: tReg("interests"),
+    selfReflection: tReg("selfReflection"),
+    conn: tReg("conn"),
+    selfGrowth: tReg("selfGrowth"),
+    volonterism: tReg("volonterism"),
+    seekingHelp: tReg("seekingHelp"),
+    breakingIso: tReg("breakingIso"),
+    research: tReg("research"),
+    sharingExp: tReg("sharingExp"),
+    reqFields: tReg("reqFields"),
+    oneInterest: tReg("oneInterest"),
+    nextStep: tReg("nextStep"),
+    prevStep: tReg("prevStep"),
+    submit: tReg("submit"),
+    name: tContact("form.name"),
+    email: tContact("form.email"),
+    phone: tContact("form.phone"),
+    subject: tContact("form.subject"),
+    congratulations: tReg("congratulations"),
+    congratsText: tReg("congratsText"),
+    congratsSecond: tReg("congratsSecond"),
+    congratsThird: tReg("congratsThird"),
+    close: tReg("close"),
+  };
+
   return (
     <div>
+      <LocaleSwitcher route="community" />
       <Nav
         home={footerHome}
         about={footerAbout}
@@ -38,9 +82,21 @@ const Community = () => {
         community={footerCommunity}
         contact={footerContact}
         btn={navBtn}
+        regObj={regObj}
       />
-      <CommunityBanner />
-      <CommunityList />
+      <CommunityBanner
+        subHeading={tCommunity("subHeading")}
+        heading={tCommunity("heading")}
+        text={tCommunity("text")}
+      />
+      <CommunityList
+        search={tCommunity("search")}
+        partners={tCommunity("partners")}
+        organizations={tCommunity("organizations")}
+        individuals={tCommunity("individuals")}
+        trainers={tCommunity("trainers")}
+        institutions={tCommunity("institutions")}
+      />
       <FooterBanner
         subHeading={tFooterBanner("subHeading")}
         heading={tFooterBanner("heading")}

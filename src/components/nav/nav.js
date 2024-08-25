@@ -17,6 +17,7 @@ const Nav = ({
   community,
   contact,
   btn,
+  regObj,
 }) => {
   const pathname = usePathname();
   const locale = useLocale(); // Get the current locale
@@ -100,7 +101,13 @@ const Nav = ({
           <button onClick={openModal}>Join us</button>
         </div>
       </header>
-      {isModalOpen && <RegisterForm onClose={closeModal} selectedType={"C1"} />}
+      {isModalOpen && (
+        <RegisterForm
+          onClose={closeModal}
+          selectedType={"C1"}
+          regObj={regObj}
+        />
+      )}
     </>
   );
 };

@@ -3,7 +3,7 @@ import styles from "./banner.module.scss";
 import Image from "next/image";
 import SubHeading from "../../SubHeading/SubHeading";
 
-const CommunityBanner = () => {
+const CommunityBanner = ({ subHeading, heading, text }) => {
   return (
     <div className={styles.banner}>
       <Image
@@ -15,12 +15,9 @@ const CommunityBanner = () => {
         priority
       />
       <div className={styles.content}>
-        <SubHeading text="DESCOVER OUR COMMUNITY" type="2" />
-        <h1>Get Connected</h1>
-        <p>
-          Welcome to our vibrant community! Dive in and discover the endless
-          opportunities to connect, learn, and grow together.
-        </p>
+        <SubHeading text={subHeading} type="2" />
+        <h1>{heading}</h1>
+        <p>{text}</p>
       </div>
     </div>
   );

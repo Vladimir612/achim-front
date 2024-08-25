@@ -2,26 +2,7 @@ import React, { useState } from "react";
 import styles from "./registerForm.module.scss";
 import axios from "axios";
 
-const typeOptions = [
-  { value: "C1", label: "Institution" },
-  { value: "C2", label: "Organization" },
-  { value: "C3", label: "Partner" },
-  { value: "CM1", label: "Individual" },
-  { value: "CM2", label: "Trainer" },
-];
-
-const interestOptions = [
-  { value: "Self Reflection", imgPath: "/interests/selfReflection.png" },
-  { value: "Connections", imgPath: "/interests/selfReflection.png" },
-  { value: "Self Growth", imgPath: "/interests/selfReflection.png" },
-  { value: "Volonterism", imgPath: "/interests/selfReflection.png" },
-  { value: "Seeking Help", imgPath: "/interests/selfReflection.png" },
-  { value: "Breaking Isolation", imgPath: "/interests/selfReflection.png" },
-  { value: "Research", imgPath: "/interests/selfReflection.png" },
-  { value: "Sharing Experience", imgPath: "/interests/selfReflection.png" },
-];
-
-const RegisterForm = ({ onClose, selectedType }) => {
+const RegisterForm = ({ onClose, selectedType, regObj }) => {
   const [step, setStep] = useState(1);
   const [disableSubmit, setDisableSubmit] = useState(false);
 
@@ -41,6 +22,57 @@ const RegisterForm = ({ onClose, selectedType }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
+  const typeOptions = [
+    { value: "C1", label: regObj.institution },
+    { value: "C2", label: regObj.organization },
+    { value: "C3", label: regObj.partner },
+    { value: "CM1", label: regObj.individual },
+    { value: "CM2", label: regObj.trainer },
+  ];
+
+  const interestOptions = [
+    {
+      value: "Self Reflection",
+      label: regObj.selfReflection,
+      imgPath: "/interests/selfReflection.png",
+    },
+    {
+      value: "Connections",
+      label: regObj.conn,
+      imgPath: "/interests/selfReflection.png",
+    },
+    {
+      value: "Self Growth",
+      label: regObj.selfGrowth,
+      imgPath: "/interests/selfReflection.png",
+    },
+    {
+      value: "Volonterism",
+      label: regObj.volonterism,
+      imgPath: "/interests/selfReflection.png",
+    },
+    {
+      value: "Seeking Help",
+      label: regObj.seekingHelp,
+      imgPath: "/interests/selfReflection.png",
+    },
+    {
+      value: "Breaking Isolation",
+      label: regObj.breakingIso,
+      imgPath: "/interests/selfReflection.png",
+    },
+    {
+      value: "Research",
+      label: regObj.research,
+      imgPath: "/interests/selfReflection.png",
+    },
+    {
+      value: "Sharing Experience",
+      label: regObj.sharingExp,
+      imgPath: "/interests/selfReflection.png",
+    },
+  ];
+
   const handleNextStep = () => {
     if (step === 2) {
       if (
@@ -52,13 +84,13 @@ const RegisterForm = ({ onClose, selectedType }) => {
         formData.image === null ||
         formData.acceptedTerms === false
       ) {
-        setErrorMsg("Please fill all required fields");
+        setErrorMsg(regObj.reqFields);
         return;
       }
     }
     if (step === 3) {
       if (formData.interests.length === 0) {
-        setErrorMsg("Please select at least one interest");
+        setErrorMsg(regObj.oneInterest);
         return;
       }
     }
@@ -120,6 +152,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
     if (formData.image) {
       data.append("image", formData.image);
     }
+    setDisableSubmit(true);
 
     await axios.post("http://localhost:5000/api/community/join-us", data, {
       headers: {
@@ -127,8 +160,6 @@ const RegisterForm = ({ onClose, selectedType }) => {
       },
     });
 
-    setDisableSubmit(true);
-    await axios.post("http://localhost:5000/api/community/join-us", formData);
     setDisableSubmit(false);
 
     setFormData({
@@ -170,7 +201,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
 
         {step === 1 && (
           <div className={styles.step}>
-            <h2>Select Registration Type</h2>
+            <h2>{regObj.selectRType}</h2>
             <button
               className={styles.selectBtn}
               onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -211,7 +242,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
             )}
             <div className={styles.buttonGroup}>
               <button onClick={handleNextStep} disabled={!formData.type}>
-                Next Step{" "}
+                {regObj.nextStep}{" "}
                 <svg
                   width="16"
                   height="17"
@@ -231,7 +262,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
 
         {step === 2 && (
           <div className={styles.step}>
-            <h2>Personal Information</h2>
+            <h2>{regObj.personalInfo}</h2>
             <div className={styles.top}>
               <div className={styles.fileInputWrapper}>
                 <label htmlFor="profileImage" className={styles.fileInputLabel}>
@@ -255,7 +286,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
                           fill="#C4D0D6"
                         />
                       </svg>
-                      <p>Add your image *</p>
+                      <p>{regObj.addImg} *</p>
                     </div>
                   )}
                 </label>
@@ -269,7 +300,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
               </div>
               <div className={styles.topRight}>
                 <div className={styles.inputGroup}>
-                  <label htmlFor="name">Name*</label>
+                  <label htmlFor="name">{regObj.name}*</label>
                   <input
                     type="text"
                     id="name"
@@ -280,7 +311,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
                 </div>
                 <div className={styles.rowSecond}>
                   <div className={styles.inputGroup}>
-                    <label htmlFor="email">Email*</label>
+                    <label htmlFor="email">{regObj.email}*</label>
                     <input
                       type="email"
                       id="email"
@@ -290,7 +321,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
                     />
                   </div>
                   <div className={styles.inputGroup}>
-                    <label htmlFor="phone">Phone number*</label>
+                    <label htmlFor="phone">{regObj.phone}*</label>
                     <input
                       type="text"
                       id="phone"
@@ -305,9 +336,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
             </div>
             <div className={styles.bottom}>
               <div className={styles.inputGroup}>
-                <label htmlFor="shortDescription">
-                  Short description* (Maximum of 150 Characters)
-                </label>
+                <label htmlFor="shortDescription">{regObj.shortDesc}*</label>
                 <textarea
                   id="shortDescription"
                   name="shortDescription"
@@ -316,7 +345,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
                 />
               </div>
               <div className={styles.inputGroup}>
-                <label htmlFor="subject">Subject*</label>
+                <label htmlFor="subject">{regObj.subject}*</label>
                 <textarea
                   id="subject"
                   name="subject"
@@ -338,7 +367,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
                   htmlFor="acceptedTerms"
                   style={{ position: "initial", fontSize: "1rem" }}
                 >
-                  Accept terms and conditions*
+                  {regObj.acceptTerms}*
                 </label>
                 <input
                   type="checkbox"
@@ -363,10 +392,10 @@ const RegisterForm = ({ onClose, selectedType }) => {
                     fill="#366951"
                   />
                 </svg>
-                Previous Step
+                {regObj.prevStep}
               </button>
               <button onClick={handleNextStep}>
-                Next Step{" "}
+                {regObj.nextStep}{" "}
                 <svg
                   width="16"
                   height="17"
@@ -386,7 +415,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
 
         {step === 3 && (
           <div className={styles.step}>
-            <h2>Interests</h2>
+            <h2>{regObj.interests}</h2>
             <div className={styles.interestsList}>
               {interestOptions.map((interest) => (
                 <label key={interest.value} className={styles.interestWrapper}>
@@ -401,7 +430,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
                     checked={formData.interests.includes(interest.value)}
                     onChange={handleInterestChange}
                   />
-                  {interest.value}
+                  {interest.label}
                 </label>
               ))}
             </div>
@@ -419,10 +448,10 @@ const RegisterForm = ({ onClose, selectedType }) => {
                     fill="#366951"
                   />
                 </svg>
-                Previous Step
+                {regObj.prevStep}
               </button>
               <button onClick={handleNextStep}>
-                Next Step{" "}
+                {regObj.nextStep}{" "}
                 <svg
                   width="16"
                   height="17"
@@ -476,11 +505,18 @@ const RegisterForm = ({ onClose, selectedType }) => {
                     <h4>{formData.email}</h4>
                     <h4>{formData.phone}</h4>
                     <div className={styles.interests}>
-                      {formData.interests.map((interest, index) => (
-                        <div key={index} className={styles.interestLabel}>
-                          {interest}
-                        </div>
-                      ))}
+                      {formData.interests.map((interest, index) => {
+                        const matchingInterest = interestOptions.find(
+                          (option) => option.value === interest
+                        );
+                        return (
+                          matchingInterest && (
+                            <div key={index} className={styles.interestLabel}>
+                              {matchingInterest.label}
+                            </div>
+                          )
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -504,10 +540,10 @@ const RegisterForm = ({ onClose, selectedType }) => {
                     fill="#366951"
                   />
                 </svg>
-                Previous Step
+                {regObj.prevStep}
               </button>
               <button disabled={disableSubmit} onClick={handleSubmit}>
-                Submit{" "}
+                {regObj.submit}{" "}
                 <svg
                   width="16"
                   height="17"
@@ -527,14 +563,10 @@ const RegisterForm = ({ onClose, selectedType }) => {
 
         {step === 5 && (
           <div className={styles.step}>
-            <h2>Congratulations!</h2>
-            <p>
-              Your request to join us was sent successfully and its under our
-              review. We will respond to you over your email address once our
-              crew complete your application.
-            </p>
-            <p style={{ margin: "1rem 0" }}>Thank you for your patients 😊</p>
-            <p>Meanwhile please continue enjoying our platform.</p>
+            <h2>{regObj.congratulations}</h2>
+            <p>{regObj.congratsText}</p>
+            <p style={{ margin: "1rem 0" }}>{regObj.congratsSecond}</p>
+            <p>{regObj.congratsThird}</p>
             <div className={styles.buttonGroup}>
               <button
                 onClick={() => {
@@ -542,7 +574,7 @@ const RegisterForm = ({ onClose, selectedType }) => {
                   onClose();
                 }}
               >
-                Close
+                {regObj.close}{" "}
                 <svg
                   width="16"
                   height="17"

@@ -12,7 +12,7 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const SliderHeroEvents = () => {
+const SliderHeroEvents = ({ readMore }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const eventsArr = [
     {
@@ -159,7 +159,7 @@ const SliderHeroEvents = () => {
         </div>
         <div className={styles.buttons}>
           <button className={`${styles.btnCta} ${styles.borderBg}`}>
-            More details
+            {readMore}
           </button>
         </div>
       </div>

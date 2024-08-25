@@ -1,5 +1,5 @@
 .contactBanner{
-    height: 70vh;
+    height: 80vh;
     position: relative;
     *{
         text-align: center;
@@ -47,9 +47,9 @@
         width: 100%;
         z-index: 50;
         left: 0;
-        bottom: -5rem;
+        bottom: -20%;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         gap: 1rem;
         &::-webkit-scrollbar {
@@ -93,7 +93,7 @@
 @media (max-width: 470px) {
     .contactBanner {
         .cards {
-            bottom: -8rem;
+            bottom: -22%;
         }
     }
 }

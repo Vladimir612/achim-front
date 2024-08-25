@@ -6,6 +6,9 @@
         padding: 4rem 13rem;
         grid-gap: 1rem;
         .card{
+                h3{
+                        word-break: break-all;
+                }
                 padding: 1rem 2rem;
                 padding-bottom: 4rem;
                 &:nth-child(1){

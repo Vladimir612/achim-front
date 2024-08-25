@@ -13,6 +13,9 @@ const Banner = ({
   aboutBanner,
   customText,
   refToScroll,
+  startingPointSubHeading,
+  startingPointHeading,
+  startingPointPar,
 }) => {
   const refAbout = useRef(null);
 
@@ -39,7 +42,7 @@ const Banner = ({
         <h1>{heading}</h1>
         <p>{par}</p>
         <button onClick={scrollToElement}>
-          <p>{customText ? customText : "Continue Reading"}</p>
+          <p>{customText}</p>
           <svg
             width="18"
             height="16"
@@ -54,7 +57,14 @@ const Banner = ({
           </svg>
         </button>
       </div>
-      {aboutBanner && <StartingPoint ref={refAbout} />}
+      {aboutBanner && (
+        <StartingPoint
+          subHeading={startingPointSubHeading}
+          heading={startingPointHeading}
+          par={startingPointPar}
+          ref={refAbout}
+        />
+      )}
     </div>
   );
 };

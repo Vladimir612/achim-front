@@ -7,7 +7,7 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const Services = forwardRef((_, ref) => {
+const Services = forwardRef(({ content }, ref) => {
   return (
     <div className={styles.services} ref={ref}>
       <div
@@ -50,16 +50,14 @@ const Services = forwardRef((_, ref) => {
               letterSpacing: "2px",
             }}
           >
-            Trainers pool
+            {content[0].heading}
           </h3>
         </div>
         <p
           className={merriweather.className}
           style={{ fontSize: "1rem", letterSpacing: "1px", fontWeight: 300 }}
         >
-          There will be a pool of certified trainers who will cover both online
-          courses and be bookable for individually designed learning processes
-          for organizations.
+          {content[0].text}
         </p>
       </div>
       <div
@@ -102,19 +100,14 @@ const Services = forwardRef((_, ref) => {
               letterSpacing: "2px",
             }}
           >
-            Online courses
+            {content[1].heading}
           </h3>
         </div>
         <p
           className={merriweather.className}
           style={{ fontSize: "1rem", letterSpacing: "1px", fontWeight: 300 }}
         >
-          Courses will be bookable here (hopefully free of charge), for
-          beginners and advanced learners, moderated learning, practice and
-          exchange groups. As well as specific courses for various disciplines
-          from healthcare, education or business. And this 7 days a week at
-          different times of the day and, as soon as possible, in other
-          languages.
+          {content[1].text}
         </p>
       </div>
       <div
@@ -157,15 +150,14 @@ const Services = forwardRef((_, ref) => {
               letterSpacing: "2px",
             }}
           >
-            Science networks
+            {content[2].heading}
           </h3>
         </div>
         <p
           className={merriweather.className}
           style={{ fontSize: "1rem", letterSpacing: "1px", fontWeight: 300 }}
         >
-          Science networks are supported by the forum in order to weave the
-          various research strands even more closely together.
+          {content[2].text}
         </p>
       </div>
       <div
@@ -208,16 +200,14 @@ const Services = forwardRef((_, ref) => {
               letterSpacing: "2px",
             }}
           >
-            Structural consulting
+            {content[3].heading}
           </h3>
         </div>
         <p
           className={merriweather.className}
           style={{ fontSize: "1rem", letterSpacing: "1px", fontWeight: 300 }}
         >
-          Here, larger structures such as municipalities, universities, federal
-          states or (federal) politics and later also the EU institutions can
-          find advice and support.
+          {content[3].text}
         </p>
       </div>
       <div
@@ -260,14 +250,14 @@ const Services = forwardRef((_, ref) => {
               letterSpacing: "2px",
             }}
           >
-            Events
+            {content[4].heading}
           </h3>
         </div>
         <p
           className={merriweather.className}
           style={{ fontSize: "1rem", letterSpacing: "1px", fontWeight: 300 }}
         >
-          Check all our conferences, trainings, annual groups, etc.
+          {content[4].text}
         </p>
       </div>
       <div
@@ -310,16 +300,14 @@ const Services = forwardRef((_, ref) => {
               letterSpacing: "2px",
             }}
           >
-            Self-study area
+            {content[5].heading}
           </h3>
         </div>
         <p
           className={merriweather.className}
           style={{ fontSize: "1rem", letterSpacing: "1px", fontWeight: 300 }}
         >
-          There will be videos, lectures, case studies and exercises, learning
-          groups and probably at some point a three-dimensional metaverse as an
-          interactive learning space.
+          {content[5].text}
         </p>
       </div>
       <div
@@ -362,17 +350,14 @@ const Services = forwardRef((_, ref) => {
               letterSpacing: "2px",
             }}
           >
-            Model projects
+            {content[6].heading}
           </h3>
         </div>
         <p
           className={merriweather.className}
           style={{ fontSize: "1rem", letterSpacing: "1px", fontWeight: 300 }}
         >
-          We don't yet know what a more nervous system-friendly daycare center,
-          school or local government looks like. This needs to be researched
-          through professionally designed and scientifically supported model
-          projects.
+          {content[6].text}
         </p>
       </div>
     </div>

@@ -4,7 +4,14 @@ import React, { useState } from "react";
 import styles from "./communityList.module.scss";
 import Card from "./Card";
 
-const CommunityList = () => {
+const CommunityList = ({
+  partners,
+  search,
+  organizations,
+  individuals,
+  trainers,
+  institutions,
+}) => {
   const [communities, setCommunities] = useState([]);
   const [searchWord, setSearchWord] = useState("");
 
@@ -23,7 +30,7 @@ const CommunityList = () => {
             type="text"
             name="search"
             id="search"
-            placeholder="Search"
+            placeholder={search}
             value={searchWord}
             onChange={(e) => setSearchWord(e.target.value)}
           />
@@ -31,32 +38,32 @@ const CommunityList = () => {
         <div className={styles.cards}>
           <FilterCard
             id="1"
-            iconPath="/communityIcons/organizations.svg"
-            name="All"
+            iconPath="/communityIcons/partners.svg"
+            name={partners}
             number="12"
           />
           <FilterCard
             id="1"
             iconPath="/communityIcons/organizations.svg"
-            name="All"
+            name={organizations}
             number="12"
           />
           <FilterCard
             id="1"
-            iconPath="/communityIcons/organizations.svg"
-            name="All"
+            iconPath="/communityIcons/individuals.svg"
+            name={individuals}
             number="12"
           />
           <FilterCard
             id="1"
-            iconPath="/communityIcons/organizations.svg"
-            name="All"
+            iconPath="/communityIcons/trainers.svg"
+            name={trainers}
             number="12"
           />
           <FilterCard
             id="1"
-            iconPath="/communityIcons/organizations.svg"
-            name="All"
+            iconPath="/communityIcons/institutions.svg"
+            name={institutions}
             number="12"
           />
         </div>

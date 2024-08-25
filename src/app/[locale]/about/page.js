@@ -5,11 +5,14 @@ import Footer from "@/components/footer/Footer";
 import FooterBanner from "@/components/footerBanner/FooterBanner";
 import Nav from "@/components/nav/nav";
 import { useTranslations } from "next-intl";
+import LocaleSwitcher from "@/components/localeSwitcher/LocaleSwitcher";
 
 const about = () => {
   const tFooter = useTranslations("Footer");
   const tFooterBanner = useTranslations("FooterBanner");
   const tNav = useTranslations("Navigation");
+
+  const tCommon = useTranslations("Common");
 
   const footerHome = tFooter("links.home");
   const footerAbout = tFooter("links.about");
@@ -28,11 +31,50 @@ const about = () => {
 
   const navBtn = tNav("btn");
 
-  //Treba testirati
   const tAbout = useTranslations("About");
+
+  const tContact = useTranslations("Contact");
+  const tReg = useTranslations("Register");
+
+  const regObj = {
+    selectRType: tReg("selectRType"),
+    institution: tReg("institution"),
+    organization: tReg("organization"),
+    partner: tReg("partner"),
+    individual: tReg("individual"),
+    trainer: tReg("trainer"),
+    personalInfo: tReg("personalInfo"),
+    addImg: tReg("addImg"),
+    shortDesc: tReg("shortDesc"),
+    acceptTerms: tReg("acceptTerms"),
+    interests: tReg("interests"),
+    selfReflection: tReg("selfReflection"),
+    conn: tReg("conn"),
+    selfGrowth: tReg("selfGrowth"),
+    volonterism: tReg("volonterism"),
+    seekingHelp: tReg("seekingHelp"),
+    breakingIso: tReg("breakingIso"),
+    research: tReg("research"),
+    sharingExp: tReg("sharingExp"),
+    reqFields: tReg("reqFields"),
+    oneInterest: tReg("oneInterest"),
+    nextStep: tReg("nextStep"),
+    prevStep: tReg("prevStep"),
+    submit: tReg("submit"),
+    name: tContact("form.name"),
+    email: tContact("form.email"),
+    phone: tContact("form.phone"),
+    subject: tContact("form.subject"),
+    congratulations: tReg("congratulations"),
+    congratsText: tReg("congratsText"),
+    congratsSecond: tReg("congratsSecond"),
+    congratsThird: tReg("congratsThird"),
+    close: tReg("close"),
+  };
 
   return (
     <div>
+      <LocaleSwitcher route="about" />
       <Nav
         home={footerHome}
         about={footerAbout}
@@ -42,44 +84,49 @@ const about = () => {
         community={footerCommunity}
         contact={footerContact}
         btn={navBtn}
+        regObj={regObj}
       />
       <Banner
-        subHeading="OUR LAYERS"
-        heading="Building a Healthier Future"
-        par="Explore trauma-informed, nervous system-oriented solutions for societal change. Join us in shaping a healthier, more equitable future."
+        subHeading={tAbout("banner.subHeading")}
+        heading={tAbout("banner.heading")}
+        par={tAbout("banner.par")}
+        customText={tCommon("continueReading")}
         aboutBanner={true}
         imagePath="/aboutBanner.png"
+        startingPointSubHeading={tAbout("startingPoint.subHeading")}
+        startingPointHeading={tAbout("startingPoint.heading")}
+        startingPointPar={tAbout("startingPoint.par")}
       />
       <div>
         <AboutSection
           imagePath="/aboutFirst.png"
-          heading="The forum itself"
-          text="...is based on trauma-informed and nervous system-oriented principles in both its full-time and voluntary structures. In addition to the content of the work, the focus is on ensuring that the work processes and methods have a positive, regulating effect on health. The forum is therefore a research and development field for regenerative work methods that combines New Work approaches with current findings about the nervous system. The forum also offers nervous system-friendly and trauma-integrating rooms for groups."
+          heading={tAbout("sections.first.heading")}
+          text={tAbout("sections.first.text")}
         />
         <AboutSection
           imagePath="/aboutSecond.png"
-          heading="The forum as a knowledge platform"
-          text="...connects with existing (scientific) structures, prepares trauma and nervous system-oriented knowledge and makes it accessible and understandable to a public beyond the specialist world. In addition to scientific knowledge, it is about developing and disseminating concrete solutions that are appropriate to the nervous system for politics, business, health, education and social sectors. Some of these solutions already exist and some of the scientific findings still need to be translated into concrete options for action. In addition to specialists and managers, the forum addresses private individuals through brochures, social media, etc. and promotes options for actions appropriate to the nervous system for “personal use” in relationships, upbringing or in dealing with oneself."
+          heading={tAbout("sections.second.heading")}
+          text={tAbout("sections.second.text")}
         />
         <AboutSection
           imagePath="/aboutThird.png"
-          heading="The forum as a training center"
-          text="...develops tailor-made training concepts for the various areas and trains trainers to implement them. These will, for example, be tailored training courses for teachers, social workers, politicians, managers or socio-politically active people."
+          heading={tAbout("sections.third.heading")}
+          text={tAbout("sections.third.text")}
         />
         <AboutSection
           imagePath="/aboutFourth.png"
-          heading="The Forum as a social movement"
-          text="...identifies nervous system orientation as a crucial common denominator and common goal of all social transformational movements. Social structures that are more compatible with the nervous system have a positive impact on health, educational equality, environmental awareness and conflict transformation. Nervous system-based approaches flow into the various socio-political movements and a movement of its own is forming, which has the vision of a global society that is more compatible with the nervous system as its main goal."
+          heading={tAbout("sections.fourth.heading")}
+          text={tAbout("sections.fourth.text")}
         />
         <AboutSection
           imagePath="/aboutFifth.png"
-          heading="The forum as a lobby structure"
-          text="...has two pillars. One is a constantly professionalizing lobby organization that promotes nervous system-based approaches within the existing structures in the municipality, the state, the federal government and beyond. The second pillar is a – in the long term perspective – a global party that, on the one hand, advocates for a society that is more compatible with the nervous system, but on the other hand does not adapt to the existing political structures. More important than achieving concrete election results is establishing an alternative style of politics that aims at solidarity and “well-being” instead of generating power."
+          heading={tAbout("sections.fifth.heading")}
+          text={tAbout("sections.fifth.text")}
         />
         <AboutSection
           imagePath="/aboutSixth.png"
-          heading="The local groups"
-          text="...have three levels of impact. They offer spaces for self- and co-regulation. And they create opportunities for civil society engagement by networking with other civil society actors on site and promoting nervous system-oriented approaches. They also have a targeted effect on the municipal structures, influence the local political agenda and contribute to well-being in the municipality."
+          heading={tAbout("sections.sixth.heading")}
+          text={tAbout("sections.sixth.text")}
         />
       </div>
       <FooterBanner

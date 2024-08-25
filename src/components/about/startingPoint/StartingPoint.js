@@ -3,21 +3,17 @@ import styles from "./startingPoint.module.scss";
 import SubHeading from "../../SubHeading/SubHeading";
 import Image from "next/image";
 
-const StartingPoint = forwardRef((_, ref) => {
+const StartingPoint = forwardRef(({ subHeading, heading, par }, ref) => {
   return (
     <div className={styles.startingPoint} ref={ref}>
       <div className={styles.content}>
-        <SubHeading text="STARTING POINT" />
-        <h1>History of origin</h1>
-        <p>
-          If you want to know how the forum vision came about, what a dog, a
-          social worker and a Netflix documentary have to do with it, then click
-          here...
-        </p>
+        <SubHeading text={subHeading} />
+        <h1>{heading}</h1>
+        <p>{par}</p>
       </div>
       <Image
         src="/history.png"
-        alt="Das Forum history of origin"
+        alt={heading}
         className={styles.image}
         fill
         style={{ objectFit: "cover" }}

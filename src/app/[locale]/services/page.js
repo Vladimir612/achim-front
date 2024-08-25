@@ -4,6 +4,7 @@ import FooterBanner from "@/components/footerBanner/FooterBanner";
 import ServicesWrapper from "@/components/services/ServicesWrapper";
 import Footer from "@/components/footer/Footer";
 import { useTranslations } from "next-intl";
+import LocaleSwitcher from "@/components/localeSwitcher/LocaleSwitcher";
 
 const Services = () => {
   const tFooter = useTranslations("Footer");
@@ -27,8 +28,91 @@ const Services = () => {
 
   const navBtn = tNav("btn");
 
+  const tServices = useTranslations("Services");
+
+  const tCommon = useTranslations("Common");
+
+  let obj = {
+    banner: {
+      subHeading: tServices("banner.subHeading"),
+      heading: tServices("banner.heading"),
+      par: tServices("banner.par"),
+      readMore: tCommon("explore"),
+    },
+    content: [
+      {
+        heading: tServices("content.first.heading"),
+        text: tServices("content.first.text"),
+      },
+      {
+        heading: tServices("content.second.heading"),
+        text: tServices("content.second.text"),
+      },
+      {
+        heading: tServices("content.third.heading"),
+        text: tServices("content.third.text"),
+      },
+      {
+        heading: tServices("content.fourth.heading"),
+        text: tServices("content.fourth.text"),
+      },
+      {
+        heading: tServices("content.fifth.heading"),
+        text: tServices("content.fifth.text"),
+      },
+      {
+        heading: tServices("content.sixth.heading"),
+        text: tServices("content.sixth.text"),
+      },
+      {
+        heading: tServices("content.seventh.heading"),
+        text: tServices("content.seventh.text"),
+      },
+    ],
+  };
+
+  const tContact = useTranslations("Contact");
+  const tReg = useTranslations("Register");
+
+  const regObj = {
+    selectRType: tReg("selectRType"),
+    institution: tReg("institution"),
+    organization: tReg("organization"),
+    partner: tReg("partner"),
+    individual: tReg("individual"),
+    trainer: tReg("trainer"),
+    personalInfo: tReg("personalInfo"),
+    addImg: tReg("addImg"),
+    shortDesc: tReg("shortDesc"),
+    acceptTerms: tReg("acceptTerms"),
+    interests: tReg("interests"),
+    selfReflection: tReg("selfReflection"),
+    conn: tReg("conn"),
+    selfGrowth: tReg("selfGrowth"),
+    volonterism: tReg("volonterism"),
+    seekingHelp: tReg("seekingHelp"),
+    breakingIso: tReg("breakingIso"),
+    research: tReg("research"),
+    sharingExp: tReg("sharingExp"),
+    reqFields: tReg("reqFields"),
+    oneInterest: tReg("oneInterest"),
+    nextStep: tReg("nextStep"),
+    prevStep: tReg("prevStep"),
+    submit: tReg("submit"),
+    name: tContact("form.name"),
+    email: tContact("form.email"),
+    phone: tContact("form.phone"),
+    subject: tContact("form.subject"),
+    congratulations: tReg("congratulations"),
+    congratsText: tReg("congratsText"),
+    congratsSecond: tReg("congratsSecond"),
+    congratsThird: tReg("congratsThird"),
+    close: tReg("close"),
+  };
+
   return (
     <div>
+      <LocaleSwitcher route="services" />
       <Nav
         home={footerHome}
         about={footerAbout}
@@ -38,8 +122,9 @@ const Services = () => {
         community={footerCommunity}
         contact={footerContact}
         btn={navBtn}
+        regObj={regObj}
       />
-      <ServicesWrapper />
+      <ServicesWrapper obj={{ ...obj }} />
       <FooterBanner
         subHeading={tFooterBanner("subHeading")}
         heading={tFooterBanner("heading")}
