@@ -46,47 +46,38 @@
   },
   "Team": {
     "first": {
-      "name": "LUKAS ZIMMERMANN",
-      "role": "Erholungscoach",
-      "text": "Lukas arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
+      "name": "ACHIM KONIG",
+      "role": "CEO",
+      "text": "Ich bin die Quelle der Forumsvision. Meine  Leidenschaft ist es herauszufinden was alles im verborgenen und  unbewussten passiert und wie wir da  Bewusstsein schaffen können. Neben  meinen glitzernden Kompetenzen im Bereich Coaching und Training mag ich sehr gerne über mich selber lachen, Räume und andere  Menschen halten, spirituell sein, quatsch reden und machen und die Liebe, die  durch mich hin durchstrahlt ins Leben bringen."
     },
     "second": {
-      "name": "EVGENIA SCHNIDER",
-      "role": "Trauma-Spezialistin",
-      "text": "Evgenia ist auf evidenzbasierte Therapien spezialisiert, die auf die Bedürfnisse jedes Klienten zugeschnitten sind, fördert die Resilienz und unterstützt die Heilung bei Traumata."
+      "name": "SUSIE WIMMER",
+      "role": "COO",
+      "text": "Als Performerin, Clownin, Workshopleiterin und vieles mehr,  gestalte ich die Einführungen in das Herzstück der Forumsarbeit, der  Schattenliebe - Forschungswerkstatt und lade ein zu unmöglichen  Möglichkeiten, leidenschaftlichem Scheitern, Greifbares im Nichts und  der Freude am Sinn in Unsinn."
     },
     "third": {
-      "name": "LARS MÜLLER",
-      "role": "Trauma-Unterstützungsarbeiter",
+      "name": "Nikola Bulic",
+      "role": "CTO",
       "text": "Lars bietet mitfühlende Unterstützung und praktische Anleitung für Traumaüberlebende und befähigt sie, ihr Leben mit Stabilität und Hoffnung neu aufzubauen."
     },
     "fourth": {
-      "name": "MATHIAS BAUER",
-      "role": "Partner",
+      "name": "Buba",
+      "role": "Assistant",
       "text": "Mathias arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
-    },
-    "fifth": {
-      "name": "LUKAS ZIMMERMANN",
-      "role": "Erholungscoach",
-      "text": "Lukas arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
     }
   },
   "Testimonials": {
     "first": {
-      "name": "Max Mustermann",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+      "name": "Sayaka Schmuck",
+      "text": "Ich fühle mich in den Coachings sehr sicher   bin jedes Mal total begeistert und fasziniert wohin die Reise führt."
     },
-    "second": {
-      "name": "Max Mustermann",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+    "second":{
+      "name": "Ananda Lena Kupsch",
+      "text": "Es war sehr schön Mensch sein zu dürfen und so angenommen zu sein, wie ich bin - mit meinen Licht- und Schattenseiten."
     },
     "third": {
-      "name": "Max Mustermann",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
-    },
-    "fourth": {
-      "name": "Max Mustermann",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+      "name": "Raja Brasen",
+      "text": "In  einer entspannten und ehrlichen Atmosphäre war die eigene  Verletzlichkeit ein zentrales Thema, das mich mit den  anderen verbunden hat."
     }
   },
   "FooterBanner": {
@@ -107,11 +98,9 @@
       "community": "Gemeinschaft",
       "contact": "Kontakt"
     },
-    "terms": "Allgemeine Geschäftsbedingungen",
     "termsLinks": {
-      "first": "Nutzungsbedingungen",
-      "second": "Datenschutzerklärung",
-      "third": "Gemeinschaftsrichtlinien"
+      "first": "Allgemeine Geschäftsbedingungen",
+      "second": "Nutzungsbedingungen"
     }
   },
   "About": {

@@ -3,9 +3,14 @@
     overflow: hidden;
     border: 1px solid rgba(214, 241, 235, 0.236);
     width: 60%;
-    height: 24rem;
     border-radius: 2rem;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 0;
     .card {
         width: 6rem!important;
         height: 6rem!important;
@@ -40,7 +45,6 @@
         justify-content: flex-start;
         flex-direction: column;
         gap: 1rem;
-        margin-top: 1rem;
         padding: 0 5rem;
         text-align: center;
         h1{
@@ -60,6 +64,12 @@
                 right: -1rem;
             }
         }
+    }
+    .navigation{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
     }
 }
 

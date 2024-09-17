@@ -63,25 +63,25 @@ export default function Home() {
     {
       name: tTeam("first.name"),
       role: tTeam("first.role"),
-      imagePath: "/team/lukas.png",
+      imagePath: "/team/achim.png",
       text: tTeam("first.text"),
     },
     {
       name: tTeam("second.name"),
       role: tTeam("second.role"),
-      imagePath: "/team/evgenia.png",
+      imagePath: "/team/susie.png",
       text: tTeam("second.text"),
     },
     {
       name: tTeam("third.name"),
       role: tTeam("third.role"),
-      imagePath: "/team/lars.png",
+      imagePath: "/team/achim.png",
       text: tTeam("third.text"),
     },
     {
       name: tTeam("fourth.name"),
       role: tTeam("fourth.role"),
-      imagePath: "/team/mathias.png",
+      imagePath: "/team/susie.png",
       text: tTeam("fourth.text"),
     },
   ];
@@ -104,11 +104,6 @@ export default function Home() {
       text: tTestimonials("third.text"),
       imagePath: "/eventImageExample.png",
     },
-    {
-      name: tTestimonials("fourth.name"),
-      text: tTestimonials("fourth.text"),
-      imagePath: "/eventImageExample.png",
-    },
   ];
 
   const footerText = tFooter("text");
@@ -122,10 +117,8 @@ export default function Home() {
   const footerCommunity = tFooter("links.community");
   const footerContact = tFooter("links.contact");
 
-  const footerTerms = tFooter("terms");
   const footerTermsFirst = tFooter("termsLinks.first");
   const footerTermsSecond = tFooter("termsLinks.second");
-  const footerTermsThird = tFooter("termsLinks.third");
 
   const tNav = useTranslations("Navigation");
   const navBtn = tNav("btn");
@@ -211,10 +204,8 @@ export default function Home() {
         events={footerEvents}
         community={footerCommunity}
         contact={footerContact}
-        terms={footerTerms}
         termsFirst={footerTermsFirst}
         termsSecond={footerTermsSecond}
-        termsThird={footerTermsThird}
       />
     </main>
   );

@@ -46,47 +46,38 @@
   },
   "Team": {
     "first": {
-      "name": "LUKAS ZIMMERMANN",
-      "role": "Recovery Coach",
-      "text": "Lukas partners with clients to develop personalized strategies for overcoming trauma, providing encouragement and resources for healing and well-being."
+      "name": "ACHIM KONIG",
+      "role": "CEO",
+      "text": "I  am the source of the forum vision. My passion is to find out what  happens in the hidden and unconscious and how we can create awareness  there. Besides my sparkling skills in coaching and training, I love to  laugh at myself, hold spaces and other people, be spiritual, talk and do  nonsense and bring the love that radiates through me into life."
     },
     "second": {
-      "name": "EVGENIA SCHNIDER",
-      "role": "Trauma Recovery Specialist",
-      "text": "Evgenia specializes in evidence-based therapies tailored to each client's needs, fostering resilience and promoting healing in trauma survivors."
+      "name": "SUSIE WIMMER",
+      "role": "COO",
+      "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
     },
     "third": {
-      "name": "LARS MÜLLER",
-      "role": "Trauma Support Worker",
-      "text": "Lars offers compassionate support and practical guidance to trauma survivors, empowering them to rebuild their lives with stability and hope."
+      "name": "Nikola Bulic",
+      "role": "CTO",
+      "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
     },
     "fourth": {
-      "name": "MATHIAS BAUER",
-      "role": "Partner",
-      "text": "Mathias partners with clients to develop personalized strategies for overcoming trauma, providing encouragement and resources for healing and well-being."
-    },
-    "fifth": {
-      "name": "LUKAS ZIMMERMANN",
-      "role": "Recovery Coach",
-      "text": "Lukas partners with clients to develop personalized strategies for overcoming trauma, providing encouragement and resources for healing and well-being."
+      "name": "Buba",
+      "role": "Assistant",
+      "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
     }
   },
   "Testimonials": {
     "first": {
-      "name": "John Doe",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+      "name": "Sayaka Schmuck",
+      "text": "I feel very safe in the coaching sessions and am always totally enthusiastic and fascinated by where the journey leads."
     },
     "second":{
-      "name": "John Doe",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+      "name": "Ananda Lena Kupsch",
+      "text": "It was very nice to be allowed to be human and to be accepted as I am - with my light and dark sides."
     },
     "third": {
-      "name": "John Doe",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
-    },
-    "fourth": {
-      "name": "John Doe",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum"
+      "name": "Raja Brasen",
+      "text": "In a relaxed and honest atmosphere, my own vulnerability was a central theme that connected me with the others."
     }
   },
   "FooterBanner": {
@@ -107,11 +98,9 @@
       "community": "Community",
       "contact": "Contact"
     },
-    "terms": "Terms and Conditions",
     "termsLinks": {
-      "first": "Terms and Services",
-      "second": "Privacy Policy",
-      "third": "Community Guidelines"
+      "first": "Terms and Conditions",
+      "second": "Terms and Services"
     }
   },
   "About": {

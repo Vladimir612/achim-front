@@ -15,17 +15,23 @@ const merriweather = Merriweather({
 
 const Testimonials = ({ testimonialsList }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [prevSlide, setPrevSlide] = useState(0);
 
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+  function SampleNextArrow() {
+    const handleClickNext = () => {
+      setCurrentSlide((prev) => (prev + 1) % testimonialsList.length);
+    };
+
     return (
       <div
-        className={className}
         style={{
-          ...style,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "40px",
+          height: "40px",
+          cursor: "pointer",
         }}
-        onClick={onClick}
+        onClick={handleClickNext}
       >
         <svg
           width="20"
@@ -43,15 +49,24 @@ const Testimonials = ({ testimonialsList }) => {
     );
   }
 
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+  function SamplePrevArrow() {
+    const handleClickPrev = () => {
+      setCurrentSlide((prev) =>
+        prev === 0 ? testimonialsList.length - 1 : prev - 1
+      );
+    };
+
     return (
       <div
-        className={className}
         style={{
-          ...style,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "40px",
+          height: "40px",
+          cursor: "pointer",
         }}
-        onClick={onClick}
+        onClick={handleClickPrev}
       >
         <svg
           width="20"
@@ -68,34 +83,86 @@ const Testimonials = ({ testimonialsList }) => {
       </div>
     );
   }
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    centerMode: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    arrowClass: "custom-slick-arrow",
-    className: "custom-slick-slider testimonials",
-    arrows: true,
-    swipeToSlide: true,
-    beforeChange: (oldIndex, _) => {
-      setPrevSlide(oldIndex);
-    },
-    afterChange: (currentIndex) => {
-      setCurrentSlide(currentIndex);
-    },
-  };
+
+  // function SampleNextArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //       }}
+  //       onClick={onClick}
+  //     >
+  //       <svg
+  //         width="20"
+  //         height="16"
+  //         viewBox="0 0 24 16"
+  //         fill="none"
+  //         xmlns="http://www.w3.org/2000/svg"
+  //       >
+  //         <path
+  //           d="M16 0.30128L14.59 1.63088L20.17 6.90212L-3.93402e-07 6.90212L-3.0598e-07 8.78808L20.17 8.78807L14.58 14.0499L16 15.3889L24 7.8451L16 0.30128Z"
+  //           fill="#FBD784"
+  //         />
+  //       </svg>
+  //     </div>
+  //   );
+  // }
+
+  // function SamplePrevArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //       }}
+  //       onClick={onClick}
+  //     >
+  //       <svg
+  //         width="20"
+  //         height="16"
+  //         viewBox="0 0 24 16"
+  //         fill="none"
+  //         xmlns="http://www.w3.org/2000/svg"
+  //       >
+  //         <path
+  //           d="M8 0.30128L9.41 1.63088L3.83 6.90212L24 6.90212L24 8.78808L3.83 8.78807L9.42 14.0499L8 15.3889L3.49691e-07 7.8451L8 0.30128Z"
+  //           fill="#FBD784"
+  //         />
+  //       </svg>
+  //     </div>
+  //   );
+  // }
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: false,
+  //   autoplaySpeed: 3000,
+  //   pauseOnHover: true,
+  //   centerMode: true,
+  //   nextArrow: <SampleNextArrow />,
+  //   prevArrow: <SamplePrevArrow />,
+  //   arrowClass: "custom-slick-arrow",
+  //   className: "custom-slick-slider testimonials",
+  //   arrows: true,
+  //   swipeToSlide: true,
+  //   beforeChange: (oldIndex, _) => {
+  //     setPrevSlide(oldIndex);
+  //   },
+  //   afterChange: (currentIndex) => {
+  //     setCurrentSlide(currentIndex);
+  //   },
+  // };
 
   const currentTestimonial = testimonialsList[currentSlide];
 
   return (
     <div className={styles.testimonials}>
-      <div className={styles.sliderVisible}>
+      {/* <div className={styles.sliderVisible}>
         <Slider {...settings}>
           {testimonialsList.map((event, index) => (
             <div
@@ -124,7 +191,7 @@ const Testimonials = ({ testimonialsList }) => {
             </div>
           ))}
         </Slider>
-      </div>
+      </div> */}
       <div className={styles.content}>
         <h1>{currentTestimonial.name}</h1>
         <p className={`${styles.firstPar} ${merriweather.className}`}>
@@ -157,6 +224,10 @@ const Testimonials = ({ testimonialsList }) => {
             />
           </svg>
         </p>
+      </div>
+      <div className={styles.navigation}>
+        <SamplePrevArrow />
+        <SampleNextArrow />
       </div>
     </div>
   );

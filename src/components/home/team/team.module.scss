@@ -21,3 +21,11 @@
         // backdrop-filter: blur(4px);
     }
 }
+
+@media (max-width: 1300px) {
+    .team {
+        &::before{
+            background: linear-gradient(90deg, #0B1D26 0%, rgba(41, 107, 140, 0.4) 100%);
+        }
+    }
+}

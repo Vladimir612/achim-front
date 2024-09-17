@@ -2,8 +2,13 @@
 import React, { useState } from "react";
 import styles from "./messageForm.module.scss";
 import SubHeading from "../../SubHeading/SubHeading";
+import axios from "axios";
 
 const MessageForm = ({ obj }) => {
+  const [disableSubmit, setDisableSubmit] = useState(false);
+  const [msg, setMsg] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -35,6 +40,53 @@ const MessageForm = ({ obj }) => {
       [name]: value,
     }));
   };
+
+  const handleSubmit = async () => {
+    const data = {
+      name: formData.name,
+      surname: formData.surname,
+      email: formData.email,
+      phone: formData.phoneNumber,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    if (
+      !data.name ||
+      !data.surname ||
+      !data.email ||
+      !data.phone ||
+      !data.subject ||
+      !data.message
+    ) {
+      setMsg("Please fill in all the fields!");
+      setSuccess(false);
+      return;
+    }
+
+    setDisableSubmit(true);
+
+    try {
+      await axios.post("http://localhost:5000/api/community/contact", data);
+
+      setFormData({
+        name: "",
+        surname: "",
+        email: "",
+        phoneNumber: "",
+        subject: "",
+        message: "",
+      });
+
+      setMsg("You successfully sent the message!");
+      setSuccess(true);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setDisableSubmit(false);
+    }
+  };
+
   return (
     <div className={styles.messageForm}>
       <div className={styles.content}>
@@ -115,7 +167,16 @@ const MessageForm = ({ obj }) => {
             />
           </div>
         </div>
-        <button>{button}</button>
+        <button disabled={disableSubmit} onClick={handleSubmit} type="button">
+          {button}
+        </button>
+        {msg && (
+          <p
+            className={`${styles.msg} ${success ? styles.success : styles.err}`}
+          >
+            {msg}
+          </p>
+        )}
       </form>
     </div>
   );

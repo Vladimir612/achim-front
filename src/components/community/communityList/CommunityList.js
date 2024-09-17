@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./communityList.module.scss";
 import Card from "./Card";
+import axios from "axios";
 
 const CommunityList = ({
   partners,
@@ -12,8 +13,79 @@ const CommunityList = ({
   trainers,
   institutions,
 }) => {
-  const [communities, setCommunities] = useState([]);
+  const typeOptions = [
+    { value: "C1", label: "institution" },
+    { value: "C2", label: "organization" },
+    { value: "C3", label: "partner" },
+    { value: "CM1", label: "individual" },
+    { value: "CM2", label: "trainer" },
+  ];
+
+  const [numbers, setNumbers] = useState({
+    C1: 0,
+    C2: 0,
+    C3: 0,
+    CM1: 0,
+    CM2: 0,
+  });
+
+  const [type, setType] = useState();
+  const [communityMembers, setCommunityMembers] = useState([]);
   const [searchWord, setSearchWord] = useState("");
+
+  const [shouldSearch, setShouldSearch] = useState(true);
+
+  const [firstSearch, setFirstSearch] = useState(true);
+
+  useEffect(() => {
+    const fetchCommunityMembers = async () => {
+      try {
+        if (shouldSearch) {
+          let queryParams = "";
+          if (type && searchWord)
+            queryParams = `?type=${type}&searchWord=${searchWord}`;
+          else if (type) queryParams = `?type=${type}`;
+          else if (searchWord) queryParams = `?searchWord=${searchWord}`;
+
+          const response = await axios.get(
+            `http://localhost:5000/api/community/members${queryParams}`
+          );
+
+          if (firstSearch) {
+            const countTypes = response.data.reduce(
+              (acc, member) => {
+                return {
+                  ...acc,
+                  [member.type]: (acc[member.type] || 0) + 1,
+                };
+              },
+              { C1: 0, C2: 0, C3: 0, CM1: 0, CM2: 0 }
+            );
+
+            setNumbers(countTypes);
+          }
+          setFirstSearch(false);
+
+          const membersWithLabels = response.data.map((member) => {
+            const matchedOption = typeOptions.find(
+              (option) => option.value === member.type
+            );
+            return {
+              ...member,
+              type: matchedOption ? matchedOption.label : member.type,
+            };
+          });
+
+          setCommunityMembers(membersWithLabels);
+          setShouldSearch(false);
+        }
+      } catch (error) {
+        console.error("Failed to fetch community members:", error);
+      }
+    };
+
+    fetchCommunityMembers();
+  }, [shouldSearch]);
 
   return (
     <div className={styles.communityList}>
@@ -34,109 +106,103 @@ const CommunityList = ({
             value={searchWord}
             onChange={(e) => setSearchWord(e.target.value)}
           />
+          <button
+            className={styles.searchBtn}
+            onClick={() => setShouldSearch(true)}
+          >
+            {search}
+          </button>
         </div>
         <div className={styles.cards}>
           <FilterCard
-            id="1"
+            id="C3"
             iconPath="/communityIcons/partners.svg"
             name={partners}
-            number="12"
+            number={numbers.C3}
+            setShouldSearch={setShouldSearch}
+            setType={setType}
+            type={type}
           />
           <FilterCard
-            id="1"
+            id="C2"
             iconPath="/communityIcons/organizations.svg"
             name={organizations}
-            number="12"
+            number={numbers.C2}
+            setShouldSearch={setShouldSearch}
+            setType={setType}
+            type={type}
           />
           <FilterCard
-            id="1"
+            id="CM1"
             iconPath="/communityIcons/individuals.svg"
             name={individuals}
-            number="12"
+            number={numbers.CM1}
+            setShouldSearch={setShouldSearch}
+            setType={setType}
+            type={type}
           />
           <FilterCard
-            id="1"
+            id="CM2"
             iconPath="/communityIcons/trainers.svg"
             name={trainers}
-            number="12"
+            number={numbers.CM2}
+            setShouldSearch={setShouldSearch}
+            setType={setType}
+            type={type}
           />
           <FilterCard
-            id="1"
+            id="C1"
             iconPath="/communityIcons/institutions.svg"
             name={institutions}
-            number="12"
+            number={numbers.C1}
+            setShouldSearch={setShouldSearch}
+            setType={setType}
+            type={type}
           />
         </div>
       </div>
       <div className={styles.list}>
-        <Card
-          id="1"
-          imagePath="/test.png"
-          name="John Doe"
-          text="In all my activities and manifestations, I am guided by principles that provide me with orientation. My view of humanity is characterized by comprehensive and loving acceptance of what is and is orien."
-          website="www.idiaspora.ch"
-          email="info@idiaspora.com"
-          number="+21 979 123 239 12"
-          communityType="partners"
-        />
-        <Card
-          id="2"
-          imagePath="/test.png"
-          name="John Doe"
-          text="In all my activities and manifestations, I am guided by principles that provide me with orientation. My view of humanity is characterized by comprehensive and loving acceptance of what is and is orien."
-          website="www.idiaspora.ch"
-          email="info@idiaspora.com"
-          number="+21 979 123 239 12"
-          communityType="partners"
-        />
-        <Card
-          id="3"
-          imagePath="/test.png"
-          name="John Doe"
-          text="In all my activities and manifestations, I am guided by principles that provide me with orientation. My view of humanity is characterized by comprehensive and loving acceptance of what is and is orien."
-          website="www.idiaspora.ch"
-          email="info@idiaspora.com"
-          number="+21 979 123 239 12"
-          communityType="partners"
-        />
-        <Card
-          id="4"
-          imagePath="/test.png"
-          name="John Doe"
-          text="In all my activities and manifestations, I am guided by principles that provide me with orientation. My view of humanity is characterized by comprehensive and loving acceptance of what is and is orien."
-          website="www.idiaspora.ch"
-          email="info@idiaspora.com"
-          number="+21 979 123 239 12"
-          communityType="partners"
-        />
-        <Card
-          id="5"
-          imagePath="/test.png"
-          name="John Doe"
-          text="In all my activities and manifestations, I am guided by principles that provide me with orientation. My view of humanity is characterized by comprehensive and loving acceptance of what is and is orien."
-          website="www.idiaspora.ch"
-          email="info@idiaspora.com"
-          number="+21 979 123 239 12"
-          communityType="partners"
-        />
-        <Card
-          id="6"
-          imagePath="/test.png"
-          name="John Doe"
-          text="In all my activities and manifestations, I am guided by principles that provide me with orientation. My view of humanity is characterized by comprehensive and loving acceptance of what is and is orien."
-          website="www.idiaspora.ch"
-          email="info@idiaspora.com"
-          number="+21 979 123 239 12"
-          communityType="partners"
-        />
+        {communityMembers.map((member) => {
+          return (
+            <Card
+              key={member._id}
+              id={member._id}
+              imagePath={member.profileImg}
+              name={member.name}
+              text={member.shortDescription}
+              email={member.email}
+              number={member.phone}
+              communityType={member.type}
+              interests={member.interests}
+            />
+          );
+        })}
       </div>
     </div>
   );
 };
 
-const FilterCard = ({ id, iconPath, name, number }) => {
+const FilterCard = ({
+  id,
+  iconPath,
+  name,
+  number,
+  setShouldSearch,
+  setType,
+  type,
+}) => {
   return (
-    <button className={styles.filterCard} id={id}>
+    <button
+      className={`${styles.filterCard} ${type === id ? styles.active : ""}`}
+      onClick={() => {
+        if (type === id) {
+          setType(null);
+          return;
+        }
+        setType(id);
+        setShouldSearch(true);
+      }}
+    >
       <img src={iconPath} alt={name} width={35} />
       <p>{number}</p>
       <h4>{name}</h4>

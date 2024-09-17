@@ -13,10 +13,8 @@ const Footer = ({
   events,
   community,
   contact,
-  terms,
   termsFirst,
   termsSecond,
-  termsThird,
 }) => {
   const locale = useLocale(); // Get the current locale
   return (
@@ -45,11 +43,9 @@ const Footer = ({
         </nav>
       </div>
       <div className={styles.colFour}>
-        <p>{terms}</p>
         <nav>
           <a href="#">{termsFirst}</a>
           <a href="#">{termsSecond}</a>
-          <a href="#">{termsThird}</a>
         </nav>
       </div>
     </footer>
