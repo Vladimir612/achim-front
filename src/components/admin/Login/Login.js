@@ -4,10 +4,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./login.module.scss";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const [errorMsg, setErrorMsg] = useState("");
 
   const [submitted, setSubmitted] = useState(false);
 
@@ -31,9 +34,22 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = () => {
-    localStorage.setItem("jwtToken", "123");
-    setSubmitted(true);
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+
+  const handleSubmit = async () => {
+    const loginData = {
+      email: username,
+      password: password,
+    };
+
+    try {
+      const res = await axios.post(`${baseURL}/api/admin/login`, loginData);
+
+      localStorage.setItem("jwtToken", res.data.token);
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMsg(err.response.data.error);
+    }
   };
 
   return (
@@ -68,6 +84,9 @@ const Login = () => {
         >
           Submit
         </button>
+        {errorMsg && (
+          <p style={{ marginTop: "1rem", color: "red" }}>{errorMsg}</p>
+        )}
       </form>
     </div>
   );

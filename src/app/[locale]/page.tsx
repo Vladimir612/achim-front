@@ -147,6 +147,7 @@ export default function Home() {
     research: tReg("research"),
     sharingExp: tReg("sharingExp"),
     reqFields: tReg("reqFields"),
+    sizeExceeds: tReg("sizeExceeds"),
     oneInterest: tReg("oneInterest"),
     nextStep: tReg("nextStep"),
     prevStep: tReg("prevStep"),

@@ -145,7 +145,7 @@
     "banner": {
       "subHeading": "OUR APPROACH",
       "heading": "Learn Our Principles",
-      "par": "Discover a transformative space at the Forum, where we explore trauma, social justice, and societal transformation.  Dive in and explore the depths of human experience with compassion and courage."
+      "par": "The principles are the foundation on which the Forum is  built. They give us orientation, inspiration and enable us to act  coherently."
     },
     "sections": {
       "first": {
@@ -214,7 +214,7 @@
     "banner": {
       "subHeading": "WHAT WE OFFER",
       "heading": "Transforming Society Together",
-      "par": "Discover our offerings designed to empower societal change. From events and training to structural consulting and innovative initiatives, we're dedicated to shaping a brighter future. Join us in creating positive impact."
+      "par": "The forum is gradually building up a pool of trainers, organising  events, building networks, offering online and offline training, nervous system-oriented advice and support and developing an attractive  interactive self-learning area."
     },
     "content": {
       "first": {
@@ -249,13 +249,13 @@
   },
   "Events": {
     "subHeading": "EVENTS",
-    "text": "See All Our Past Events",
+    "text": "See All Our Events",
     "readMore": "Read More"
   },
   "Community": {
-    "subHeading": "COMMUNITY",
+    "subHeading": "DISCOVER OUR COMMUNITY",
     "heading": "Get Connected",
-    "text": "DISCOVER OUR COMMUNITY",
+    "text": "We are bulding a vibrant community of people who want to make the world more nervoussystem friendly. And you are welcome to join.",
     "partners": "Partners",
     "organizations": "Organizations",
     "individuals": "Individuals",
@@ -329,6 +329,7 @@
     "research": "Research",
     "sharingExp": "Sharing Experiences",
     "reqFields": "Please fill all required fields",
+    "sizeExceeds": "File size exceeds 300kB",
     "oneInterest": "Please select at least one interest",
     "nextStep": "Next Step",
     "prevStep": "Previous Step",

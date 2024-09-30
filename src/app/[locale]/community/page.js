@@ -20,10 +20,8 @@ const Community = () => {
   const footerCommunity = tFooter("links.community");
   const footerContact = tFooter("links.contact");
 
-  const footerTerms = tFooter("terms");
   const footerTermsFirst = tFooter("termsLinks.first");
   const footerTermsSecond = tFooter("termsLinks.second");
-  const footerTermsThird = tFooter("termsLinks.third");
   const footerText = tFooter("text");
   const footerLinksHeading = tFooter("linksHeading");
 
@@ -55,6 +53,7 @@ const Community = () => {
     research: tReg("research"),
     sharingExp: tReg("sharingExp"),
     reqFields: tReg("reqFields"),
+    sizeExceeds: tReg("sizeExceeds"),
     oneInterest: tReg("oneInterest"),
     nextStep: tReg("nextStep"),
     prevStep: tReg("prevStep"),
@@ -113,10 +112,8 @@ const Community = () => {
         events={footerEvents}
         community={footerCommunity}
         contact={footerContact}
-        terms={footerTerms}
         termsFirst={footerTermsFirst}
         termsSecond={footerTermsSecond}
-        termsThird={footerTermsThird}
       />
     </div>
   );

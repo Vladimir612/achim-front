@@ -1,10 +1,10 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Merriweather } from "next/font/google";
-
 import EventCard from "./EventCard/EventCard";
 import SubHeading from "../SubHeading/SubHeading";
-
+import { useLocale } from "next-intl";
+import axios from "axios";
 import styles from "./events.module.scss";
 
 const merriweather = Merriweather({
@@ -20,6 +20,30 @@ const Events = ({ subHeading, text, readMore }) => {
       refToScroll.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const [events, setEvents] = useState([]);
+
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+  const locale = useLocale();
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/api/events`);
+        setEvents(response.data);
+      } catch (err) {
+        console.log(
+          err.response.data.error
+            ? err.response.data.error
+            : "Internal Server error"
+        );
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      fetchEvents();
+    }
+  }, []);
 
   return (
     <div className={styles.events}>
@@ -44,43 +68,21 @@ const Events = ({ subHeading, text, readMore }) => {
           fill="white"
         />
       </svg>
-
       <div className={styles.column} ref={refToScroll}>
-        <EventCard
-          imagePath="/aboutFirst.png"
-          heading="Event 1"
-          date="26. - 28. September 2024."
-          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-          readMore={readMore}
-        />
-        <EventCard
-          imagePath="/aboutFirst.png"
-          heading="Event 1"
-          date="26. - 28. September 2024."
-          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-          readMore={readMore}
-        />
-        <EventCard
-          imagePath="/aboutFirst.png"
-          heading="Event 1"
-          date="26. - 28. September 2024."
-          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-          readMore={readMore}
-        />
-        <EventCard
-          imagePath="/aboutFirst.png"
-          heading="Event 1"
-          date="26. - 28. September 2024."
-          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-          readMore={readMore}
-        />
-        <EventCard
-          imagePath="/aboutFirst.png"
-          heading="Event 1"
-          date="26. - 28. September 2024."
-          text="The forum brings together the issue of trauma with the issue of social justice and creates a powerful vision of a trauma-informed, fairer and more peaceful society with effective social systems."
-          readMore={readMore}
-        />
+        {events.map((event) => (
+          <EventCard
+            imagePath={event.bgImage}
+            heading={locale === "de" ? event.titleGer : event.titleEng}
+            date={
+              locale === "de"
+                ? event.datesFirstFieldGer + " " + event.datesSecondFieldGer
+                : event.datesFirstFieldEng + " " + event.datesSecondFieldEng
+            }
+            text={locale === "de" ? event.descriptionGer : event.descriptionEng}
+            readMore={readMore}
+            readMoreLink={locale === "de" ? event.pdfGerLink : event.pdfEngLink}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./sliderHeroEvents.module.scss";
 import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Merriweather } from "next/font/google";
+import { useLocale } from "next-intl";
+import axios from "axios";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -13,39 +15,33 @@ const merriweather = Merriweather({
 });
 
 const SliderHeroEvents = ({ readMore }) => {
+  const [events, setEvents] = useState([]);
+
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+  const locale = useLocale();
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/api/events`);
+        setEvents(response.data);
+        setCurrentEvent(response.data[0]);
+      } catch (err) {
+        console.log(
+          err.response.data.error
+            ? err.response.data.error
+            : "Internal Server error"
+        );
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      fetchEvents();
+    }
+  }, []);
+
   const [currentSlide, setCurrentSlide] = useState(0);
-  const eventsArr = [
-    {
-      image: "/eventImageExample.png",
-      title: "Trauma & Nervous System Conference",
-      description:
-        "Join us for an insightful lecture on trauma and the nervous system, exploring vital insights to enhance understanding and support. Reserve your spot now!",
-      date: "26. - 28. September 2024",
-      time: "Start: 11:00 AM - End: 20:00 PM",
-      location: "Bahnhofstrasse 25, 8001 Zurich",
-      price: "Daily: 50.00 CHF - 3 Days: 120.00 CHF",
-    },
-    {
-      image: "/eventImageExample.png",
-      title: "Health & Wellness Expo",
-      description:
-        "Discover the latest trends in health and wellness at our expo. Attend workshops and meet industry experts. Don't miss out!",
-      date: "15. - 17. October 2024",
-      time: "Start: 10:00 AM - End: 18:00 PM",
-      location: "Messeplatz 10, 4058 Basel",
-      price: "Daily: 40.00 CHF - 3 Days: 100.00 CHF",
-    },
-    {
-      image: "/eventImageExample.png",
-      title: "Technology & Innovation Summit",
-      description:
-        "Explore the future of technology and innovation at our summit. Engage with thought leaders and network with professionals.",
-      date: "5. - 7. November 2024",
-      time: "Start: 9:00 AM - End: 17:00 PM",
-      location: "Palexpo, Route François-Peyrot 30, 1218 Le Grand-Saconnex",
-      price: "Daily: 60.00 CHF - 3 Days: 150.00 CHF",
-    },
-  ];
+  const [currentEvent, setCurrentEvent] = useState(null);
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -114,16 +110,14 @@ const SliderHeroEvents = ({ readMore }) => {
     },
   };
 
-  const currentEvent = eventsArr[currentSlide];
-
   return (
     <div className={styles.sliderHeroEvents}>
       <Slider {...settings}>
-        {eventsArr.map((event, index) => (
+        {events.map((event, index) => (
           <div className={styles.card} key={index}>
             <Image
-              src={event.image}
-              alt={event.title}
+              src={event.bgImage}
+              alt={event.titleEng}
               className={styles.eventImage}
               fill
               style={{ objectFit: "cover" }}
@@ -132,37 +126,79 @@ const SliderHeroEvents = ({ readMore }) => {
           </div>
         ))}
       </Slider>
-      <div className={styles.content}>
-        <h1>{currentEvent.title}</h1>
-        <p className={`${styles.firstPar} ${merriweather.className}`}>
-          {currentEvent.description}
-        </p>
-        <div className={styles.columns}>
-          <div className={styles.col}>
-            <img src="/event.svg" alt="Event icon" width={30} />
-            <div className={styles.data}>
-              <p className="first">{currentEvent.date}</p>
+      {events && events.length > 0 && (
+        <div className={styles.content}>
+          <h1>
+            {locale === "de"
+              ? events[currentSlide].titleGer
+              : events[currentSlide].titleEng}
+          </h1>
+          <p className={`${styles.firstPar} ${merriweather.className}`}>
+            {locale === "de"
+              ? events[currentSlide].descriptionGer
+              : events[currentSlide].descriptionEng}
+          </p>
+          <div className={styles.columns}>
+            <div className={styles.col}>
+              <img src="/event.svg" alt="Event icon" width={30} />
+              <div className={styles.data}>
+                <p className="first">
+                  {locale === "de"
+                    ? events[currentSlide].datesFirstFieldGer
+                    : events[currentSlide].datesFirstFieldEng}
+                </p>
+                <p className="second">
+                  {locale === "de"
+                    ? events[currentSlide].datesSecondFieldGer
+                    : events[currentSlide].datesSecondFieldEng}
+                </p>
+              </div>
+            </div>
+            <div className={styles.col}>
+              <img src="/alarm.svg" alt="Alarm icon" width={30} />
+              <div className={styles.data}>
+                <p className="first">
+                  {locale === "de"
+                    ? events[currentSlide].timeFirstFieldGer
+                    : events[currentSlide].timeFirstFieldEng}
+                </p>
+                <p className="second">
+                  {locale === "de"
+                    ? events[currentSlide].timeSecondFieldGer
+                    : events[currentSlide].timeSecondFieldEng}
+                </p>
+              </div>
+            </div>
+            <div className={styles.col}>
+              <a
+                href={events[currentSlide].addressLink}
+                className={styles.locLink}
+              >
+                <img src="/location_on.svg" alt="Location icon" width={30} />
+                <div className={styles.data}>
+                  <p className="first">
+                    {locale === "de"
+                      ? events[currentSlide].addressTextGer
+                      : events[currentSlide].addressTextEng}
+                  </p>
+                </div>
+              </a>
             </div>
           </div>
-          <div className={styles.col}>
-            <img src="/alarm.svg" alt="Alarm icon" width={30} />
-            <div className={styles.data}>
-              <p className="first">{currentEvent.time}</p>
-            </div>
-          </div>
-          <div className={styles.col}>
-            <img src="/location_on.svg" alt="Location icon" width={30} />
-            <div className={styles.data}>
-              <p className="first">{currentEvent.location}</p>
-            </div>
+          <div className={styles.buttons}>
+            <a
+              className={`${styles.btnCta} ${styles.borderBg}`}
+              href={
+                locale === "de"
+                  ? events[currentSlide].pdfGerLink
+                  : events[currentSlide].pdfEngLink
+              }
+            >
+              {readMore}
+            </a>
           </div>
         </div>
-        <div className={styles.buttons}>
-          <button className={`${styles.btnCta} ${styles.borderBg}`}>
-            {readMore}
-          </button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

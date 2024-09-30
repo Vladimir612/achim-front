@@ -8,7 +8,14 @@ const merriweather = Merriweather({
   weight: ["300"],
 });
 
-const EventCard = ({ imagePath, heading, date, text, readMore }) => {
+const EventCard = ({
+  imagePath,
+  heading,
+  date,
+  text,
+  readMore,
+  readMoreLink,
+}) => {
   return (
     <div className={styles.eventCard}>
       <Image
@@ -25,7 +32,7 @@ const EventCard = ({ imagePath, heading, date, text, readMore }) => {
           <h4>{date}</h4>
         </div>
         <p className={merriweather.className}>{text}</p>
-        <button>
+        <a href={readMoreLink}>
           {readMore}{" "}
           <svg
             width="24"
@@ -39,7 +46,7 @@ const EventCard = ({ imagePath, heading, date, text, readMore }) => {
               fill="#FBD784"
             />
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   );

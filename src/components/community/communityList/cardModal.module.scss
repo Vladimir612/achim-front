@@ -1,0 +1,131 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 2rem;
+    max-width: 90%;
+    max-height: 90%;
+    width: 38rem;
+    overflow: hidden;
+    padding: 1rem;
+    position: relative;
+    .top{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1.8rem;
+        width: 100%;
+        .right{
+            padding: 1rem 0;
+            color: #696A6A;
+            h2{
+                font-size: 1.7rem;
+                font-weight: 600;
+                margin-bottom: 0.6rem;
+            }
+            h3{
+                font-size: 1.2rem;
+                font-weight: 300;
+                padding: 0.2rem 0;
+            }
+        }
+    }
+    p{
+        color: #696A6A
+    }
+    .interests {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 1.4rem 0;
+    }
+    .interestLabel{
+        border: 2px solid #366951;
+        color: #366951!important;
+        border-radius: 2rem;
+        box-shadow: 2px 2px 6px #5b5b5b3f;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    .textContainer {
+        padding: 2rem;
+        position: relative;
+        p {
+            color: #696A6A;
+        }
+    }
+    .imageContainer{
+        width: 8rem;
+        height: 8rem;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+        .modalImage{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .modalTitle {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #3893B8;
+    }
+
+    .closeButton {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        top: 1rem;
+        right: 1.6rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #3893B8;
+        border: 2px solid #3893B8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+  
+@media (max-width: 1000px) {
+    .modalContent {
+        max-width: 90%;
+        .closeButton{
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .modalContent{
+        .top{
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            .right{
+                padding: 0;
+            }
+        }
+    }
+}

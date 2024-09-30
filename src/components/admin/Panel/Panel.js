@@ -6,81 +6,22 @@ import { useRouter } from "next/navigation";
 import User from "./User";
 import Event from "./Event";
 import { useLocale } from "next-intl";
+import { jwtDecode } from "jwt-decode";
+import axios from "axios";
 
 const Panel = () => {
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+
   const [logout, setLogout] = useState(false);
   const locale = useLocale();
 
-  const [communityMembers, setCommunityMembers] = useState([
-    {
-      type: "C1",
-      email: "partner@example.com",
-      name: "John Doe",
-      phone: "123-456-7890",
-      profileImg: "https://via.placeholder.com/100",
-      interests: [0, 1],
-      shortDescription:
-        "Partner organization focusing on community development.",
-      shortDescriptionGer:
-        "Partnerorganisation mit Fokus auf Gemeindeentwicklung.",
-      subject: "Community Development Projects and Collaborations",
-      subjectGer: "Gemeindeentwicklungsprojekte und Kooperationen",
-    },
-    {
-      type: "CM1",
-      email: "individual@example.com",
-      name: "Jane Smith",
-      phone: "098-765-4321",
-      profileImg: "https://via.placeholder.com/200",
-      interests: [2, 3],
-      shortDescription: "Passionate about volunteering and self-growth.",
-      shortDescriptionGer:
-        "Leidenschaftlich über Freiwilligenarbeit und persönliches Wachstum.",
-      subject: "Personal Growth and Volunteer Opportunities",
-      subjectGer: "Persönliches Wachstum und Freiwilligenmöglichkeiten",
-    },
-  ]);
+  const [errorMsgUser, setErrorMsgUser] = useState("");
+  const [errorMsgEvent, setErrorMsgEvent] = useState("");
+  const [user, setUser] = useState("");
 
-  const [events, setEvents] = useState([
-    {
-      datesFirstFieldEng: "2023-08-01",
-      datesSecondFieldEng: "2023-08-05",
-      timeFirstFieldEng: "10:00 AM",
-      timeSecondFieldEng: "4:00 PM",
-      addressTextEng: "123 Main St, Springfield",
-      descriptionEng: "A community gathering event for networking and growth.",
-      pdfEng: "https://example.com/event-eng.pdf",
-      datesFirstFieldGer: "2023-08-01",
-      datesSecondFieldGer: "2023-08-05",
-      timeFirstFieldGer: "10:00 Uhr",
-      timeSecondFieldGer: "16:00 Uhr",
-      addressTextGer: "123 Hauptstr., Springfield",
-      descriptionGer:
-        "Eine Gemeinschaftsveranstaltung für Networking und Wachstum.",
-      pdfGer: "https://example.com/event-ger.pdf",
-      bgImage: "https://via.placeholder.com/300",
-      addressLink: "https://maps.google.com/?q=123+Main+St,+Springfield",
-    },
-    {
-      datesFirstFieldEng: "2023-08-01",
-      datesSecondFieldEng: "2023-08-05",
-      timeFirstFieldEng: "10:00 AM",
-      timeSecondFieldEng: "4:00 PM",
-      addressTextEng: "123 Main St, Springfield",
-      descriptionEng: "A community gathering event for networking and growth.",
-      pdfEng: "https://example.com/event-eng.pdf",
-      datesFirstFieldGer: "2023-08-01",
-      datesSecondFieldGer: "2023-08-05",
-      timeFirstFieldGer: "10:00 Uhr",
-      timeSecondFieldGer: "16:00 Uhr",
-      addressTextGer: "123 Hauptstr., Springfield",
-      descriptionGer:
-        "Eine Gemeinschaftsveranstaltung für Networking und Wachstum.",
-      pdfGer: "https://example.com/event-ger.pdf",
-      bgImage: "https://via.placeholder.com/300",
-      addressLink: "https://maps.google.com/?q=123+Main+St,+Springfield",
-    },
-  ]);
+  const [communityMembers, setCommunityMembers] = useState([]);
+
+  const [events, setEvents] = useState([]);
 
   const [communityMemberData, setCommunityMemberData] = useState({
     type: "",
@@ -119,11 +60,44 @@ const Panel = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("jwtToken");
-      if (!token) {
-        router.push(`/${locale}/admin/login`);
+    const token = localStorage.getItem("jwtToken");
+    if (!token) {
+      router.push(`/${locale}/admin/login`);
+      return;
+    }
+
+    const decodedToken = jwtDecode(token);
+    setUser(decodedToken.userId);
+
+    const fetchCommunityMembers = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/api/community/members`);
+        setCommunityMembers(response.data);
+      } catch (err) {
+        console.log(
+          err.response.data.error
+            ? err.response.data.error
+            : "Internal Server error"
+        );
       }
+    };
+
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/api/events`);
+        setEvents(response.data);
+      } catch (err) {
+        console.log(
+          err.response.data.error
+            ? err.response.data.error
+            : "Internal Server error"
+        );
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      fetchCommunityMembers();
+      fetchEvents();
     }
   }, [logout, router]);
 
@@ -142,11 +116,19 @@ const Panel = () => {
 
   const handleProfileImgChange = (e) => {
     const file = e.target.files[0];
+
+    if (file && file.size > 300 * 1024) {
+      setErrorMsgUser("Profile image file size exceeds 300kB");
+      return;
+    }
+
     setCommunityMemberData({
       ...communityMemberData,
       profileImg: file,
     });
+
     setPreviewImage(URL.createObjectURL(file));
+    setErrorMsgUser("");
   };
 
   const handleInterestsChange = (e) => {
@@ -169,8 +151,82 @@ const Panel = () => {
     });
   };
 
-  const handleCommunityMemberSubmit = (e) => {
+  const handleCommunityMemberSubmit = async (e) => {
     e.preventDefault();
+
+    const {
+      type,
+      email,
+      name,
+      phone,
+      profileImg,
+      interests,
+      shortDescription,
+      shortDescriptionGer,
+      subject,
+      subjectGer,
+    } = communityMemberData;
+
+    if (
+      !type ||
+      !email ||
+      !name ||
+      !phone ||
+      !profileImg ||
+      interests.length === 0 ||
+      !shortDescription ||
+      !shortDescriptionGer ||
+      !subject ||
+      !subjectGer
+    ) {
+      setErrorMsgUser("Every field must be filled out.");
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem("jwtToken");
+
+      const interestStrings = communityMemberData.interests.map(
+        (index) => interestOptions[index]
+      );
+
+      const updatedCommunityMemberData = {
+        ...communityMemberData,
+        interests: interestStrings,
+      };
+
+      const res = await axios.post(
+        `${baseURL}/api/community/members`,
+        updatedCommunityMemberData,
+        {
+          headers: {
+            Authorization: token,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      if (res.status === 201) {
+        setCommunityMembers([...communityMembers, res.data]);
+        setCommunityMemberData({
+          type: "",
+          email: "",
+          name: "",
+          phone: "",
+          profileImg: null,
+          interests: [],
+          shortDescription: "",
+          shortDescriptionGer: "",
+          subject: "",
+          subjectGer: "",
+        });
+        setPreviewImage(null);
+        setErrorMsgUser("");
+      }
+    } catch (err) {
+      console.log(err.response);
+      setErrorMsgUser(err.response.data.error || "Error on the server");
+    }
   };
 
   const [eventData, setEventData] = useState({
@@ -179,22 +235,22 @@ const Panel = () => {
     timeFirstFieldEng: "",
     timeSecondFieldEng: "",
     addressTextEng: "",
+    titleEng: "",
     descriptionEng: "",
-    pdfEng: null,
+    pdfEngLink: "",
     datesFirstFieldGer: "",
     datesSecondFieldGer: "",
     timeFirstFieldGer: "",
     timeSecondFieldGer: "",
     addressTextGer: "",
+    titleGer: "",
     descriptionGer: "",
-    pdfGer: null,
+    pdfGerLink: "",
     bgImage: null,
     addressLink: "",
   });
 
   const [previewEventImage, setPreviewEventImage] = useState(null);
-  const [previewPdfEng, setPreviewPdfEng] = useState(null);
-  const [previewPdfGer, setPreviewPdfGer] = useState(null);
 
   const handleEventChange = (e) => {
     const { name, value } = e.target;
@@ -213,22 +269,102 @@ const Panel = () => {
 
     if (fileType === "bgImage") {
       setPreviewEventImage(URL.createObjectURL(file));
-    } else if (fileType === "pdfEng") {
-      setPreviewPdfEng(file.name);
-    } else if (fileType === "pdfGer") {
-      setPreviewPdfGer(file.name);
     }
   };
 
-  const handleEventSubmit = (e) => {
+  const handleEventSubmit = async (e) => {
     e.preventDefault();
-    console.log(eventData);
+
+    const {
+      datesFirstFieldEng,
+      datesSecondFieldEng,
+      timeFirstFieldEng,
+      timeSecondFieldEng,
+      addressTextEng,
+      titleEng,
+      descriptionEng,
+      pdfEngLink,
+      datesFirstFieldGer,
+      datesSecondFieldGer,
+      timeFirstFieldGer,
+      timeSecondFieldGer,
+      addressTextGer,
+      titleGer,
+      descriptionGer,
+      pdfGerLink,
+      bgImage,
+      addressLink,
+    } = eventData;
+
+    if (
+      !datesFirstFieldEng ||
+      !datesSecondFieldEng ||
+      !timeFirstFieldEng ||
+      !timeSecondFieldEng ||
+      !addressTextEng ||
+      !titleEng ||
+      !descriptionEng ||
+      !pdfEngLink ||
+      !datesFirstFieldGer ||
+      !datesSecondFieldGer ||
+      !timeFirstFieldGer ||
+      !timeSecondFieldGer ||
+      !addressTextGer ||
+      !titleGer ||
+      !descriptionGer ||
+      !pdfGerLink ||
+      !bgImage ||
+      !addressLink
+    ) {
+      setErrorMsgEvent("Every field must be filled out.");
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem("jwtToken");
+
+      const res = await axios.post(`${baseURL}/api/events`, eventData, {
+        headers: {
+          Authorization: token,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if (res.status === 201) {
+        setEvents([...events, res.data]);
+        setEventData({
+          datesFirstFieldEng: "",
+          datesSecondFieldEng: "",
+          timeFirstFieldEng: "",
+          timeSecondFieldEng: "",
+          addressTextEng: "",
+          titleEng: "",
+          descriptionEng: "",
+          pdfEngLink: "",
+          datesFirstFieldGer: "",
+          datesSecondFieldGer: "",
+          timeFirstFieldGer: "",
+          timeSecondFieldGer: "",
+          addressTextGer: "",
+          titleGer: "",
+          descriptionGer: "",
+          pdfGerLink: "",
+          bgImage: null,
+          addressLink: "",
+        });
+        setPreviewEventImage(null);
+        setErrorMsgEvent("");
+      }
+    } catch (err) {
+      console.log(err.response);
+      setErrorMsgEvent(err.response.data.error || "Error on the server");
+    }
   };
 
   return (
     <div className={styles.panel}>
       <div className={styles.banner}>
-        <h1>Hello, name</h1>
+        <h1>Admin: {user}</h1>
         <button onClick={handleLogout}>Logout</button>
       </div>
 
@@ -367,13 +503,15 @@ const Panel = () => {
           <button type="submit" style={{ marginTop: "1rem" }}>
             Submit
           </button>
+          {errorMsgUser && <p style={{ color: "red" }}>{errorMsgUser}</p>}
         </form>
       </div>
 
       <div className={styles.userList}>
-        {communityMembers.map((member, index) => (
+        {communityMembers.map((member) => (
           <User
-            key={index}
+            key={member._id}
+            id={member._id}
             type={member.type}
             email={member.email}
             name={member.name}
@@ -384,6 +522,8 @@ const Panel = () => {
             shortDescriptionGer={member.shortDescriptionGer}
             subject={member.subject}
             subjectGer={member.subjectGer}
+            setCommunityMembers={setCommunityMembers}
+            communityMembers={communityMembers}
           />
         ))}
       </div>
@@ -391,6 +531,26 @@ const Panel = () => {
       <div className={styles.formWrapper}>
         <h2>Add Event</h2>
         <form onSubmit={handleEventSubmit}>
+          <div className={styles.inputGroup}>
+            <label htmlFor="titleEng">Title (Eng)</label>
+            <input
+              type="text"
+              id="titleEng"
+              name="titleEng"
+              value={eventData.titleEng}
+              onChange={handleEventChange}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="descriptionEng">Description (Eng)</label>
+            <input
+              type="text"
+              id="descriptionEng"
+              name="descriptionEng"
+              value={eventData.descriptionEng}
+              onChange={handleEventChange}
+            />
+          </div>
           <div className={styles.inputGroup}>
             <label htmlFor="datesFirstFieldEng">First Date Field (Eng)</label>
             <input
@@ -442,32 +602,34 @@ const Panel = () => {
             />
           </div>
           <div className={styles.inputGroup}>
-            <label htmlFor="descriptionEng">Description (Eng)</label>
+            <label htmlFor="pdfEngLink">PDF (Eng) Link</label>
             <input
               type="text"
-              id="descriptionEng"
-              name="descriptionEng"
-              value={eventData.descriptionEng}
+              id="pdfEngLink"
+              name="pdfEngLink"
+              value={eventData.pdfEngLink}
               onChange={handleEventChange}
             />
           </div>
           <div className={styles.inputGroup}>
-            <label htmlFor="pdfEng">PDF (Eng)</label>
-            <div className={styles.fileInputWrapper}>
-              <label htmlFor="pdfEng" className={styles.fileInputLabel}>
-                Choose File
-              </label>
-              <input
-                type="file"
-                id="pdfEng"
-                name="pdfEng"
-                className={styles.fileInput}
-                onChange={(e) => handleEventFileChange(e, "pdfEng")}
-              />
-              {previewPdfEng && (
-                <p style={{ color: "#fff" }}>{previewPdfEng}</p>
-              )}
-            </div>
+            <label htmlFor="titleGer">Title (Ger)</label>
+            <input
+              type="text"
+              id="titleGer"
+              name="titleGer"
+              value={eventData.titleGer}
+              onChange={handleEventChange}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="descriptionGer">Description (Ger)</label>
+            <input
+              type="text"
+              id="descriptionGer"
+              name="descriptionGer"
+              value={eventData.descriptionGer}
+              onChange={handleEventChange}
+            />
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor="datesFirstFieldGer">First Date Field (Ger)</label>
@@ -520,32 +682,14 @@ const Panel = () => {
             />
           </div>
           <div className={styles.inputGroup}>
-            <label htmlFor="descriptionGer">Description (Ger)</label>
+            <label htmlFor="pdfGerLink">PDF (Ger) Link</label>
             <input
               type="text"
-              id="descriptionGer"
-              name="descriptionGer"
-              value={eventData.descriptionGer}
+              id="pdfGerLink"
+              name="pdfGerLink"
+              value={eventData.pdfGerLink}
               onChange={handleEventChange}
             />
-          </div>
-          <div className={styles.inputGroup}>
-            <label htmlFor="pdfGer">PDF (Ger)</label>
-            <div className={styles.fileInputWrapper}>
-              <label htmlFor="pdfGer" className={styles.fileInputLabel}>
-                Choose File
-              </label>
-              <input
-                type="file"
-                id="pdfGer"
-                name="pdfGer"
-                className={styles.fileInput}
-                onChange={(e) => handleEventFileChange(e, "pdfGer")}
-              />
-              {previewPdfGer && (
-                <p style={{ color: "#fff" }}>{previewPdfGer}</p>
-              )}
-            </div>
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor="bgImage">Background Image</label>
@@ -582,28 +726,34 @@ const Panel = () => {
           <button type="submit" style={{ marginTop: "1rem" }}>
             Submit
           </button>
+          {errorMsgEvent && <p style={{ color: "red" }}>{errorMsgEvent}</p>}
         </form>
       </div>
       <div className={styles.eventList}>
-        {events.map((event, index) => (
+        {events.map((event) => (
           <Event
-            key={index}
+            key={event._id}
+            id={event._id}
             datesFirstFieldEng={event.datesFirstFieldEng}
             datesSecondFieldEng={event.datesSecondFieldEng}
             timeFirstFieldEng={event.timeFirstFieldEng}
             timeSecondFieldEng={event.timeSecondFieldEng}
             addressTextEng={event.addressTextEng}
+            titleEng={event.titleEng}
             descriptionEng={event.descriptionEng}
-            pdfEng={event.pdfEng}
+            pdfEngLink={event.pdfEngLink}
             datesFirstFieldGer={event.datesFirstFieldGer}
             datesSecondFieldGer={event.datesSecondFieldGer}
             timeFirstFieldGer={event.timeFirstFieldGer}
             timeSecondFieldGer={event.timeSecondFieldGer}
             addressTextGer={event.addressTextGer}
+            titleGer={event.titleGer}
             descriptionGer={event.descriptionGer}
-            pdfGer={event.pdfGer}
+            pdfGerLink={event.pdfGerLink}
             bgImage={event.bgImage}
             addressLink={event.addressLink}
+            setEvents={setEvents}
+            eventList={events}
           />
         ))}
       </div>

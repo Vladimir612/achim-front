@@ -145,7 +145,7 @@
     "banner": {
       "subHeading": "UNSER ANSATZ",
       "heading": "Erfahre unsere Prinzipien",
-      "par": "Entdecke einen transformativen Raum im Forum, in dem wir Trauma, soziale Gerechtigkeit und gesellschaftliche Transformation erkunden. Tauche ein und erforsche die Tiefen der menschlichen Erfahrung mit Mitgefühl und Mut."
+      "par": "Die Prinzipien sind das Fundament auf  dem das Forum gebaut ist. Sie geben uns Orientierung, Inspiration und  ermöglichen uns kohärentes Handeln."
     },
     "sections": {
       "first": {
@@ -214,7 +214,7 @@
     "banner": {
       "subHeading": "WAS WIR ANBIETEN",
       "heading": "Gemeinsam die Gesellschaft transformieren",
-      "par": "Entdecken Sie unsere Angebote, die darauf abzielen, gesellschaftlichen Wandel zu fördern. Von Veranstaltungen und Schulungen bis hin zu struktureller Beratung und innovativen Initiativen – wir sind bestrebt, eine bessere Zukunft zu gestalten. Schließen Sie sich uns an, um einen positiven Einfluss zu schaffen."
+      "par": "Das Forum baut schrittweise einen Trainer*innen Pool auf, organisiert Veranstaltungen, baut Netzwerke auf, bietet Online- und Offline- Weiterbildungen an, nervensystemorientierte Beratung und Begleitung und entwickelt einen attraktiven interaktiven Selbstlernbereich."
     },
     "content": {
       "first": {
@@ -249,13 +249,13 @@
   },
   "Events": {
     "subHeading": "VERANSTALTUNGEN",
-    "text": "Alle unsere vergangenen Veranstaltungen ansehen",
+    "text": "Alle unsere Veranstaltungen ansehen",
     "readMore": "Mehr lesen"
   },
   "Community": {
-    "subHeading": "GEMEINSCHAFT",
+    "subHeading": "UNSERE GEMEINSCHAFT ENTDECKEN",
     "heading": "Verbinden Sie sich",
-    "text": "UNSERE GEMEINSCHAFT ENTDECKEN",
+    "text": "Entdecke unsere community: Wir sind dabei, eine lebendige Gemeinschaft von Menschen  aufzubauen, die die Welt nervenfreundlicher machen wollen. Und du bist  herzlich eingeladen dabei zu sein.",
     "partners": "Partner",
     "organizations": "Organisationen",
     "individuals": "Einzelpersonen",
@@ -329,6 +329,7 @@
     "research": "Forschung",
     "sharingExp": "Erfahrungen teilen",
     "reqFields": "Bitte füllen Sie alle erforderlichen Felder aus",
+    "sizeExceeds": "Dateigröße überschreitet 300kB",
     "oneInterest": "Bitte wählen Sie mindestens ein Interesse aus",
     "nextStep": "Nächster Schritt",
     "prevStep": "Vorheriger Schritt",

@@ -39,37 +39,37 @@ const RegisterForm = ({ onClose, selectedType, regObj }) => {
     {
       value: "Connections",
       label: regObj.conn,
-      imgPath: "/interests/selfReflection.png",
+      imgPath: "/interests/connections.png",
     },
     {
       value: "Self Growth",
       label: regObj.selfGrowth,
-      imgPath: "/interests/selfReflection.png",
+      imgPath: "/interests/selfGrowth.png",
     },
     {
       value: "Volonterism",
       label: regObj.volonterism,
-      imgPath: "/interests/selfReflection.png",
+      imgPath: "/interests/volonterism.png",
     },
     {
       value: "Seeking Help",
       label: regObj.seekingHelp,
-      imgPath: "/interests/selfReflection.png",
+      imgPath: "/interests/seekingHelp.png",
     },
     {
       value: "Breaking Isolation",
       label: regObj.breakingIso,
-      imgPath: "/interests/selfReflection.png",
+      imgPath: "/interests/breakingIsolation.png",
     },
     {
       value: "Research",
       label: regObj.research,
-      imgPath: "/interests/selfReflection.png",
+      imgPath: "/interests/research.png",
     },
     {
       value: "Sharing Experience",
       label: regObj.sharingExp,
-      imgPath: "/interests/selfReflection.png",
+      imgPath: "/interests/sharingExperience.png",
     },
   ];
 
@@ -109,8 +109,19 @@ const RegisterForm = ({ onClose, selectedType, regObj }) => {
   };
 
   const handleImageUpload = (e) => {
+    setErrorMsg("");
+    const file = e.target.files[0];
+
+    if (file && file.size > 300 * 1024) {
+      setErrorMsg(regObj.sizeExceeds);
+      setFormData({ ...formData, image: null });
+      setPreviewImage(false);
+      return;
+    }
+
     setPreviewImage(true);
-    setFormData({ ...formData, image: e.target.files[0] });
+    setFormData({ ...formData, image: file });
+    setErrorMsg("");
   };
 
   const handleInterestChange = (e) => {
@@ -139,6 +150,8 @@ const RegisterForm = ({ onClose, selectedType, regObj }) => {
     }
   };
 
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+
   const handleSubmit = async () => {
     const data = new FormData();
 
@@ -154,7 +167,7 @@ const RegisterForm = ({ onClose, selectedType, regObj }) => {
     }
     setDisableSubmit(true);
 
-    await axios.post("http://localhost:5000/api/community/join-us", data, {
+    await axios.post(`${baseURL}/api/community/join-us`, data, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -326,7 +339,6 @@ const RegisterForm = ({ onClose, selectedType, regObj }) => {
                       type="text"
                       id="phone"
                       name="phone"
-                      // placeholder="(+381) 653207856"
                       value={formData.phone}
                       onChange={handleInputChange}
                     />

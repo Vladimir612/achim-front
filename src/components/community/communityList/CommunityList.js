@@ -37,6 +37,8 @@ const CommunityList = ({
 
   const [firstSearch, setFirstSearch] = useState(true);
 
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+
   useEffect(() => {
     const fetchCommunityMembers = async () => {
       try {
@@ -48,7 +50,7 @@ const CommunityList = ({
           else if (searchWord) queryParams = `?searchWord=${searchWord}`;
 
           const response = await axios.get(
-            `http://localhost:5000/api/community/members${queryParams}`
+            `${baseURL}/api/community/members${queryParams}`
           );
 
           if (firstSearch) {
@@ -170,10 +172,13 @@ const CommunityList = ({
               imagePath={member.profileImg}
               name={member.name}
               text={member.shortDescription}
+              textGer={member.shortDescriptionGer}
               email={member.email}
               number={member.phone}
               communityType={member.type}
               interests={member.interests}
+              subject={member.subject}
+              subjectGer={member.subjectGer}
             />
           );
         })}

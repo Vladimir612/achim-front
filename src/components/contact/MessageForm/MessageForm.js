@@ -41,6 +41,8 @@ const MessageForm = ({ obj }) => {
     }));
   };
 
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+
   const handleSubmit = async () => {
     const data = {
       name: formData.name,
@@ -67,7 +69,7 @@ const MessageForm = ({ obj }) => {
     setDisableSubmit(true);
 
     try {
-      await axios.post("http://localhost:5000/api/community/contact", data);
+      await axios.post(`${baseURL}/api/community/contact`, data);
 
       setFormData({
         name: "",

@@ -1,51 +1,66 @@
 import React, { useState } from "react";
 import styles from "./event.module.scss";
 import { Inter } from "next/font/google";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const Event = ({
+  id,
   datesFirstFieldEng,
   datesSecondFieldEng,
   timeFirstFieldEng,
   timeSecondFieldEng,
   addressTextEng,
+  titleEng,
   descriptionEng,
-  pdfEng,
+  pdfEngLink,
   datesFirstFieldGer,
   datesSecondFieldGer,
   timeFirstFieldGer,
   timeSecondFieldGer,
   addressTextGer,
+  titleGer,
   descriptionGer,
-  pdfGer,
+  pdfGerLink,
   bgImage,
   addressLink,
+  setEvents,
+  eventList,
 }) => {
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+
+  const [uploadedImg, setUploadedImg] = useState(false);
+
   const [eventData, setEventData] = useState({
     datesFirstFieldEng,
     datesSecondFieldEng,
     timeFirstFieldEng,
     timeSecondFieldEng,
     addressTextEng,
+    titleEng,
     descriptionEng,
-    pdfEng,
+    pdfEngLink,
     datesFirstFieldGer,
     datesSecondFieldGer,
     timeFirstFieldGer,
     timeSecondFieldGer,
     addressTextGer,
+    titleGer,
     descriptionGer,
-    pdfGer,
+    pdfGerLink,
     bgImage,
     addressLink,
   });
+
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
   const [newBgImage, setNewBgImage] = useState(bgImage);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
     setEventData({
       ...eventData,
       [name]: value,
@@ -64,20 +79,119 @@ const Event = ({
         });
         if (name === "bgImage") {
           setNewBgImage(reader.result);
+          setEventData({
+            ...eventData,
+            bgImage: file,
+          });
+          setUploadedImg(true);
         }
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const handleEdit = () => {
-    // Perform save operation here
-    setEditModalOpen(false);
+  const handleEdit = async () => {
+    setErrorMsg(""); // Clear previous error messages
+
+    const {
+      datesFirstFieldEng,
+      datesSecondFieldEng,
+      timeFirstFieldEng,
+      timeSecondFieldEng,
+      addressTextEng,
+      titleEng,
+      descriptionEng,
+      pdfEngLink,
+      datesFirstFieldGer,
+      datesSecondFieldGer,
+      timeFirstFieldGer,
+      timeSecondFieldGer,
+      addressTextGer,
+      titleGer,
+      descriptionGer,
+      pdfGerLink,
+      bgImage,
+      addressLink,
+    } = eventData;
+
+    // Validate that all required fields are filled in
+    if (
+      !datesFirstFieldEng ||
+      !datesSecondFieldEng ||
+      !timeFirstFieldEng ||
+      !timeSecondFieldEng ||
+      !addressTextEng ||
+      !titleEng ||
+      !descriptionEng ||
+      !datesFirstFieldGer ||
+      !datesSecondFieldGer ||
+      !timeFirstFieldGer ||
+      !timeSecondFieldGer ||
+      !addressTextGer ||
+      !titleGer ||
+      !descriptionGer ||
+      !pdfEngLink ||
+      !pdfGerLink ||
+      !addressLink
+    ) {
+      setErrorMsg("All fields must be filled out.");
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem("jwtToken");
+
+      const updatedEventData = {
+        ...eventData,
+        ...(uploadedImg && { bgImage: bgImage }),
+      };
+
+      const res = await axios.patch(
+        `${baseURL}/api/events/${id}`,
+        updatedEventData,
+        {
+          headers: {
+            Authorization: token,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      if (res.status === 200) {
+        setEvents(
+          eventList.map((event) =>
+            event._id === res.data._id ? res.data : event
+          )
+        );
+        setErrorMsg("");
+        setEditModalOpen(false);
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMsg(err.response?.data?.error || "Server error occurred.");
+    }
   };
 
-  const handleDelete = () => {
-    // Perform delete operation here
-    setDeleteModalOpen(false);
+  const handleDelete = async () => {
+    setErrorMsg("");
+    try {
+      const token = localStorage.getItem("jwtToken");
+
+      const res = await axios.delete(`${baseURL}/api/events/${id}`, {
+        headers: {
+          Authorization: token,
+        },
+      });
+
+      if (res.status === 200) {
+        setEvents(eventList.filter((event) => event._id !== id));
+        setErrorMsg("");
+        setDeleteModalOpen(false);
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMsg(err.response?.data?.error || "Error on the server"); // Set the error message if something goes wrong
+    }
   };
 
   return (
@@ -96,16 +210,17 @@ const Event = ({
           <strong>Address:</strong> {addressTextEng}
         </p>
         <p>
+          <strong>Title:</strong> {titleEng}
+        </p>
+        <p>
           <strong>Description:</strong> {descriptionEng}
         </p>
-        {pdfEng && (
-          <p>
-            <strong>PDF:</strong>{" "}
-            <a href={pdfEng} target="_blank">
-              Download PDF
-            </a>
-          </p>
-        )}
+        <p style={{ marginTop: "2rem" }}>
+          <strong>Pdf (English) Link:</strong>{" "}
+          <a href={pdfEngLink} target="_blank">
+            Open PDF
+          </a>
+        </p>
         <h3 style={{ marginTop: "2rem" }}>
           {datesFirstFieldGer} - {datesSecondFieldGer}
         </h3>
@@ -117,16 +232,17 @@ const Event = ({
           <strong>Address (German):</strong> {addressTextGer}
         </p>
         <p>
+          <strong>Title (German):</strong> {titleGer}
+        </p>
+        <p>
           <strong>Description (German):</strong> {descriptionGer}
         </p>
-        {pdfGer && (
-          <p>
-            <strong>PDF (German):</strong>{" "}
-            <a href={pdfGer} target="_blank">
-              Download PDF
-            </a>
-          </p>
-        )}
+        <p style={{ marginTop: "2rem" }}>
+          <strong>Pdf (German) Link:</strong>{" "}
+          <a href={pdfGerLink} target="_blank">
+            Open PDF
+          </a>
+        </p>
         <p style={{ marginTop: "2rem" }}>
           <strong>Address Link:</strong>{" "}
           <a href={addressLink} target="_blank">
@@ -144,6 +260,26 @@ const Event = ({
           <div className={styles.modalContent}>
             <h2>Edit Event</h2>
             <form>
+              <div className={styles.inputGroup}>
+                <label htmlFor="titleEng">Title (English)</label>
+                <textarea
+                  id="titleEng"
+                  name="titleEng"
+                  value={eventData.titleEng}
+                  onChange={handleInputChange}
+                  className={inter.className}
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <label htmlFor="descriptionEng">Description (English)</label>
+                <textarea
+                  id="descriptionEng"
+                  name="descriptionEng"
+                  value={eventData.descriptionEng}
+                  onChange={handleInputChange}
+                  className={inter.className}
+                />
+              </div>
               <div className={styles.inputGroup}>
                 <label htmlFor="datesFirstFieldEng">Start Date (English)</label>
                 <input
@@ -195,22 +331,33 @@ const Event = ({
                 />
               </div>
               <div className={styles.inputGroup}>
-                <label htmlFor="descriptionEng">Description (English)</label>
+                <label htmlFor="pdfEngLink">Pdf (English) Link</label>
+                <input
+                  type="text"
+                  id="pdfEngLink"
+                  name="pdfEngLink"
+                  value={eventData.pdfEngLink}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <label htmlFor="titleGer">Title (German)</label>
                 <textarea
-                  id="descriptionEng"
-                  name="descriptionEng"
-                  value={eventData.descriptionEng}
+                  id="titleGer"
+                  name="titleGer"
+                  value={eventData.titleGer}
                   onChange={handleInputChange}
                   className={inter.className}
                 />
               </div>
               <div className={styles.inputGroup}>
-                <label htmlFor="pdfEng">PDF (English)</label>
-                <input
-                  type="file"
-                  id="pdfEng"
-                  name="pdfEng"
-                  onChange={handleFileChange}
+                <label htmlFor="descriptionGer">Description (German)</label>
+                <textarea
+                  id="descriptionGer"
+                  name="descriptionGer"
+                  value={eventData.descriptionGer}
+                  onChange={handleInputChange}
+                  className={inter.className}
                 />
               </div>
               <div className={styles.inputGroup}>
@@ -264,22 +411,13 @@ const Event = ({
                 />
               </div>
               <div className={styles.inputGroup}>
-                <label htmlFor="descriptionGer">Description (German)</label>
-                <textarea
-                  id="descriptionGer"
-                  name="descriptionGer"
-                  value={eventData.descriptionGer}
-                  onChange={handleInputChange}
-                  className={inter.className}
-                />
-              </div>
-              <div className={styles.inputGroup}>
-                <label htmlFor="pdfGer">PDF (German)</label>
+                <label htmlFor="pdfGerLink">Pdf (German) Link</label>
                 <input
-                  type="file"
-                  id="pdfGer"
-                  name="pdfGer"
-                  onChange={handleFileChange}
+                  type="text"
+                  id="pdfGerLink"
+                  name="pdfGerLink"
+                  value={eventData.pdfGerLink}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className={styles.inputGroup}>
@@ -314,6 +452,7 @@ const Event = ({
                   Cancel
                 </button>
               </div>
+              {errorMsg && <p style={{ color: "red" }}>{errorMsg}</p>}
             </form>
           </div>
         </div>

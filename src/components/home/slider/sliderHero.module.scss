@@ -20,6 +20,14 @@
         background: linear-gradient(0deg, rgba(0, 23, 44, 0.60) 0%, rgba(0, 23, 44, 0.60) 100%);   
         border-radius: 2rem;
     }
+    .locLink{
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
     .content{
         position: absolute;
         z-index: 10;
@@ -75,6 +83,7 @@
                 box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
                 padding: 0.6rem 2rem;
                 background: transparent;
+                text-decoration: none;
                 &.borderBg{
                     color: #FBD784;
                 }

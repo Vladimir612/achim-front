@@ -11,6 +11,12 @@ module.exports = withNextIntl({
         port: "5000",
         pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   // Other Next.js configurations can go here

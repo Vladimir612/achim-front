@@ -1,10 +1,12 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import styles from "./sliderHero.module.scss";
 import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Merriweather } from "next/font/google";
+import { useLocale } from "next-intl";
+import axios from "axios";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -78,244 +80,108 @@ const SliderHero = forwardRef(({ readMoreTxt }, ref) => {
     customPaging: () => <div></div>,
   };
 
+  const [events, setEvents] = useState([]);
+
+  const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+  const locale = useLocale();
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/api/events`);
+        setEvents(response.data);
+      } catch (err) {
+        console.log(
+          err.response.data.error
+            ? err.response.data.error
+            : "Internal Server error"
+        );
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      fetchEvents();
+    }
+  }, []);
+
   return (
     <div className={styles.sliderHero} ref={ref}>
       <Slider {...settings}>
-        <div className={styles.card}>
-          <Image
-            src="/eventImageExample.png"
-            alt="Woods"
-            className={styles.eventImage}
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className={styles.content}>
-            <h1>Trauma & Nervous System Converence</h1>
-            <p className={`${styles.firstPar} ${merriweather.className}`}>
-              Join us for an insightful lecture on trauma and the nervous
-              system, exploring vital insights to enhance understanding and
-              support. Reserve your spot now!
-            </p>
-            <div className={styles.columns}>
-              <div className={styles.col}>
-                <img src="/event.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">26. - 28.</p>
-                  <p className="second">September 2024.</p>
+        {events.map((event) => (
+          <div className={styles.card} key={event._id}>
+            <Image
+              src={event.bgImage}
+              alt={event.titleEng}
+              className={styles.eventImage}
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
+            <div className={styles.content}>
+              <h1>{locale === "de" ? event.titleGer : event.titleEng}</h1>
+              <p className={`${styles.firstPar} ${merriweather.className}`}>
+                {locale === "de" ? event.descriptionGer : event.descriptionEng}
+              </p>
+              <div className={styles.columns}>
+                <div className={styles.col}>
+                  <img src="/event.svg" alt="Arrow forward" width={30} />
+                  <div className={styles.data}>
+                    <p className="first">
+                      {locale === "de"
+                        ? event.datesFirstFieldGer
+                        : event.datesFirstFieldEng}
+                    </p>
+                    <p className="second">
+                      {locale === "de"
+                        ? event.datesSecondFieldGer
+                        : event.datesSecondFieldEng}
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.col}>
+                  <img src="/alarm.svg" alt="Arrow forward" width={30} />
+                  <div className={styles.data}>
+                    <p className="first">
+                      {locale === "de"
+                        ? event.timeFirstFieldGer
+                        : event.timeFirstFieldEng}
+                    </p>
+                    <p className="second">
+                      {locale === "de"
+                        ? event.timeSecondFieldGer
+                        : event.timeSecondFieldEng}
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.col}>
+                  <a href={event.addressLink} className={styles.locLink}>
+                    <img
+                      src="/location_on.svg"
+                      alt="Arrow forward"
+                      width={30}
+                    />
+                    <div className={styles.data}>
+                      <p className="first">
+                        {locale === "de"
+                          ? event.addressTextGer
+                          : event.addressTextEng}
+                      </p>
+                    </div>
+                  </a>
                 </div>
               </div>
-              <div className={styles.col}>
-                <img src="/alarm.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Start: 11:00 AM</p>
-                  <p className="second">End: 20:00 PM</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/location_on.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Bahnhofstrasse 25, </p>
-                  <p className="second">8001 Zurich</p>
-                </div>
-              </div>
-            </div>
 
-            <div className={styles.buttons}>
-              <button className={`${styles.btnCta} ${styles.borderBg}`}>
-                {readMoreTxt}
-              </button>
+              <div className={styles.buttons}>
+                <a
+                  className={`${styles.btnCta} ${styles.borderBg}`}
+                  href={locale === "de" ? event.pdfGerLink : event.pdfEngLink}
+                >
+                  {readMoreTxt}
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.card}>
-          <Image
-            src="/eventImageExample.png"
-            alt="Woods"
-            className={styles.eventImage}
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className={styles.content}>
-            <h1>Trauma & Nervous System Converence</h1>
-            <p className={styles.firstPar}>
-              Join us for an insightful lecture on trauma and the nervous
-              system, exploring vital insights to enhance understanding and
-              support. Reserve your spot now!
-            </p>
-            <div className={styles.columns}>
-              <div className={styles.col}>
-                <img src="/event.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">26. - 28.</p>
-                  <p className="second">September 2024.</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/alarm.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Start: 11:00 AM</p>
-                  <p className="second">End: 20:00 PM</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/location_on.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Bahnhofstrasse 25, </p>
-                  <p className="second">8001 Zurich</p>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.buttons}>
-              <button className={`${styles.btnCta} ${styles.borderBg}`}>
-                More details
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <Image
-            src="/eventImageExample.png"
-            alt="Woods"
-            className={styles.eventImage}
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className={styles.content}>
-            <h1>Trauma & Nervous System Converence</h1>
-            <p className={styles.firstPar}>
-              Join us for an insightful lecture on trauma and the nervous
-              system, exploring vital insights to enhance understanding and
-              support. Reserve your spot now!
-            </p>
-            <div className={styles.columns}>
-              <div className={styles.col}>
-                <img src="/event.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">26. - 28.</p>
-                  <p className="second">September 2024.</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/alarm.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Start: 11:00 AM</p>
-                  <p className="second">End: 20:00 PM</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/location_on.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Bahnhofstrasse 25, </p>
-                  <p className="second">8001 Zurich</p>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.buttons}>
-              <button className={`${styles.btnCta} ${styles.borderBg}`}>
-                More details
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <Image
-            src="/eventImageExample.png"
-            alt="Woods"
-            className={styles.eventImage}
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className={styles.content}>
-            <h1>Trauma & Nervous System Converence</h1>
-            <p className={styles.firstPar}>
-              Join us for an insightful lecture on trauma and the nervous
-              system, exploring vital insights to enhance understanding and
-              support. Reserve your spot now!
-            </p>
-            <div className={styles.columns}>
-              <div className={styles.col}>
-                <img src="/event.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">26. - 28.</p>
-                  <p className="second">September 2024.</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/alarm.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Start: 11:00 AM</p>
-                  <p className="second">End: 20:00 PM</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/location_on.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Bahnhofstrasse 25, </p>
-                  <p className="second">8001 Zurich</p>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.buttons}>
-              <button className={`${styles.btnCta} ${styles.borderBg}`}>
-                More details
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <Image
-            src="/eventImageExample.png"
-            alt="Woods"
-            className={styles.eventImage}
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
-          <div className={styles.content}>
-            <h1>Trauma & Nervous System Converence</h1>
-            <p className={styles.firstPar}>
-              Join us for an insightful lecture on trauma and the nervous
-              system, exploring vital insights to enhance understanding and
-              support. Reserve your spot now!
-            </p>
-            <div className={styles.columns}>
-              <div className={styles.col}>
-                <img src="/event.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">26. - 28.</p>
-                  <p className="second">September 2024.</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/alarm.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Start: 11:00 AM</p>
-                  <p className="second">End: 20:00 PM</p>
-                </div>
-              </div>
-              <div className={styles.col}>
-                <img src="/location_on.svg" alt="Arrow forward" width={30} />
-                <div className={styles.data}>
-                  <p className="first">Bahnhofstrasse 25, </p>
-                  <p className="second">8001 Zurich</p>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.buttons}>
-              <button className={`${styles.btnCta} ${styles.borderBg}`}>
-                More details
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );

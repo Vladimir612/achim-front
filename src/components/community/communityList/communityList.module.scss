@@ -1,8 +1,12 @@
 .communityList{
     background: #0c1e27;
-    padding: 0 10rem;
+    padding: 2rem 10rem;
     .filter{
-        transform: translateY(-17rem);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+        width: 90%;
         input{
             width: 100%;
             border-radius: 1rem;
@@ -106,17 +110,17 @@
     }
     .list{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+        
         gap: 1rem;
         flex-wrap: wrap;
-        transform: translateY(-10rem);
     }
 }
 
 @media (max-width: 1320px) {
     .communityList {
-        padding: 0 2rem;
+        padding: 2rem;
     }
 }
 
