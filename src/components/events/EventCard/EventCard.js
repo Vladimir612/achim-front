@@ -32,7 +32,7 @@ const EventCard = ({
           <h4>{date}</h4>
         </div>
         <p className={merriweather.className}>{text}</p>
-        <a href={readMoreLink}>
+        <a href={readMoreLink} target="_blank">
           {readMore}{" "}
           <svg
             width="24"

@@ -71,6 +71,7 @@ const Events = ({ subHeading, text, readMore }) => {
       <div className={styles.column} ref={refToScroll}>
         {events.map((event) => (
           <EventCard
+            key={event._id}
             imagePath={event.bgImage}
             heading={locale === "de" ? event.titleGer : event.titleEng}
             date={

@@ -154,7 +154,11 @@ const SliderHero = forwardRef(({ readMoreTxt }, ref) => {
                   </div>
                 </div>
                 <div className={styles.col}>
-                  <a href={event.addressLink} className={styles.locLink}>
+                  <a
+                    href={event.addressLink}
+                    className={styles.locLink}
+                    target="_blank"
+                  >
                     <img
                       src="/location_on.svg"
                       alt="Arrow forward"
@@ -175,6 +179,7 @@ const SliderHero = forwardRef(({ readMoreTxt }, ref) => {
                 <a
                   className={`${styles.btnCta} ${styles.borderBg}`}
                   href={locale === "de" ? event.pdfGerLink : event.pdfEngLink}
+                  target="_blank"
                 >
                   {readMoreTxt}
                 </a>

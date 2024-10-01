@@ -11,6 +11,8 @@ import axios from "axios";
 
 const Panel = () => {
   const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
+  const [submittedPostCm, setSubmittedPostCm] = useState(false);
+  const [submittedPostEvent, setSubmittedPostEvent] = useState(false);
 
   const [logout, setLogout] = useState(false);
   const locale = useLocale();
@@ -153,6 +155,7 @@ const Panel = () => {
 
   const handleCommunityMemberSubmit = async (e) => {
     e.preventDefault();
+    setSubmittedPostCm(true);
 
     const {
       type,
@@ -179,6 +182,7 @@ const Panel = () => {
       !subject ||
       !subjectGer
     ) {
+      setSubmittedPostCm(false);
       setErrorMsgUser("Every field must be filled out.");
       return;
     }
@@ -221,9 +225,11 @@ const Panel = () => {
           subjectGer: "",
         });
         setPreviewImage(null);
+        setSubmittedPostCm(false);
         setErrorMsgUser("");
       }
     } catch (err) {
+      setSubmittedPostCm(false);
       console.log(err.response);
       setErrorMsgUser(err.response.data.error || "Error on the server");
     }
@@ -274,6 +280,7 @@ const Panel = () => {
 
   const handleEventSubmit = async (e) => {
     e.preventDefault();
+    setSubmittedPostEvent(true);
 
     const {
       datesFirstFieldEng,
@@ -316,6 +323,7 @@ const Panel = () => {
       !bgImage ||
       !addressLink
     ) {
+      setSubmittedPostEvent(false);
       setErrorMsgEvent("Every field must be filled out.");
       return;
     }
@@ -354,8 +362,10 @@ const Panel = () => {
         });
         setPreviewEventImage(null);
         setErrorMsgEvent("");
+        setSubmittedPostEvent(false);
       }
     } catch (err) {
+      setSubmittedPostEvent(false);
       console.log(err.response);
       setErrorMsgEvent(err.response.data.error || "Error on the server");
     }
@@ -500,7 +510,12 @@ const Panel = () => {
               ))}
             </div>
           </div>
-          <button type="submit" style={{ marginTop: "1rem" }}>
+          <button
+            type="submit"
+            style={{ marginTop: "1rem" }}
+            disabled={submittedPostCm}
+            className={styles.submit}
+          >
             Submit
           </button>
           {errorMsgUser && <p style={{ color: "red" }}>{errorMsgUser}</p>}
@@ -723,7 +738,12 @@ const Panel = () => {
               onChange={handleEventChange}
             />
           </div>
-          <button type="submit" style={{ marginTop: "1rem" }}>
+          <button
+            type="submit"
+            style={{ marginTop: "1rem" }}
+            disabled={submittedPostEvent}
+            className={styles.submit}
+          >
             Submit
           </button>
           {errorMsgEvent && <p style={{ color: "red" }}>{errorMsgEvent}</p>}

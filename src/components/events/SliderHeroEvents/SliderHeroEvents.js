@@ -173,6 +173,7 @@ const SliderHeroEvents = ({ readMore }) => {
               <a
                 href={events[currentSlide].addressLink}
                 className={styles.locLink}
+                target="_blank"
               >
                 <img src="/location_on.svg" alt="Location icon" width={30} />
                 <div className={styles.data}>
