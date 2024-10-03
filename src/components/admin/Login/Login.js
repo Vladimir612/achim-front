@@ -9,6 +9,7 @@ import axios from "axios";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -37,6 +38,7 @@ const Login = () => {
   const baseURL = process.env.NEXT_PUBLIC_BACK_BASE_URL;
 
   const handleSubmit = async () => {
+    setLoading(true);
     const loginData = {
       email: username,
       password: password,
@@ -46,8 +48,10 @@ const Login = () => {
       const res = await axios.post(`${baseURL}/api/admin/login`, loginData);
 
       localStorage.setItem("jwtToken", res.data.token);
+      setLoading(false);
       setSubmitted(true);
     } catch (err) {
+      setLoading(false);
       setErrorMsg(err.response.data.error);
     }
   };
@@ -81,6 +85,7 @@ const Login = () => {
             e.preventDefault();
             handleSubmit();
           }}
+          disabled={loading}
         >
           Submit
         </button>

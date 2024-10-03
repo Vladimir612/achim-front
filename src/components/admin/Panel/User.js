@@ -248,6 +248,22 @@ const User = ({
             <h2>Edit User</h2>
             <form>
               <div className={styles.inputGroup}>
+                <label htmlFor="type">Type</label>
+                <select
+                  id="type"
+                  name="type"
+                  value={formData.type}
+                  onChange={handleInputChange}
+                >
+                  <option value="">Select Type</option>
+                  {typeOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className={styles.inputGroup}>
                 <label htmlFor="profileImg">Profile Image</label>
                 <input
                   type="file"
