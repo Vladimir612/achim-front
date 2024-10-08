@@ -5,7 +5,7 @@ import styles from "./teamSlider.module.scss";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import Slider from "react-slick";
+import Slider from "react-slick";
 
 const TeamSlider = ({ teamList, readMore }) => {
   function SampleNextArrow(props) {
@@ -114,22 +114,22 @@ const TeamSlider = ({ teamList, readMore }) => {
 
   return (
     <div className={styles.teamSlider}>
-      {/* <Slider {...settings}> */}
-      {teamList.map((teamMember, index) => (
-        <div key={index} className={styles.teamMember}>
-          <Image
-            src={teamMember.imagePath}
-            alt={teamMember.name}
-            className={styles.image}
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-            sizes=""
-          />
-          <h3>{teamMember.name}</h3>
-          <p className={styles.role}>{teamMember.role}</p>
-          <p>{teamMember.text}</p>
-          {/* <button>
+      <Slider {...settings}>
+        {teamList.map((teamMember, index) => (
+          <div key={index} className={styles.teamMember}>
+            <Image
+              src={teamMember.imagePath}
+              alt={teamMember.name}
+              className={styles.image}
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+              sizes=""
+            />
+            <h3>{teamMember.name}</h3>
+            {/* <p className={styles.role}>{teamMember.role}</p> */}
+            <p>{teamMember.text}</p>
+            {/* <button>
             {readMore}{" "}
             <svg
               width="24"
@@ -144,9 +144,9 @@ const TeamSlider = ({ teamList, readMore }) => {
               />
             </svg>
           </button> */}
-        </div>
-      ))}
-      {/* </Slider> */}
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

@@ -61,12 +61,6 @@ export default function Home() {
 
   const teamList = [
     {
-      name: tTeam("first.name"),
-      role: tTeam("first.role"),
-      imagePath: "/team/achim.png",
-      text: tTeam("first.text"),
-    },
-    {
       name: tTeam("second.name"),
       role: tTeam("second.role"),
       imagePath: "/team/susie.png",
@@ -75,14 +69,26 @@ export default function Home() {
     {
       name: tTeam("third.name"),
       role: tTeam("third.role"),
-      imagePath: "/team/achim.png",
+      imagePath: "/team/nikola.png",
       text: tTeam("third.text"),
     },
     {
       name: tTeam("fourth.name"),
       role: tTeam("fourth.role"),
-      imagePath: "/team/susie.png",
+      imagePath: "/team/franziska.jpg",
       text: tTeam("fourth.text"),
+    },
+    {
+      name: tTeam("first.name"),
+      role: tTeam("first.role"),
+      imagePath: "/team/franziska.jpg",
+      text: tTeam("first.text"),
+    },
+    {
+      name: tTeam("fifth.name"),
+      role: tTeam("fifth.role"),
+      imagePath: "/team/achim.png",
+      text: tTeam("fifth.text"),
     },
   ];
 
@@ -102,6 +108,11 @@ export default function Home() {
     {
       name: tTestimonials("third.name"),
       text: tTestimonials("third.text"),
+      imagePath: "/eventImageExample.png",
+    },
+    {
+      name: tTestimonials("fourth.name"),
+      text: tTestimonials("fourth.text"),
       imagePath: "/eventImageExample.png",
     },
   ];

@@ -46,24 +46,29 @@
   },
   "Team": {
     "first": {
-      "name": "ACHIM KONIG",
-      "role": "CEO",
-      "text": "I  am the source of the forum vision. My passion is to find out what  happens in the hidden and unconscious and how we can create awareness  there. Besides my sparkling skills in coaching and training, I love to  laugh at myself, hold spaces and other people, be spiritual, talk and do  nonsense and bring the love that radiates through me into life."
+      "name": "Franziska Siebert",
+      "role": "Assistant",
+      "text": "Sociologist in an open air laboratory - As an event manager in the nature community, I am a link between the forum and the world of ecovillages and communities."
     },
     "second": {
-      "name": "SUSIE WIMMER",
+      "name": "Susie Wimmer",
       "role": "COO",
       "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
     },
     "third": {
       "name": "Nikola Bulic",
       "role": "CTO",
-      "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
+      "text": "I am a network weaver dedicated to driving systemic change through grassroots movements and citizen-led initiatives. With a background as an Environmental Engineer, I am deeply committed to advocating for regenerative practices that restore ecosystems and foster resilient communities."
     },
     "fourth": {
       "name": "Buba",
       "role": "Assistant",
       "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
+    },
+    "fifth": {
+      "name": "Achim Konig",
+      "role": "CEO",
+      "text": "I  am the source of the forum vision. My passion is to find out what  happens in the hidden and unconscious and how we can create awareness  there. Besides my sparkling skills in coaching and training, I love to  laugh at myself, hold spaces and other people, be spiritual, talk and do  nonsense and bring the love that radiates through me into life."
     }
   },
   "Testimonials": {
@@ -78,6 +83,10 @@
     "third": {
       "name": "Raja Brasen",
       "text": "In a relaxed and honest atmosphere, my own vulnerability was a central theme that connected me with the others."
+    },
+    "fourth": {
+      "name": "Franziska Siebert",
+      "text": "I was particularly impressed by how much pleasure and ease with which we addressed our 'mistakes' and shadow parts - I have rarely experienced such a friendly and safe space!"
     }
   },
   "FooterBanner": {

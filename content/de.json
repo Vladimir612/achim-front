@@ -46,9 +46,9 @@
   },
   "Team": {
     "first": {
-      "name": "ACHIM KONIG",
-      "role": "CEO",
-      "text": "Ich bin die Quelle der Forumsvision. Meine  Leidenschaft ist es herauszufinden was alles im verborgenen und  unbewussten passiert und wie wir da  Bewusstsein schaffen können. Neben  meinen glitzernden Kompetenzen im Bereich Coaching und Training mag ich sehr gerne über mich selber lachen, Räume und andere  Menschen halten, spirituell sein, quatsch reden und machen und die Liebe, die  durch mich hin durchstrahlt ins Leben bringen."
+      "name": "Franziska Siebert",
+      "role": "Assistant",
+      "text": "Sociologist in an open air laboratory - As an event manager in the nature community, I am a link between the forum and the world of ecovillages and communities."
     },
     "second": {
       "name": "SUSIE WIMMER",
@@ -58,12 +58,17 @@
     "third": {
       "name": "Nikola Bulic",
       "role": "CTO",
-      "text": "Lars bietet mitfühlende Unterstützung und praktische Anleitung für Traumaüberlebende und befähigt sie, ihr Leben mit Stabilität und Hoffnung neu aufzubauen."
+      "text": "Ich bin ein Netzwerkweber, der sich für systemischen Wandel durch Basisbewegungen und bürgergeführte Initiativen einsetzt. Mit einem Hintergrund als Umweltingenieur engagiere ich mich leidenschaftlich für regenerative Praktiken, die Ökosysteme wiederherstellen und resiliente Gemeinschaften fördern."
     },
     "fourth": {
       "name": "Buba",
       "role": "Assistant",
-      "text": "Mathias arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
+      "text": "Buba arbeitet mit Klienten zusammen, um personalisierte Strategien zur Überwindung von Traumata zu entwickeln, und bietet Ermutigung und Ressourcen für Heilung und Wohlbefinden."
+    },
+    "fifth": {
+      "name": "ACHIM KONIG",
+      "role": "CEO",
+      "text": "Ich bin die Quelle der Forumsvision. Meine  Leidenschaft ist es herauszufinden was alles im verborgenen und  unbewussten passiert und wie wir da  Bewusstsein schaffen können. Neben  meinen glitzernden Kompetenzen im Bereich Coaching und Training mag ich sehr gerne über mich selber lachen, Räume und andere  Menschen halten, spirituell sein, quatsch reden und machen und die Liebe, die  durch mich hin durchstrahlt ins Leben bringen."
     }
   },
   "Testimonials": {
@@ -78,6 +83,10 @@
     "third": {
       "name": "Raja Brasen",
       "text": "In  einer entspannten und ehrlichen Atmosphäre war die eigene  Verletzlichkeit ein zentrales Thema, das mich mit den  anderen verbunden hat."
+    },
+    "fourth": {
+      "name": "Franziska Siebert",
+      "text": "Besonders beeindruckt hat mich mit wieviel Lust und Leichtigkeit wir uns unseren 'Fehlern' und Schattenanteilen zugewendet haben - selten habe ich einen so wohlwollenden und sicheren Raum erlebt!"
     }
   },
   "FooterBanner": {
