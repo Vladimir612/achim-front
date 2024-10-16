@@ -21,7 +21,7 @@
     },
     "second": {
       "subHeading": "APROACH",
-      "title": "What are my basic principles?",
+      "title": "What are our basic principles?",
       "par": "In all my activities and manifestations I am guided by basic principles that give me orientation. My view of humanity is characterized by an all-encompassing and loving acceptance of what is and is based on the life's work of Martinus Thomsen. The forum swings like a pendulum between the pillar of “going outward” in the form of passing on knowledge to society and the pillar of “going inward” in the form of creating safe spaces in which we look within ourselves and perceive our shadows and integrate, back and forth...",
       "fullText": "In all my activities and manifestations I am guided by basic principles that give me orientation. My view of humanity is characterized by an all-encompassing and loving acceptance of what is and is based on the life's work of Martinus Thomsen. The forum swings like a pendulum between the pillar of “going outward” in the form of passing on knowledge to society and the pillar of “going inward” in the form of creating safe spaces in which we look within ourselves and perceive our shadows and integrate, back and forth..."
     },
@@ -48,7 +48,7 @@
     "first": {
       "name": "Franziska Siebert",
       "role": "Assistant",
-      "text": "Sociologist in an open air laboratory - As an event manager in the nature community, I am a link between the forum and the world of ecovillages and communities."
+      "text": "Sociologist at open-air laboratory - As an event manager in the nature community, I am a link between the forum and the world of ecovillages and communities. I am fascinated by how strongly unconscious trauma structures influence our community life and what happens when we turn to the wounded and hidden parts. For me as an individual, for my relationships and for our community, great healing potentials arise through this process of awareness and I strive to make this potential available for all people."
     },
     "second": {
       "name": "Susie Wimmer",
@@ -56,14 +56,14 @@
       "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
     },
     "third": {
-      "name": "Nikola Bulic",
+      "name": "Nikola Buric",
       "role": "CTO",
       "text": "I am a network weaver dedicated to driving systemic change through grassroots movements and citizen-led initiatives. With a background as an Environmental Engineer, I am deeply committed to advocating for regenerative practices that restore ecosystems and foster resilient communities."
     },
     "fourth": {
-      "name": "Buba",
+      "name": "Ljubica Babic",
       "role": "Assistant",
-      "text": "As a performer, clown, workshop leader and much more, I design the  introductions to the centrepiece of the Forum's work, the Shadow Love -  Research Workshop, and invite You to explore impossible possibilities, passionate failure, the tangible in nothingness and the joy of sense in nonsense."
+      "text": "I'm a former architect with over 13 years of extensive experience working in UAE and Serbia. Due to my personal development and since I got to know the Forum for Trauma and Nervous System, I'm deeply interested in our inner architecture and inner work. I'm passionate about spirituality, connecting people and technology, and I'm excited to be part of the Forum."
     },
     "fifth": {
       "name": "Achim Konig",
@@ -82,11 +82,15 @@
     },
     "third": {
       "name": "Raja Brasen",
-      "text": "In a relaxed and honest atmosphere, my own vulnerability was a central theme that connected me with the others."
+      "text": "In a relaxed and honest atmosphere my own vulnerability was a central theme that connected me with the others."
     },
     "fourth": {
       "name": "Franziska Siebert",
       "text": "I was particularly impressed by how much pleasure and ease with which we addressed our 'mistakes' and shadow parts - I have rarely experienced such a friendly and safe space!"
+    },
+    "fifth": {
+      "name": "Ljubica Babic",
+      "text": "Rarely is there a workshop where all of the talks are incredibly useful. I found it really thought provoking and stimulating."
     }
   },
   "FooterBanner": {
@@ -96,7 +100,7 @@
     "button": "Join us here"
   },
   "Footer": {
-    "text": "Lorem ipsum dolor sit amet consectetur. Amet convallis maecenas malesuada fringilla.",
+    "text": "Trauma and nervous system awareness as a key to social change.",
     "linksHeading": "Pages",
     "links": {
       "home": "Home",
@@ -108,8 +112,7 @@
       "contact": "Contact"
     },
     "termsLinks": {
-      "first": "Terms and Conditions",
-      "second": "Terms and Services"
+      "first": "Terms and Conditions"
     }
   },
   "About": {
@@ -275,7 +278,7 @@
   "Contact": {
     "subHeading": "JOIN US",
     "heading": "How can you join in?",
-    "par": "There are many ways to help shape the forum. You can become active as a trainer, join or found a local group, you can help build the club, you can become part of the forum movement with your organization or support us with your ideas, your commitment or your money.",
+    "par": "There are many ways to help shape the forum. You can become active as a trainer, join or found a local group, you can help build the association, you can become part of the forum movement with your organization, support us with your ideas, your commitment or your funds.",
     "btn": "Select The Role",
     "partners": {
       "bulletOne": "Resources, and funding",
@@ -283,24 +286,24 @@
       "bulletThree": "Collaborations"
     },
     "organizations": {
-      "bulletOne": "Access and share resources",
-      "bulletTwo": "Co-create events and webinars",
-      "bulletThree": "Networking and collaboration"
+      "bulletOne": "Visibility and outreach",
+      "bulletTwo": "Collaborative opportunities",
+      "bulletThree": "Access to training and resources"
     },
     "individuals": {
-      "bulletOne":"Educational resources & support",
-      "bulletTwo":"Community connection",
-      "bulletThree":"Volonterism"
+      "bulletOne":"Access to resources",
+      "bulletTwo":"Networking opportunities",
+      "bulletThree":"Participate in initiatives"
     },
     "trainers": {
-      "bulletOne": "Training programs & workshops",
-      "bulletTwo": "Provide mentorship",
-      "bulletThree": "Collaborations"
+      "bulletOne": "Expand your client base",
+      "bulletTwo": "Professional development",
+      "bulletThree": "Collaborate on projects"
     },
     "institutions": {
-      "bulletOne": "Networking opportunities",
-      "bulletTwo": "Cross marketing opportunities",
-      "bulletThree": "Co-organising events"
+      "bulletOne": "Partnerships and collaborations",
+      "bulletTwo": "Access to specialized expertise",
+      "bulletThree": "Showcase your impact"
     },
     "simply": "OR SIMPLY",
     "writeUs": "Write Us A Message",

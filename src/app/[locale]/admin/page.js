@@ -13,6 +13,7 @@ const Admin = () => {
   const footerEvents = tFooter("links.events");
   const footerCommunity = tFooter("links.community");
   const footerContact = tFooter("links.contact");
+  const footerTermsFirst = tFooter("termsLinks.first");
 
   const tNav = useTranslations("Navigation");
   const navBtn = tNav("btn");
@@ -70,6 +71,7 @@ const Admin = () => {
         contact={footerContact}
         btn={navBtn}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <Panel />
     </div>

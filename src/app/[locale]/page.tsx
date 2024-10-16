@@ -75,7 +75,7 @@ export default function Home() {
     {
       name: tTeam("fourth.name"),
       role: tTeam("fourth.role"),
-      imagePath: "/team/franziska.jpg",
+      imagePath: "/team/buba.png",
       text: tTeam("fourth.text"),
     },
     {
@@ -115,6 +115,11 @@ export default function Home() {
       text: tTestimonials("fourth.text"),
       imagePath: "/eventImageExample.png",
     },
+    {
+      name: tTestimonials("fifth.name"),
+      text: tTestimonials("fifth.text"),
+      imagePath: "/eventImageExample.png",
+    },
   ];
 
   const footerText = tFooter("text");
@@ -129,7 +134,6 @@ export default function Home() {
   const footerContact = tFooter("links.contact");
 
   const footerTermsFirst = tFooter("termsLinks.first");
-  const footerTermsSecond = tFooter("termsLinks.second");
 
   const tNav = useTranslations("Navigation");
   const navBtn = tNav("btn");
@@ -187,6 +191,7 @@ export default function Home() {
         contact={footerContact}
         btn={navBtn}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <Hero
         subHeading={t("subHeading")}
@@ -217,7 +222,6 @@ export default function Home() {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
-        termsSecond={footerTermsSecond}
       />
     </main>
   );

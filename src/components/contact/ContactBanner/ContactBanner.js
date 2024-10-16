@@ -4,7 +4,15 @@ import Image from "next/image";
 import SubHeading from "../../SubHeading/SubHeading";
 import Card from "./Card";
 
-const ContactBanner = ({ subHeading, heading, par, btn, cards, regObj }) => {
+const ContactBanner = ({
+  subHeading,
+  heading,
+  par,
+  btn,
+  cards,
+  regObj,
+  termsFirst,
+}) => {
   return (
     <div className={styles.contactBanner}>
       <Image
@@ -45,6 +53,7 @@ const ContactBanner = ({ subHeading, heading, par, btn, cards, regObj }) => {
             bulletTwo={card.bulletTwo}
             bulletThree={card.bulletThree}
             regObj={regObj}
+            termsFirst={termsFirst}
           />
         ))}
       </div>

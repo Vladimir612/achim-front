@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styles from "./registerForm.module.scss";
 import axios from "axios";
+import { useLocale } from "next-intl";
 
-const RegisterForm = ({ onClose, selectedType, regObj }) => {
+const RegisterForm = ({ onClose, selectedType, regObj, termsFirst }) => {
   const [step, setStep] = useState(1);
   const [disableSubmit, setDisableSubmit] = useState(false);
+  const locale = useLocale();
 
   const [formData, setFormData] = useState({
     type: selectedType,
@@ -388,6 +390,17 @@ const RegisterForm = ({ onClose, selectedType, regObj }) => {
                   onChange={handleTermsChange}
                   checked={formData.acceptedTerms}
                 />
+                <a
+                  href={
+                    locale === "de"
+                      ? "/pdfs/termsGer.pdf"
+                      : "/pdfs/termsEng.pdf"
+                  }
+                  target="_blank"
+                  style={{ fontSize: "0.7rem" }}
+                >
+                  {termsFirst}
+                </a>
               </div>
             </div>
             <div className={styles.buttonGroup}>

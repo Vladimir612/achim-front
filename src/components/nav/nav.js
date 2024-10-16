@@ -18,6 +18,7 @@ const Nav = ({
   contact,
   btn,
   regObj,
+  termsFirst,
 }) => {
   const pathname = usePathname();
   const locale = useLocale(); // Get the current locale
@@ -106,6 +107,7 @@ const Nav = ({
           onClose={closeModal}
           selectedType={"C1"}
           regObj={regObj}
+          termsFirst={termsFirst}
         />
       )}
     </>

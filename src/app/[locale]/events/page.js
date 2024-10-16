@@ -20,7 +20,6 @@ const Events = () => {
   const footerCommunity = tFooter("links.community");
   const footerContact = tFooter("links.contact");
   const footerTermsFirst = tFooter("termsLinks.first");
-  const footerTermsSecond = tFooter("termsLinks.second");
   const footerText = tFooter("text");
   const footerLinksHeading = tFooter("linksHeading");
 
@@ -83,6 +82,7 @@ const Events = () => {
         contact={footerContact}
         btn={navBtn}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <SliderHeroEvents readMore={tHome("moreDetails")} />
       <EventsComponent
@@ -107,7 +107,6 @@ const Events = () => {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
-        termsSecond={footerTermsSecond}
       />
     </div>
   );

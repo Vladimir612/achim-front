@@ -21,7 +21,6 @@ const Contact = () => {
   const footerContact = tFooter("links.contact");
 
   const footerTermsFirst = tFooter("termsLinks.first");
-  const footerTermsSecond = tFooter("termsLinks.second");
   const footerText = tFooter("text");
   const footerLinksHeading = tFooter("linksHeading");
 
@@ -140,6 +139,7 @@ const Contact = () => {
         contact={footerContact}
         btn={navBtn}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <ContactBanner
         subHeading={t("subHeading")}
@@ -148,6 +148,7 @@ const Contact = () => {
         btn={t("btn")}
         cards={cardsData}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <MessageForm obj={{ ...obj }} />
       {/* <Faq /> */}
@@ -162,7 +163,6 @@ const Contact = () => {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
-        termsSecond={footerTermsSecond}
       />
     </div>
   );

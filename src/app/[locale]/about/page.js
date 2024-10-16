@@ -23,7 +23,6 @@ const about = () => {
   const footerContact = tFooter("links.contact");
 
   const footerTermsFirst = tFooter("termsLinks.first");
-  const footerTermsSecond = tFooter("termsLinks.second");
   const footerText = tFooter("text");
   const footerLinksHeading = tFooter("linksHeading");
 
@@ -84,6 +83,7 @@ const about = () => {
         contact={footerContact}
         btn={navBtn}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <Banner
         subHeading={tAbout("banner.subHeading")}
@@ -145,7 +145,6 @@ const about = () => {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
-        termsSecond={footerTermsSecond}
       />
     </div>
   );

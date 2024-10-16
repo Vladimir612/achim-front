@@ -20,7 +20,6 @@ const Services = () => {
   const footerContact = tFooter("links.contact");
 
   const footerTermsFirst = tFooter("termsLinks.first");
-  const footerTermsSecond = tFooter("termsLinks.second");
   const footerText = tFooter("text");
   const footerLinksHeading = tFooter("linksHeading");
 
@@ -122,6 +121,7 @@ const Services = () => {
         contact={footerContact}
         btn={navBtn}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <ServicesWrapper obj={{ ...obj }} />
       <FooterBanner
@@ -141,7 +141,6 @@ const Services = () => {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
-        termsSecond={footerTermsSecond}
       />
     </div>
   );

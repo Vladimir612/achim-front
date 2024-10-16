@@ -20,7 +20,6 @@ const Principles = () => {
   const footerContact = tFooter("links.contact");
 
   const footerTermsFirst = tFooter("termsLinks.first");
-  const footerTermsSecond = tFooter("termsLinks.second");
   const footerText = tFooter("text");
   const footerLinksHeading = tFooter("linksHeading");
 
@@ -178,6 +177,7 @@ const Principles = () => {
         contact={footerContact}
         btn={navBtn}
         regObj={regObj}
+        termsFirst={footerTermsFirst}
       />
       <PrinciplesWrapper obj={{ ...obj }} />
       <FooterBanner
@@ -197,7 +197,6 @@ const Principles = () => {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
-        termsSecond={footerTermsSecond}
       />
     </div>
   );

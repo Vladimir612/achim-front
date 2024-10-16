@@ -83,7 +83,7 @@ const CardModal = ({ isOpen, onClose, cm }) => {
         <p style={{ marginBottom: "1rem", fontSize: "1.2rem" }}>
           {locale === "de" ? cm.textGer : cm.text}
         </p>
-        <p>{locale === "de" ? cm.subjectGer : cm.textGer}</p>
+        <p>{locale === "de" ? cm.subjectGer : cm.subject}</p>
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ const Card = ({
   bulletTwo,
   bulletThree,
   regObj,
+  termsFirst,
 }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -21,7 +22,12 @@ const Card = ({
   return (
     <>
       {isModalOpen && (
-        <RegisterForm onClose={closeModal} selectedType={id} regObj={regObj} />
+        <RegisterForm
+          onClose={closeModal}
+          selectedType={id}
+          regObj={regObj}
+          termsFirst={termsFirst}
+        />
       )}
       <button className={styles.card} onClick={openModal}>
         <div className={styles.top}>

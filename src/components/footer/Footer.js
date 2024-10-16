@@ -14,9 +14,8 @@ const Footer = ({
   community,
   contact,
   termsFirst,
-  termsSecond,
 }) => {
-  const locale = useLocale(); // Get the current locale
+  const locale = useLocale();
   return (
     <footer className={styles.footer}>
       <div className={styles.colOne}>
@@ -28,10 +27,10 @@ const Footer = ({
           style={{ objectFit: "cover" }}
           priority
         />
-        <p>{text}</p> {/* Dinamički tekst iz propa */}
+        <p>{text}</p>
       </div>
       <div className={styles.colTwo} style={{ margin: "0 4rem 0 1rem" }}>
-        <p>{linksHeading}</p> {/* Dinamički naslov linkova */}
+        <p>{linksHeading}</p>
         <nav>
           <a href={`/${locale}`}>{home}</a>
           <a href={`/${locale}/about`}>{about}</a>
@@ -44,8 +43,12 @@ const Footer = ({
       </div>
       <div className={styles.colFour}>
         <nav>
-          <a href="#">{termsFirst}</a>
-          <a href="#">{termsSecond}</a>
+          <a
+            href={locale === "de" ? "/pdfs/termsGer.pdf" : "/pdfs/termsEng.pdf"}
+            target="_blank"
+          >
+            {termsFirst}
+          </a>
         </nav>
       </div>
     </footer>
