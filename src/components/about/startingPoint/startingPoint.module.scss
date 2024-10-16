@@ -28,6 +28,19 @@
             line-height: 1.8rem;
             text-align: left;
         }
+        button{
+            border: none;
+            color: #FBD784;
+            outline: none;
+            background: none;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem; 
+            cursor: pointer;
+        }
     }
     .image{
         width: 50%!important;

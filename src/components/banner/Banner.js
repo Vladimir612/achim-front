@@ -16,6 +16,8 @@ const Banner = ({
   startingPointSubHeading,
   startingPointHeading,
   startingPointPar,
+  readMoreTxt,
+  fullText,
 }) => {
   const refAbout = useRef(null);
 
@@ -62,6 +64,8 @@ const Banner = ({
           subHeading={startingPointSubHeading}
           heading={startingPointHeading}
           par={startingPointPar}
+          readMoreTxt={readMoreTxt}
+          fullText={fullText}
           ref={refAbout}
         />
       )}

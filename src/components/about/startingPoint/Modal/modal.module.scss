@@ -15,20 +15,11 @@
     display: flex;
     background: #fff;
     border-radius: 2rem;
-    max-width: 70%;
+    max-width: 90%;
     max-height: 90%;
     overflow: hidden;
-    .imageContainer {
-        width: 25%;
-        position: relative;
-    }
-    .modalImage {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
     .textContainer {
-        width: 75%;
+        width: 100%;
         padding: 2rem;
         position: relative;
         overflow-y: scroll;
@@ -60,9 +51,6 @@
 @media (max-width: 1000px) {
     .modalContent {
         max-width: 90%;
-        .imageContainer{
-            display: none;
-        }
         .textContainer{
             width: 100%;
         }

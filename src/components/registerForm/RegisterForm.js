@@ -163,6 +163,7 @@ const RegisterForm = ({ onClose, selectedType, regObj, termsFirst }) => {
     data.append("email", formData.email);
     data.append("shortDescription", formData.shortDescription);
     data.append("subject", formData.subject);
+    data.append("interests", formData.interests);
 
     if (formData.image) {
       data.append("image", formData.image);

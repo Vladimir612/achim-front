@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import LocaleSwitcher from "@/components/localeSwitcher/LocaleSwitcher";
 
 const about = () => {
+  const t = useTranslations("Home");
   const tFooter = useTranslations("Footer");
   const tFooterBanner = useTranslations("FooterBanner");
   const tNav = useTranslations("Navigation");
@@ -95,6 +96,8 @@ const about = () => {
         startingPointSubHeading={tAbout("startingPoint.subHeading")}
         startingPointHeading={tAbout("startingPoint.heading")}
         startingPointPar={tAbout("startingPoint.par")}
+        readMoreTxt={t("moreDetails")}
+        fullText={tAbout("startingPoint.fullText")}
       />
       <div>
         <AboutSection
