@@ -80,7 +80,6 @@ const RegisterForm = ({ onClose, selectedType, regObj, termsFirst }) => {
       if (
         formData.name === "" ||
         formData.email === "" ||
-        formData.phone === "" ||
         formData.shortDescription === "" ||
         formData.subject === "" ||
         formData.image === null ||
@@ -114,7 +113,7 @@ const RegisterForm = ({ onClose, selectedType, regObj, termsFirst }) => {
     setErrorMsg("");
     const file = e.target.files[0];
 
-    if (file && file.size > 300 * 1024) {
+    if (file && file.size > 600 * 1024) {
       setErrorMsg(regObj.sizeExceeds);
       setFormData({ ...formData, image: null });
       setPreviewImage(false);
@@ -302,7 +301,9 @@ const RegisterForm = ({ onClose, selectedType, regObj, termsFirst }) => {
                           fill="#C4D0D6"
                         />
                       </svg>
-                      <p>{regObj.addImg} *</p>
+                      <p>
+                        {regObj.addImg} * {regObj.maxSize}
+                      </p>
                     </div>
                   )}
                 </label>
@@ -337,7 +338,7 @@ const RegisterForm = ({ onClose, selectedType, regObj, termsFirst }) => {
                     />
                   </div>
                   <div className={styles.inputGroup}>
-                    <label htmlFor="phone">{regObj.phone}*</label>
+                    <label htmlFor="phone">{regObj.phone}</label>
                     <input
                       type="text"
                       id="phone"

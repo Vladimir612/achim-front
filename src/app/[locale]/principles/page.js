@@ -149,6 +149,7 @@ const Principles = () => {
     sharingExp: tReg("sharingExp"),
     reqFields: tReg("reqFields"),
     sizeExceeds: tReg("sizeExceeds"),
+    maxSize: tReg("maxSize"),
     oneInterest: tReg("oneInterest"),
     nextStep: tReg("nextStep"),
     prevStep: tReg("prevStep"),
