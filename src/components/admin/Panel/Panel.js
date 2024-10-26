@@ -161,7 +161,6 @@ const Panel = () => {
       type,
       email,
       name,
-      phone,
       profileImg,
       interests,
       shortDescription,
@@ -174,7 +173,6 @@ const Panel = () => {
       !type ||
       !email ||
       !name ||
-      !phone ||
       !profileImg ||
       interests.length === 0 ||
       !shortDescription ||

@@ -109,7 +109,6 @@ const User = ({
       type,
       email,
       name,
-      phone,
       profileImg,
       interests,
       shortDescription,
@@ -122,14 +121,13 @@ const User = ({
       !type ||
       !email ||
       !name ||
-      !phone ||
       interests.length === 0 ||
       !shortDescription ||
       !shortDescriptionGer ||
       !subject ||
       !subjectGer
     ) {
-      setErrorMsg("Every field must be filled out.");
+      setErrorMsg("Every field except phone number must be filled out.");
       return;
     }
 
