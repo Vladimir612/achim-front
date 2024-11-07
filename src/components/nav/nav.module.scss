@@ -1,5 +1,5 @@
 .navigationHeader{
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -10,6 +10,7 @@
     z-index: 1000;
     height: 3.5rem;
     padding: 0 3rem;
+    backdrop-filter: blur(8px) brightness(0.9);
     .logo{
         width: 6.2rem !important;
         height: initial!important;
