@@ -2,11 +2,6 @@
     background: #0c1e27;
     padding: 2rem 10rem;
     .filter{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%);
-        width: 90%;
         input{
             width: 100%;
             border-radius: 1rem;
@@ -24,7 +19,6 @@
             &::placeholder{
                 color: #ffffff80;
                 font-weight: 500;
-                
             }
         }
         .input{
@@ -53,6 +47,7 @@
     }
     .cards{
         margin-top: 2rem;
+        margin-bottom: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
