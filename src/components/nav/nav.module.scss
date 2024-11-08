@@ -55,7 +55,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 4px;
         z-index: 1000;
         background: transparent;
         border: none;
@@ -66,20 +66,20 @@
         z-index: 1001;
         .line{
             width: 2rem;
-            height: 0.25rem;
+            height: 4px;
             background: #fff;
             border-radius: 1rem;
             transition: all 0.3s ease-in-out;
         }
         &.open{
             .line:nth-child(1){
-                transform: translateY(0.55rem) rotate(-45deg) ;
+                transform: translateY(8px) rotate(-45deg) ;
             }
             .line:nth-child(2){
                 opacity: 0;
             }
             .line:nth-child(3){
-                transform: translateY(-0.5rem) rotate(45deg) ;
+                transform: translateY(-8px) rotate(45deg) ;
             }
         }
     }

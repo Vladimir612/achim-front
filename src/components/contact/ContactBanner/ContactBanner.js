@@ -19,7 +19,7 @@ const ContactBanner = ({
         src="/footerBanner.png"
         alt="footer banner"
         fill
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "cover", zIndex: "-1" }}
         priority
       />
       <div className={styles.content}>

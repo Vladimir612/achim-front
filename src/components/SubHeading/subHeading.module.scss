@@ -29,3 +29,12 @@
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 600px) {
+    .subHeading{
+        font-size: 0.7rem;
+        &::before{
+            width: 1.5rem;
+        }
+    }
+}

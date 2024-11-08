@@ -109,3 +109,17 @@
         
     }
 }
+
+@media (max-width: 600px) {
+    .testimonials {
+        .content{
+            padding: 0 1rem;
+            h1{
+                font-size: 1.4rem;
+            }
+            p{
+                font-size: 0.85rem;
+            }
+        }
+    }
+}
