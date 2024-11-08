@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-const TeamSlider = ({ teamList, readMore }) => {
+const TeamSlider = ({ teamList, readMore, teamSubHeading }) => {
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -114,6 +114,7 @@ const TeamSlider = ({ teamList, readMore }) => {
 
   return (
     <div className={styles.teamSlider}>
+      <h1>{teamSubHeading}</h1>
       <Slider {...settings}>
         {teamList.map((teamMember, index) => (
           <div key={index} className={styles.teamMember}>

@@ -142,7 +142,7 @@ const SliderHeroEvents = ({ readMore }) => {
             <div className={styles.col}>
               <img src="/event.svg" alt="Event icon" width={30} />
               <div className={styles.data}>
-                <p className="first">
+                <p className={styles.first}>
                   {locale === "de"
                     ? events[currentSlide].datesFirstFieldGer
                     : events[currentSlide].datesFirstFieldEng}
@@ -157,7 +157,7 @@ const SliderHeroEvents = ({ readMore }) => {
             <div className={styles.col}>
               <img src="/alarm.svg" alt="Alarm icon" width={30} />
               <div className={styles.data}>
-                <p className="first">
+                <p className={styles.first}>
                   {locale === "de"
                     ? events[currentSlide].timeFirstFieldGer
                     : events[currentSlide].timeFirstFieldEng}
@@ -177,7 +177,7 @@ const SliderHeroEvents = ({ readMore }) => {
               >
                 <img src="/location_on.svg" alt="Location icon" width={30} />
                 <div className={styles.data}>
-                  <p className="first">
+                  <p className={styles.first}>
                     {locale === "de"
                       ? events[currentSlide].addressTextGer
                       : events[currentSlide].addressTextEng}

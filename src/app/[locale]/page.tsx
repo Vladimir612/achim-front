@@ -205,6 +205,7 @@ export default function Home() {
         teamList={teamList}
         testimonialsList={testimonialsList}
         readMore={t("moreDetails")}
+        teamSubHeading={tTeam("subHeading")}
       />
       <FooterBanner
         subHeading={tFooterBanner("subHeading")}

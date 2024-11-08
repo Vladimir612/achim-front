@@ -36,7 +36,7 @@ const Banner = ({
         alt="Das forum about image"
         className={styles.eventImage}
         fill
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "cover", zIndex: "-1" }}
         priority
       />
       <div className={styles.content}>

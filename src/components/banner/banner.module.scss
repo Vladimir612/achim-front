@@ -1,5 +1,10 @@
 .banner{
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-direction: column;
+    padding: 7rem 0 2rem 0;
     position: relative;
     *{
         text-align: center;
@@ -9,10 +14,6 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         color: #fff;
         width: 50%;
         h1{
@@ -51,14 +52,14 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .banner {
         .content {
             h1{
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
             p{
-                font-size: 1.2rem;
+                font-size: 0.85rem;
             }
         }
     }
