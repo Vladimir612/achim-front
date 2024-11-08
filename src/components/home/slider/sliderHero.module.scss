@@ -103,10 +103,6 @@
 .sliderHero{
     z-index: 100;
     width: 100%;
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translate(-50%, 50%);
 }
 
 @media (max-width: 1120px) {
@@ -175,6 +171,14 @@
             gap: 1rem!important;
             .btnCta{
                 font-size: 0.8rem!important;
+            }
+        }
+        .content{
+            h1{
+                font-size: 1.4rem;
+            }
+            .firstPar{
+                font-size: 0.85rem;
             }
         }
     }
