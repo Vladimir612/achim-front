@@ -36,5 +36,10 @@
         &::before{
             width: 1.5rem;
         }
+        &.typeTwo{
+            &::after{
+                width: 1.5rem;
+            }
+        }
     }
 }
