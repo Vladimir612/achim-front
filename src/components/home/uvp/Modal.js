@@ -20,7 +20,15 @@ const Modal = ({ isOpen, onClose, imagePath, title, fullText }) => {
         </div>
         <div className={styles.textContainer}>
           <h2 className={styles.modalTitle}>{title}</h2>
-          <p>{fullText}</p>
+          <p>
+            {fullText.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
+
           <button className={styles.closeButton} onClick={onClose}>
             &times;
           </button>
