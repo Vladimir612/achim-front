@@ -62,7 +62,7 @@ const Events = () => {
     name: tContact("form.name"),
     email: tContact("form.email"),
     phone: tContact("form.phone"),
-    subject: tContact("form.subject"),
+    subject: tReg("subject"),
     congratulations: tReg("congratulations"),
     congratsText: tReg("congratsText"),
     congratsSecond: tReg("congratsSecond"),

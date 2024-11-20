@@ -119,7 +119,7 @@ const Contact = () => {
     name: t("form.name"),
     email: t("form.email"),
     phone: t("form.phone"),
-    subject: t("form.subject"),
+    subject: tReg("subject"),
     congratulations: tReg("congratulations"),
     congratsText: tReg("congratsText"),
     congratsSecond: tReg("congratsSecond"),
