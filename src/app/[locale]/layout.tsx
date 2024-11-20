@@ -30,11 +30,13 @@ export async function generateMetadata({
           : "Wo Traumabewusstsein auf gesellschaftlichen Wandel trifft",
       images: [
         {
-          url: `${baseURL}/logo.png`,
+          url: `${baseURL}/thumb.png`,
           width: 1200,
           height: 630,
           alt:
-            params.locale === "en" ? "Das Forum logo" : "Das Forum Logo - DE",
+            params.locale === "en"
+              ? "Das Forum thumbnail"
+              : "Das Forum thumbnail - DE",
         },
       ],
     },
@@ -45,7 +47,7 @@ export async function generateMetadata({
         params.locale === "en"
           ? "Where Trauma Awareness Meets Societal Change"
           : "Wo Traumabewusstsein auf gesellschaftlichen Wandel trifft",
-      images: [`${baseURL}/logo.png`],
+      images: [`${baseURL}/thumb.png`],
     },
   };
 }
