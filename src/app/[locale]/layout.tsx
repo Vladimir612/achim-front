@@ -4,19 +4,60 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Das Forum",
-  description: "Das Forum helps you with menatl health",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const baseURL = "https://traumaundnervensystem.org";
+  const localePath = params.locale === "en" ? "/en" : "/de";
+
+  return {
+    metadataBase: new URL(baseURL),
+    title: "Das Forum",
+    description:
+      params.locale === "en"
+        ? "Where Trauma Awareness Meets Societal Change"
+        : "Wo Traumabewusstsein auf gesellschaftlichen Wandel trifft",
+    openGraph: {
+      type: "website",
+      url: `${baseURL}${localePath}`,
+      locale: params.locale === "en" ? "en_US" : "de_DE",
+      title: "Das Forum",
+      description:
+        params.locale === "en"
+          ? "Where Trauma Awareness Meets Societal Change"
+          : "Wo Traumabewusstsein auf gesellschaftlichen Wandel trifft",
+      images: [
+        {
+          url: `${baseURL}/logo.png`,
+          width: 1200,
+          height: 630,
+          alt:
+            params.locale === "en" ? "Das Forum logo" : "Das Forum Logo - DE",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Das Forum",
+      description:
+        params.locale === "en"
+          ? "Where Trauma Awareness Meets Societal Change"
+          : "Wo Traumabewusstsein auf gesellschaftlichen Wandel trifft",
+      images: [`${baseURL}/logo.png`],
+    },
+  };
+}
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  locale: never;
+  params: { locale: string };
 }
 
-export default function RootLayout({ children, locale }: RootLayoutProps) {
+export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
-    <html lang={locale}>
+    <html lang={params.locale}>
       <body className={inter.className}>{children}</body>
     </html>
   );
