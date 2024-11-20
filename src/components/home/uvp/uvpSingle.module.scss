@@ -40,6 +40,14 @@
         line-height: 1.8rem;
         margin-bottom: 1rem;
     }
+    .linkText{
+        text-decoration: none;
+        color: #FBD784;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
     button{
         border: none;
         color: #FBD784;

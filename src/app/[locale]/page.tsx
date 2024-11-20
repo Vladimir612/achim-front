@@ -30,6 +30,8 @@ export default function Home() {
       par: tUvp("second.par"),
       fullText: tUvp("second.fullText"),
       imagePath: "/uvpSecond.png",
+      link: "/principles",
+      linkText: tUvp("second.linkText"),
     },
     {
       number: "03",
@@ -54,6 +56,8 @@ export default function Home() {
       par: tUvp("fifth.par"),
       fullText: tUvp("fifth.fullText"),
       imagePath: "/uvpFifth.png",
+      link: "/services",
+      linkText: tUvp("fifth.linkText"),
     },
   ];
 

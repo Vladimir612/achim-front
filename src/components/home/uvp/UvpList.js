@@ -15,6 +15,8 @@ const UvpList = ({ list, readMoreTxt }) => {
           fullText={item.fullText}
           imagePath={item.imagePath}
           readMoreTxt={readMoreTxt}
+          link={item.link}
+          linkText={item.linkText}
         />
       ))}
     </div>
