@@ -22,7 +22,7 @@ const Contact = () => {
 
   const footerTermsFirst = tFooter("termsLinks.first");
   const footerText = tFooter("text");
-  const footerLinksHeading = tFooter("linksHeading");
+  const germany = tFooter("germany");
 
   const navBtn = tNav("btn");
 
@@ -155,7 +155,6 @@ const Contact = () => {
       {/* <Faq /> */}
       <Footer
         text={footerText}
-        linksHeading={footerLinksHeading}
         home={footerHome}
         about={footerAbout}
         principles={footerPrinciples}
@@ -164,6 +163,7 @@ const Contact = () => {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
+        germany={germany}
       />
     </div>
   );

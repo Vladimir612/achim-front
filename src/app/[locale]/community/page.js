@@ -22,7 +22,7 @@ const Community = () => {
 
   const footerTermsFirst = tFooter("termsLinks.first");
   const footerText = tFooter("text");
-  const footerLinksHeading = tFooter("linksHeading");
+  const germany = tFooter("germany");
 
   const navBtn = tNav("btn");
 
@@ -105,7 +105,6 @@ const Community = () => {
       />
       <Footer
         text={footerText}
-        linksHeading={footerLinksHeading}
         home={footerHome}
         about={footerAbout}
         principles={footerPrinciples}
@@ -114,6 +113,7 @@ const Community = () => {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
+        germany={germany}
       />
     </div>
   );

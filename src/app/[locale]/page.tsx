@@ -127,7 +127,7 @@ export default function Home() {
   ];
 
   const footerText = tFooter("text");
-  const footerLinksHeading = tFooter("linksHeading");
+  const germany = tFooter("germany");
 
   const footerHome = tFooter("links.home");
   const footerAbout = tFooter("links.about");
@@ -219,7 +219,6 @@ export default function Home() {
       />
       <Footer
         text={footerText}
-        linksHeading={footerLinksHeading}
         home={footerHome}
         about={footerAbout}
         principles={footerPrinciples}
@@ -228,6 +227,7 @@ export default function Home() {
         community={footerCommunity}
         contact={footerContact}
         termsFirst={footerTermsFirst}
+        germany={germany}
       />
     </main>
   );

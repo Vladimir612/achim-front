@@ -5,7 +5,6 @@ import { useLocale } from "next-intl";
 
 const Footer = ({
   text,
-  linksHeading,
   home,
   about,
   principles,
@@ -14,6 +13,7 @@ const Footer = ({
   community,
   contact,
   termsFirst,
+  germany,
 }) => {
   const locale = useLocale();
   return (
@@ -28,9 +28,15 @@ const Footer = ({
           priority
         />
         <p>{text}</p>
+        <p className={styles.address}>
+          <a href="mailto:info@traumaundnervensystem.org">
+            info@traumaundnervensystem.org
+          </a>
+          <br />
+          Bonner Talweg 235, <br /> 53129 Bonn <br /> {germany}
+        </p>
       </div>
-      <div className={styles.colTwo} style={{ margin: "0 4rem 0 1rem" }}>
-        <p>{linksHeading}</p>
+      <div className={styles.colTwo}>
         <nav>
           <a href={`/${locale}`}>{home}</a>
           <a href={`/${locale}/about`}>{about}</a>
@@ -39,10 +45,6 @@ const Footer = ({
           <a href={`/${locale}/events`}>{events}</a>
           <a href={`/${locale}/community`}>{community}</a>
           <a href={`/${locale}/contact`}>{contact}</a>
-        </nav>
-      </div>
-      <div className={styles.colFour}>
-        <nav>
           <a
             href={locale === "de" ? "/pdfs/termsGer.pdf" : "/pdfs/termsEng.pdf"}
             target="_blank"
