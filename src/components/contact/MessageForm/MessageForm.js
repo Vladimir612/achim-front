@@ -57,11 +57,10 @@ const MessageForm = ({ obj }) => {
       !data.name ||
       !data.surname ||
       !data.email ||
-      !data.phone ||
       !data.subject ||
       !data.message
     ) {
-      setMsg("Please fill in all the fields!");
+      setMsg("Please fill in all required the fields!");
       setSuccess(false);
       return;
     }
@@ -135,7 +134,7 @@ const MessageForm = ({ obj }) => {
             </div>
 
             <div className={styles.inputGroup}>
-              <label htmlFor="phoneNumber">{phone}*</label>
+              <label htmlFor="phoneNumber">{phone}</label>
               <input
                 type="tel"
                 id="phoneNumber"
